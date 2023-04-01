@@ -1,0 +1,76 @@
+header {
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px 0px 60px;
+}
+
+.sticky {
+    z-index: 100;
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 1);
+    position: fixed;
+    background: #000;
+    animation: sticky-anim 0.8s forwards;
+}
+
+@keyframes sticky-anim {
+    from {
+        top: -20vh;
+    }
+
+    to {
+        top: 0;
+    }
+}
+
+/* MAIN MENU */
+.main-menu {
+    text-align: center;
+    justify-content: center;
+}
+
+.main-menu ul li {
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+    padding: 20px 0;
+}
+
+.main-menu ul li a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.main-menu ul li a:hover {
+    color: #c42e71;
+    text-decoration: none;
+}
+
+.buy-ticket {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+/* BUY TICKET */
+.buy-ticket a {
+    color: #fff;
+    border-radius: 0px;
+    padding: 10px 30px;
+    background: #c42e71;
+    border: 1px solid transparent;
+
+}
+
+.buy-ticket a:hover {
+    color: #c42e71;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid #c42e71;
+}
