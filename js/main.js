@@ -8,5 +8,5 @@ window.onscroll = function () {
 };
 
 function onClickMenu(x) {
-    document.getElementById("header").classList.toggle("change");
+    header.classList.toggle("change");
 }
