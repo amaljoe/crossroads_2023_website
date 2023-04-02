@@ -1,18 +1,56 @@
 header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#nav-bar {
     left: 0;
     right: 0;
-    top: 0;
+    top: -100%;
     width: 100%;
+    z-index: 100;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px 60px 0px 60px;
+    animation: anim4 2s forwards 2.5s;
+}
+
+@keyframes anim4 {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 0%;
+    }
+}
+
+#side-nav {
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #000;
+    flex-direction: column;
+    position: fixed;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 60px 0px 60px;
+    transition: 0.4s;
+    z-index: 90;
+}
+
+.change #side-nav {
+    transform: translate(100%, 0);
 }
 
 .sticky {
     z-index: 100;
-    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.3);
     position: fixed;
+    width: 100%;
     background: #000;
     animation: sticky-anim 0.8s forwards;
 }
@@ -27,50 +65,101 @@ header {
     }
 }
 
+/* MENU ICON */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    border-radius: 3px;
+    transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+    transform: translate(0, 9px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+    opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+    transform: translate(0, -9px) rotate(45deg);
+}
+
 /* MAIN MENU */
 .main-menu {
     text-align: center;
     justify-content: center;
+    list-style-type: none;
+    padding: 0;
 }
 
-.main-menu ul li {
+.main-menu li {
     display: inline-block;
     position: relative;
     margin: 0 20px;
     padding: 20px 0;
 }
 
-.main-menu ul li a {
+.main-menu li a {
     color: #fff;
     font-size: 16px;
     font-weight: 600;
 }
 
-.main-menu ul li a:hover {
+.main-menu li a:hover {
     color: #c42e71;
     text-decoration: none;
 }
 
-.buy-ticket {
-    align-items: center;
-    display: flex;
-    justify-content: flex-end;
-
-}
-
 /* BUY TICKET */
-.buy-ticket a {
+.buy-ticket {
     color: #fff;
-    border-radius: 0px;
+    border-radius: 10px;
     padding: 10px 30px;
+    text-align: center;
     background: #c42e71;
+    position: relative;
     border: 1px solid transparent;
-
 }
 
-.buy-ticket a:hover {
+.buy-ticket:hover {
     color: #c42e71;
     text-decoration: none;
     background: transparent;
     border: 1px solid #c42e71;
+}
+
+@media (max-width: 576px) {
+    #nav-bar {
+        justify-content: flex-start;
+        padding: 20px;
+    }
+
+    #nav-bar .main-menu {
+        display: none;
+    }
+
+    #nav-bar .buy-ticket {
+        display: none;
+    }
+
+    #nav-bar .menu-icon {
+        display: inline-block;
+    }
+
+    .main-menu li {
+        display: block;
+    }
 }
