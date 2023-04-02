@@ -44,6 +44,8 @@ header {
 
 .change #side-nav {
     transform: translate(100%, 0);
+    overflow: hidden;
+    height: 100vh;
 }
 
 .sticky {

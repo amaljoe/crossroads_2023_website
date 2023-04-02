@@ -1,4 +1,6 @@
 const header = document.getElementById("header");
+var showNav = false;
+
 window.onscroll = function () {
     if (document.documentElement.scrollTop > window.innerHeight / 2) {
         header.className = "sticky";
@@ -8,5 +10,13 @@ window.onscroll = function () {
 };
 
 function onClickMenu(x) {
-    header.classList.toggle("change");
+    if (showNav) {
+        header.classList.remove("change");
+        document.body.style.overflow = "auto";
+        showNav = false;
+    } else {
+        header.classList.add("change");
+        document.body.style.overflow = "hidden";
+        showNav = true;
+    }
 }
