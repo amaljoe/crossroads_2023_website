@@ -1,8 +1,10 @@
 body {
-    background-color: #000000;
-    font-family: 'Poppins', sans-serif;
+  background-color: #000000;
+  font-family: "Poppins", sans-serif;
 }
 
 *:hover {
-    transition: all 0.1s ease 0s;
+  transition: all 0.1s ease 0s;
 }
+
+/*# sourceMappingURL=styles.css.map */
