@@ -14,6 +14,7 @@
   background-blend-mode: overlay;
 }
 #proshows h1 {
+  position: absolute;
   font-family: "goodTimes", sans-serif;
   font-size: 32px;
   color: white;
@@ -60,6 +61,26 @@
 .proshow-card h2 {
   left: 0;
   font-size: 20px;
+}
+
+.start h1 {
+  opacity: 0;
+}
+.start .proshow-card {
+  box-shadow: none;
+  border-radius: 0;
+  position: absolute;
+  margin: 0;
+}
+.start .proshow-card img {
+  border-radius: 0;
+  height: 100vh;
+  object-fit: cover;
+}
+.start .proshow-card h2,
+.start .proshow-card p,
+.start .proshow-card .overlay {
+  opacity: 0;
 }
 
 /*# sourceMappingURL=proshows.css.map */

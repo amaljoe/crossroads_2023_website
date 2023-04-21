@@ -3,9 +3,13 @@
   font-family: "goodTimes";
   src: url("/fonts/good_times.otf");
 }
+html,
 body {
+  overflow-x: hidden;
   background-color: #000000;
   font-family: "goodTimes", sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 *:hover {

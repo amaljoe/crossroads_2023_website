@@ -4,7 +4,7 @@
 /* small mobile :320px. */
 /* Large Mobile :480px. */
 header {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
 }
@@ -109,6 +109,9 @@ header {
   width: 100%;
   background: #000;
   animation: sticky-anim 0.8s forwards;
+}
+.sticky .menu-icon {
+  padding-top: 20px;
 }
 @-webkit-keyframes sticky-anim {
   from {

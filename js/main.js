@@ -1,11 +1,14 @@
 const header = document.getElementById("header");
+const proshows = document.getElementById("proshows");
 var showNav = false;
 
 window.onscroll = function () {
     if (document.documentElement.scrollTop > window.innerHeight / 2) {
         header.className = "sticky";
+        proshows.classList.remove("start");
     } else {
         header.className = "";
+        proshows.classList.add("start");
     }
 };
 

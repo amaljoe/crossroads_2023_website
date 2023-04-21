@@ -2,7 +2,7 @@
 @import 'responsive.scss';
 
 header {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
 }
@@ -93,6 +93,10 @@ header {
     width: 100%;
     background: #000;
     animation: sticky-anim 0.8s forwards;
+
+    .menu-icon {
+        padding-top: 20px;
+    }
 
     @include keyframes(sticky-anim) {
         from {
