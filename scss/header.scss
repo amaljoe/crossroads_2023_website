@@ -1,3 +1,6 @@
+@import 'mixins.scss';
+@import 'responsive.scss';
+
 header {
     position: relative;
     display: flex;
@@ -11,12 +14,12 @@ header {
     width: 100%;
     z-index: 100;
     display: flex;
+    justify-content: space-around;
+    padding: 20px 60px 0px 60px;
     align-items: center;
-    justify-content: flex-start;
-    padding: 20px;
     animation: nav-bar-anim 2s forwards 2.5s;
 
-    @keyframes nav-bar-anim {
+    @include keyframes(nav-bar-anim) {
         from {
             top: -100%;
         }
@@ -28,16 +31,16 @@ header {
 
     .main-menu,
     .buy-ticket {
-        display: none;
+        display: block;
     }
 
-    @media (min-width: 576px) {
-        justify-content: space-around;
-        padding: 20px 60px 0px 60px;
+    @media #{$mobile_device} {
+        justify-content: flex-start;
+        padding: 20px;
 
         .main-menu,
         .buy-ticket {
-            display: block;
+            display: none;
         }
     }
 }
@@ -48,7 +51,7 @@ header {
     left: -100%;
     width: 100%;
     height: 100vh;
-    display: flex;
+    display: none;
     background-color: #000;
     flex-direction: column;
     position: fixed;
@@ -58,8 +61,8 @@ header {
     transition: 0.4s;
     z-index: 90;
 
-    @media screen and (min-width: 576px) {
-        display: none;
+    @media #{$mobile_device} {
+        display: flex;
     }
 }
 
@@ -91,7 +94,7 @@ header {
     background: #000;
     animation: sticky-anim 0.8s forwards;
 
-    @keyframes sticky-anim {
+    @include keyframes(sticky-anim) {
         from {
             top: -20vh;
         }
@@ -103,7 +106,7 @@ header {
 }
 
 .menu-icon {
-    display: inline-block;
+    display: none;
     cursor: pointer;
 
     .bar1,
@@ -117,8 +120,8 @@ header {
         transition: 0.4s;
     }
 
-    @media (min-width: 576px) {
-        display: none;
+    @media #{$mobile_device} {
+        display: inline-block;
     }
 }
 
@@ -147,7 +150,7 @@ header {
     padding: 0;
 
     li {
-        display: block;
+        display: inline-block;
         position: relative;
         margin: 0 20px;
         padding: 20px 0;
@@ -164,9 +167,9 @@ header {
         }
     }
 
-    @media (min-width: 576px) {
+    @media #{$mobile_device} {
         li {
-            display: inline-block;
+            display: block;
         }
     }
 }

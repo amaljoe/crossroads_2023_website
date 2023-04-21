@@ -1,6 +1,8 @@
+@import "variables";
+
 body {
     background-color: #000000;
-    font-family: 'Poppins', sans-serif;
+    font-family: $goodTimes;
 }
 
 *:hover {

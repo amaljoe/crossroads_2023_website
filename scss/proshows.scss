@@ -1,0 +1,67 @@
+@import "variables";
+
+#proshows {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-image: url(../images/bg-concert.png), linear-gradient(180deg, #000000 0.76%, rgba(0, 0, 0, 0.81) 18.75%, #000000 96.01%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-blend-mode: overlay;
+
+
+    h1 {
+        font-family: $goodTimes;
+        font-size: 32px;
+        color: white;
+        padding: 1rem;
+    }
+}
+
+.proshow-card {
+    font-family: $goodTimes;
+    color: white;
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    box-shadow: 1px 2px 9px -5px #D08453;
+    margin: 1rem;
+
+    img {
+        position: relative;
+        z-index: 1;
+        border-radius: 20px;
+        width: 100%;
+    }
+
+    .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 2;
+        border-radius: 20px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 8.33%, #000000 100%);
+    }
+
+    h2,
+    p {
+        display: inline-block;
+        position: absolute;
+        z-index: 10;
+        bottom: 0;
+        margin: 0;
+        padding: 16px;
+    }
+
+    p {
+        right: 0;
+        font-size: 16px;
+    }
+
+    h2 {
+        left: 0;
+        font-size: 20px;
+    }
+}

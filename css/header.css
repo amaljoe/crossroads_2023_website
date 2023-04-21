@@ -1,3 +1,8 @@
+/* Normal desktop :1200px. */
+/* Normal desktop :992px. */
+/* Tablet desktop :768px. */
+/* small mobile :320px. */
+/* Large Mobile :480px. */
 header {
   position: relative;
   display: flex;
@@ -11,10 +16,34 @@ header {
   width: 100%;
   z-index: 100;
   display: flex;
+  justify-content: space-around;
+  padding: 20px 60px 0px 60px;
   align-items: center;
-  justify-content: flex-start;
-  padding: 20px;
   animation: nav-bar-anim 2s forwards 2.5s;
+}
+@-webkit-keyframes nav-bar-anim {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+@-moz-keyframes nav-bar-anim {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+@-o-keyframes nav-bar-anim {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
 }
 @keyframes nav-bar-anim {
   from {
@@ -26,16 +55,16 @@ header {
 }
 #nav-bar .main-menu,
 #nav-bar .buy-ticket {
-  display: none;
+  display: block;
 }
-@media (min-width: 576px) {
+@media (max-width: 767px) {
   #nav-bar {
-    justify-content: space-around;
-    padding: 20px 60px 0px 60px;
+    justify-content: flex-start;
+    padding: 20px;
   }
   #nav-bar .main-menu,
   #nav-bar .buy-ticket {
-    display: block;
+    display: none;
   }
 }
 
@@ -43,7 +72,7 @@ header {
   left: -100%;
   width: 100%;
   height: 100vh;
-  display: flex;
+  display: none;
   background-color: #000;
   flex-direction: column;
   position: fixed;
@@ -53,9 +82,9 @@ header {
   transition: 0.4s;
   z-index: 90;
 }
-@media screen and (min-width: 576px) {
+@media (max-width: 767px) {
   #side-nav {
-    display: none;
+    display: flex;
   }
 }
 
@@ -81,6 +110,30 @@ header {
   background: #000;
   animation: sticky-anim 0.8s forwards;
 }
+@-webkit-keyframes sticky-anim {
+  from {
+    top: -20vh;
+  }
+  to {
+    top: 0;
+  }
+}
+@-moz-keyframes sticky-anim {
+  from {
+    top: -20vh;
+  }
+  to {
+    top: 0;
+  }
+}
+@-o-keyframes sticky-anim {
+  from {
+    top: -20vh;
+  }
+  to {
+    top: 0;
+  }
+}
 @keyframes sticky-anim {
   from {
     top: -20vh;
@@ -91,7 +144,7 @@ header {
 }
 
 .menu-icon {
-  display: inline-block;
+  display: none;
   cursor: pointer;
 }
 .menu-icon .bar1,
@@ -104,9 +157,9 @@ header {
   border-radius: 3px;
   transition: 0.4s;
 }
-@media (min-width: 576px) {
+@media (max-width: 767px) {
   .menu-icon {
-    display: none;
+    display: inline-block;
   }
 }
 
@@ -133,7 +186,7 @@ header {
   padding: 0;
 }
 .main-menu li {
-  display: block;
+  display: inline-block;
   position: relative;
   margin: 0 20px;
   padding: 20px 0;
@@ -147,9 +200,9 @@ header {
   color: #c42e71;
   text-decoration: none;
 }
-@media (min-width: 576px) {
+@media (max-width: 767px) {
   .main-menu li {
-    display: inline-block;
+    display: block;
   }
 }
 
