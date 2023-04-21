@@ -5,9 +5,13 @@ var showNav = false;
 window.onscroll = function () {
     if (document.documentElement.scrollTop > window.innerHeight / 2) {
         header.className = "sticky";
-        proshows.classList.remove("start");
     } else {
         header.className = "";
+    }
+
+    if (document.documentElement.scrollTop > window.innerHeight / 3 * 2) {
+        proshows.classList.remove("start");
+    } else {
         proshows.classList.add("start");
     }
 };
