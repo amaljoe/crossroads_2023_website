@@ -12,8 +12,8 @@ header {
     z-index: 100;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    padding: 20px 60px 0px 60px;
+    justify-content: flex-start;
+    padding: 20px;
     animation: nav-bar-anim 2s forwards 2.5s;
 
     @keyframes nav-bar-anim {
@@ -26,9 +26,19 @@ header {
         }
     }
 
-    @media (max-width: 576px) {
-        justify-content: flex-start;
-        padding: 20px;
+    .main-menu,
+    .buy-ticket {
+        display: none;
+    }
+
+    @media (min-width: 576px) {
+        justify-content: space-around;
+        padding: 20px 60px 0px 60px;
+
+        .main-menu,
+        .buy-ticket {
+            display: block;
+        }
     }
 }
 
@@ -37,7 +47,7 @@ header {
 #side-nav {
     left: -100%;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     background-color: #000;
     flex-direction: column;
@@ -47,13 +57,17 @@ header {
     padding: 20px 60px 0px 60px;
     transition: 0.4s;
     z-index: 90;
+
+    @media screen and (min-width: 576px) {
+        display: none;
+    }
 }
 
 .change {
     #side-nav {
         transform: translate(100%, 0);
         overflow: hidden;
-        height: 100vh;
+
     }
 
     .bar1 {
@@ -89,7 +103,7 @@ header {
 }
 
 .menu-icon {
-    display: none;
+    display: inline-block;
     cursor: pointer;
 
     .bar1,
@@ -103,31 +117,8 @@ header {
         transition: 0.4s;
     }
 
-}
-
-
-.main-menu {
-    text-align: center;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
-
-    li {
-        display: inline-block;
-        position: relative;
-        margin: 0 20px;
-        padding: 20px 0;
-
-        a {
-            color: #fff;
-            font-size: 16px;
-            font-weight: 600;
-
-            &:hover {
-                color: #c42e71;
-                text-decoration: none;
-            }
-        }
+    @media (min-width: 576px) {
+        display: none;
     }
 }
 
@@ -149,25 +140,33 @@ header {
 }
 
 
-@media (max-width: 576px) {
-    #nav-bar {
-        justify-content: flex-start;
-        padding: 20px;
-    }
+.main-menu {
+    text-align: center;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
 
-    #nav-bar .main-menu {
-        display: none;
-    }
-
-    #nav-bar .buy-ticket {
-        display: none;
-    }
-
-    #nav-bar .menu-icon {
-        display: inline-block;
-    }
-
-    .main-menu li {
+    li {
         display: block;
+        position: relative;
+        margin: 0 20px;
+        padding: 20px 0;
+
+        a {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 600;
+
+            &:hover {
+                color: #c42e71;
+                text-decoration: none;
+            }
+        }
+    }
+
+    @media (min-width: 576px) {
+        li {
+            display: inline-block;
+        }
     }
 }
