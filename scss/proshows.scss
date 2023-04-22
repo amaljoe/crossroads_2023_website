@@ -45,13 +45,19 @@ $proshowCardMargin: 1rem;
     transform-origin: top center;
 
     &:nth-of-type(1) {
-        z-index: 20;
+        z-index: 21;
         box-shadow: 1px 2px 9px -5px #B9926A;
     }
 
     &:nth-of-type(2) {
+        z-index: 20;
+        box-shadow: 1px 2px 9px -5px #B9926A;
+    }
+
+    &:nth-of-type(3) {
         z-index: 19;
         box-shadow: 1px 2px 9px -5px #5698B0;
+
     }
 
     &:not(:first-of-type) {
@@ -70,10 +76,10 @@ $proshowCardMargin: 1rem;
         width: 100%;
         height: 100%;
         top: 0;
-        z-index: 2;
+        z-index: 22;
         border-radius: 20px;
         transition: $proshowTransition2;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 8.33%, #000000 100%);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 70%, #000000 100%);
     }
 
     .bg-overlay {
@@ -94,7 +100,7 @@ $proshowCardMargin: 1rem;
         transition: $proshowTransition2;
         display: inline-block;
         position: absolute;
-        z-index: 10;
+        z-index: 30;
         margin: 0;
         padding: 16px;
         color: #ACACAC;

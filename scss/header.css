@@ -16,14 +16,17 @@ header {
   padding: 20px 60px 0px 60px;
   animation: nav-bar-anim 2s forwards 2.5s;
 }
+
 @keyframes nav-bar-anim {
   from {
     top: -100%;
   }
+
   to {
     top: 0%;
   }
 }
+
 @media (max-width: 576px) {
   #nav-bar {
     justify-content: flex-start;
@@ -51,12 +54,15 @@ header {
   overflow: hidden;
   height: 100vh;
 }
+
 .change .bar1 {
   transform: translate(0, 9.8px) rotate(-45deg);
 }
+
 .change .bar2 {
   opacity: 0;
 }
+
 .change .bar3 {
   transform: translate(0, -9.8px) rotate(45deg);
 }
@@ -69,19 +75,23 @@ header {
   background: #000;
   animation: sticky-anim 0.8s forwards;
 }
+
 @keyframes sticky-anim {
   from {
     top: -20vh;
   }
+
   to {
     top: 0;
   }
 }
 
 .menu-icon {
+  transform: scale(0.8);
   display: none;
   cursor: pointer;
 }
+
 .menu-icon .bar1,
 .menu-icon .bar2,
 .menu-icon .bar3 {
@@ -99,17 +109,20 @@ header {
   list-style-type: none;
   padding: 0;
 }
+
 .main-menu li {
   display: inline-block;
   position: relative;
   margin: 0 20px;
   padding: 20px 0;
 }
+
 .main-menu li a {
   color: #fff;
   font-size: 16px;
   font-weight: 600;
 }
+
 .main-menu li a:hover {
   color: #c42e71;
   text-decoration: none;
@@ -124,6 +137,7 @@ header {
   position: relative;
   border: 1px solid transparent;
 }
+
 .buy-ticket:hover {
   color: #c42e71;
   text-decoration: none;
@@ -134,18 +148,24 @@ header {
 @media (max-width: 576px) {
   #nav-bar {
     justify-content: flex-start;
-    padding: 20px;
+    padding: 15px 20px;
   }
+
   #nav-bar .main-menu {
     display: none;
   }
+
   #nav-bar .buy-ticket {
     display: none;
   }
+
   #nav-bar .menu-icon {
     display: inline-block;
   }
+
   .main-menu li {
     display: block;
   }
-}/*# sourceMappingURL=header.css.map */
+}
+
+/*# sourceMappingURL=header.css.map */
