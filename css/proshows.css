@@ -34,23 +34,46 @@
   transition: all 0.5s ease;
   transform-origin: top center;
 }
+.proshow-card:nth-of-type(1) {
+  z-index: 20;
+}
+.proshow-card:nth-of-type(2) {
+  z-index: 19;
+}
+.proshow-card:not(:first-of-type) {
+  transition: all 0.5s ease 0.5s;
+}
 .proshow-card img {
   position: relative;
   z-index: 1;
   border-radius: 20px;
   width: 100%;
 }
-.proshow-card .overlay {
+.proshow-card .bottom-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   z-index: 2;
   border-radius: 20px;
+  transition: all 0.5s ease 0.5s;
+  opacity: 100;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 8.33%, #000000 100%);
+}
+.proshow-card .bg-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 2;
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 0.5s ease 0.5s;
+  background: linear-gradient(180deg, #000000 0.76%, rgba(0, 0, 0, 0) 51.04%, #000000 96.01%);
 }
 .proshow-card h2,
 .proshow-card p {
+  transition: all 0.5s ease 0.5s;
   display: inline-block;
   position: absolute;
   z-index: 10;
@@ -70,24 +93,29 @@
 .start h1 {
   opacity: 0;
 }
-.start .proshow-card {
+.start .proshow-card:first-of-type {
   box-shadow: none;
   border-radius: 0;
-  position: absolute;
   margin: 0;
   transform: scale(3);
 }
-.start .proshow-card img {
+.start .proshow-card:first-of-type img {
   border-radius: 0;
 }
-.start .proshow-card h2,
-.start .proshow-card p {
+.start .proshow-card:first-of-type h2,
+.start .proshow-card:first-of-type p,
+.start .proshow-card:first-of-type bottom-overlay {
   opacity: 0;
+  padding: 60px;
 }
-.start .proshow-card .overlay {
-  z-index: 100;
-  background: red;
-  background: linear-gradient(180deg, #000000 0.76%, rgba(0, 0, 0, 0) 51.04%, #000000 96.01%);
+.start .proshow-card:first-of-type .bg-overlay {
+  opacity: 100;
+}
+.start .proshow-card:nth-of-type(2) {
+  transform: translate(0, calc(-100% - 2rem - 5px));
+}
+.start .proshow-card:nth-of-type(3) {
+  transform: translate(0, calc(-200% - 4rem - 10px));
 }
 
 /*# sourceMappingURL=proshows.css.map */
