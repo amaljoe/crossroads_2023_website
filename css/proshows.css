@@ -29,6 +29,10 @@
   border-radius: 20px;
   box-shadow: 1px 2px 9px -5px #D08453;
   margin: 1rem;
+  display: inline-block;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  transform-origin: top center;
 }
 .proshow-card img {
   position: relative;
@@ -71,16 +75,19 @@
   border-radius: 0;
   position: absolute;
   margin: 0;
+  transform: scale(3);
 }
 .start .proshow-card img {
   border-radius: 0;
-  height: 100vh;
-  object-fit: cover;
 }
 .start .proshow-card h2,
-.start .proshow-card p,
-.start .proshow-card .overlay {
+.start .proshow-card p {
   opacity: 0;
+}
+.start .proshow-card .overlay {
+  z-index: 100;
+  background: red;
+  background: linear-gradient(180deg, #000000 0.76%, rgba(0, 0, 0, 0) 51.04%, #000000 96.01%);
 }
 
 /*# sourceMappingURL=proshows.css.map */
