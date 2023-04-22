@@ -4,10 +4,9 @@
   src: url("/fonts/good_times.otf");
 }
 #proshows {
-  height: 100vh;
   width: 100%;
   position: relative;
-  background-image: url(../images/bg-concert.png), linear-gradient(180deg, #000000 0.76%, rgba(0, 0, 0, 0.81) 18.75%, #000000 96.01%);
+  background-image: url(../images/bg-concert.png), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.8) 25%, #000000 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
