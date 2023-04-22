@@ -21,7 +21,7 @@ $proshowCardMargin: 1rem;
         font-size: 32px;
         color: white;
         padding: 2rem;
-        z-index: 50;
+        z-index: 1;
         transition: all 0.8s ease;
 
         &.scrolled {
@@ -135,6 +135,10 @@ $proshowCardMargin: 1rem;
 }
 
 .start {
+    #proshows-heading {
+        z-index: 50;
+    }
+
     .proshow-card:first-of-type {
         box-shadow: none;
         border-radius: 0;

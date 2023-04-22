@@ -18,7 +18,7 @@
   font-size: 32px;
   color: white;
   padding: 2rem;
-  z-index: 50;
+  z-index: 1;
   transition: all 0.8s ease;
 }
 #proshows #proshows-heading.scrolled {
@@ -114,6 +114,9 @@
   bottom: 0;
 }
 
+.start #proshows-heading {
+  z-index: 50;
+}
 .start .proshow-card:first-of-type {
   box-shadow: none;
   border-radius: 0;

@@ -5,25 +5,19 @@ var showNav = false;
 
 window.onscroll = function () {
     const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
-    // sticky navigation bar
+    // proshow heading animation
     if (document.documentElement.scrollTop > window.innerHeight / 8 || (proshowsHeadingTop < window.innerHeight && document.documentElement.scrollTop > 0)) {
         proshowsHeading.classList.add("scrolled");
     } else {
         proshowsHeading.classList.remove("scrolled");
     }
 
-    // proshow heading animation
-    if (document.documentElement.scrollTop > window.innerHeight / 2) {
-        header.classList.add("sticky");
-    } else {
-        header.classList.remove("sticky");
-    }
-
-    // proshows animation
+    // proshows animation and sticky header
     if (document.documentElement.scrollTop > window.innerHeight / 3 * 2) {
         proshows.classList.remove("start");
+        header.classList.add("sticky");
     } else {
-        proshows.classList.add("start");
+        //proshows.classList.add("start");
     }
 };
 
