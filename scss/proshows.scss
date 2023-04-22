@@ -77,30 +77,47 @@ $proshowCardMargin: 1rem;
         z-index: 2;
         border-radius: 20px;
         opacity: 0;
-        transition: $proshowTransition2;
+        transition: $proshowTransition1;
         background: linear-gradient(180deg, #000000 0.76%, rgba(0, 0, 0, 0) 51.04%, #000000 96.01%);
     }
 
     h2,
-    p {
+    p,
+    .arrow {
         transition: $proshowTransition2;
         display: inline-block;
         position: absolute;
         z-index: 10;
-        bottom: 0;
         margin: 0;
         padding: 16px;
         color: #ACACAC;
     }
 
+    .arrow {
+        right: 0;
+        top: 0;
+        background: url(../images/icons/arrow.svg);
+        background-repeat: no-repeat;
+        width: 1rem;
+        height: 1rem;
+        background-origin: content-box;
+        background-position: center;
+        background-size: cover;
+        box-sizing: content-box;
+    }
+
     p {
         right: 0;
         font-size: 16px;
+        bottom: 0;
+
     }
 
     h2 {
         left: 0;
         font-size: 20px;
+        bottom: 0;
+
     }
 }
 
@@ -121,9 +138,13 @@ $proshowCardMargin: 1rem;
 
         h2,
         p,
-        bottom-overlay {
+        .arrow {
             opacity: 0;
-            padding: 60px;
+            padding: 40px;
+        }
+
+        .bottom-overlay {
+            opacity: 0;
         }
 
         .bg-overlay {
