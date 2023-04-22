@@ -1,14 +1,25 @@
 const header = document.getElementById("header");
 const proshows = document.getElementById("proshows");
+const proshowsHeading = document.getElementById("proshows-heading");
 var showNav = false;
 
 window.onscroll = function () {
-    if (document.documentElement.scrollTop > window.innerHeight / 2) {
-        header.className = "sticky";
+    const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
+    // sticky navigation bar
+    if (document.documentElement.scrollTop > window.innerHeight / 8 || (proshowsHeadingTop < window.innerHeight && document.documentElement.scrollTop > 0)) {
+        proshowsHeading.classList.add("scrolled");
     } else {
-        header.className = "";
+        proshowsHeading.classList.remove("scrolled");
     }
 
+    // proshow heading animation
+    if (document.documentElement.scrollTop > window.innerHeight / 2) {
+        header.classList.add("sticky");
+    } else {
+        header.classList.remove("sticky");
+    }
+
+    // proshows animation
     if (document.documentElement.scrollTop > window.innerHeight / 3 * 2) {
         proshows.classList.remove("start");
     } else {

@@ -13,12 +13,17 @@
   background-size: 100%;
   background-blend-mode: overlay;
 }
-#proshows h1 {
+#proshows #proshows-heading {
   position: absolute;
   font-family: "goodTimes", sans-serif;
   font-size: 32px;
   color: white;
-  padding: 1rem;
+  padding: 2rem;
+  z-index: 50;
+  transition: all 0.8s ease;
+}
+#proshows #proshows-heading.scrolled {
+  transform: translate(0, -100px);
 }
 
 .proshow-card {
@@ -36,9 +41,11 @@
 }
 .proshow-card:nth-of-type(1) {
   z-index: 20;
+  box-shadow: 1px 2px 9px -5px #B9926A;
 }
 .proshow-card:nth-of-type(2) {
   z-index: 19;
+  box-shadow: 1px 2px 9px -5px #5698B0;
 }
 .proshow-card:not(:first-of-type) {
   transition: all 0.8s ease 0.8s;
@@ -54,10 +61,9 @@
   width: 100%;
   height: 100%;
   top: 0;
-  z-index: 50;
+  z-index: 2;
   border-radius: 20px;
   transition: all 0.8s ease 0.8s;
-  opacity: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 8.33%, #000000 100%);
 }
 .proshow-card .bg-overlay {
@@ -65,9 +71,10 @@
   width: 100%;
   height: 100%;
   top: 0;
-  z-index: 2;
+  z-index: 50;
   border-radius: 20px;
   transition: all 0.8s ease;
+  opacity: 0;
   background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 50%, #000000 100%);
 }
 .proshow-card h2,
@@ -104,9 +111,6 @@
   bottom: 0;
 }
 
-.start h1 {
-  opacity: 0;
-}
 .start .proshow-card:first-of-type {
   box-shadow: none;
   border-radius: 0;
