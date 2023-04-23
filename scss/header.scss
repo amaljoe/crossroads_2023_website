@@ -17,17 +17,6 @@ header {
     justify-content: space-around;
     padding: 20px 60px 0px 60px;
     align-items: center;
-    animation: nav-bar-anim 2s forwards 2.5s;
-
-    @include keyframes(nav-bar-anim) {
-        from {
-            top: -100%;
-        }
-
-        to {
-            top: 0%;
-        }
-    }
 
     .main-menu,
     .buy-ticket {
@@ -54,6 +43,7 @@ header {
     display: none;
     background-color: #000;
     flex-direction: column;
+    overflow: hidden;
     position: fixed;
     align-items: center;
     justify-content: space-around;
@@ -68,13 +58,11 @@ header {
 
 .change {
     #side-nav {
-        transform: translate(100%, 0);
-        overflow: hidden;
-
+        @include transform(translate(100%, 0));
     }
 
     .bar1 {
-        transform: translate(0, 9.8px) rotate(-45deg);
+        @include transform(translate(0, 9.8px) rotate(-45deg));
     }
 
     .bar2 {
@@ -82,7 +70,7 @@ header {
     }
 
     .bar3 {
-        transform: translate(0, -9.8px) rotate(45deg);
+        @include transform(translate(0, -9.8px) rotate(45deg));
     }
 }
 
@@ -91,16 +79,14 @@ header {
     box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.3);
     position: fixed;
     width: 100%;
+    top: -100px;
     background: #000;
-    animation: sticky-anim 0.8s forwards;
+    animation: sticky-anim 0.8s forwards 0.8s;
 
-    .menu-icon {
-        padding-top: 20px;
-    }
 
     @include keyframes(sticky-anim) {
         from {
-            top: -20vh;
+            top: -100px;
         }
 
         to {

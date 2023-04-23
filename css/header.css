@@ -19,39 +19,6 @@ header {
   justify-content: space-around;
   padding: 20px 60px 0px 60px;
   align-items: center;
-  animation: nav-bar-anim 2s forwards 2.5s;
-}
-@-webkit-keyframes nav-bar-anim {
-  from {
-    top: -100%;
-  }
-  to {
-    top: 0%;
-  }
-}
-@-moz-keyframes nav-bar-anim {
-  from {
-    top: -100%;
-  }
-  to {
-    top: 0%;
-  }
-}
-@-o-keyframes nav-bar-anim {
-  from {
-    top: -100%;
-  }
-  to {
-    top: 0%;
-  }
-}
-@keyframes nav-bar-anim {
-  from {
-    top: -100%;
-  }
-  to {
-    top: 0%;
-  }
 }
 #nav-bar .main-menu,
 #nav-bar .buy-ticket {
@@ -75,6 +42,7 @@ header {
   display: none;
   background-color: #000;
   flex-direction: column;
+  overflow: hidden;
   position: fixed;
   align-items: center;
   justify-content: space-around;
@@ -89,16 +57,24 @@ header {
 }
 
 .change #side-nav {
+  -webkit-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
   transform: translate(100%, 0);
-  overflow: hidden;
 }
 .change .bar1 {
+  -webkit-transform: translate(0, 9.8px) rotate(-45deg);
+  -moz-transform: translate(0, 9.8px) rotate(-45deg);
+  -ms-transform: translate(0, 9.8px) rotate(-45deg);
   transform: translate(0, 9.8px) rotate(-45deg);
 }
 .change .bar2 {
   opacity: 0;
 }
 .change .bar3 {
+  -webkit-transform: translate(0, -9.8px) rotate(45deg);
+  -moz-transform: translate(0, -9.8px) rotate(45deg);
+  -ms-transform: translate(0, -9.8px) rotate(45deg);
   transform: translate(0, -9.8px) rotate(45deg);
 }
 
@@ -107,15 +83,13 @@ header {
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.3);
   position: fixed;
   width: 100%;
+  top: -100px;
   background: #000;
-  animation: sticky-anim 0.8s forwards;
-}
-.sticky .menu-icon {
-  padding-top: 20px;
+  animation: sticky-anim 0.8s forwards 0.8s;
 }
 @-webkit-keyframes sticky-anim {
   from {
-    top: -20vh;
+    top: -100px;
   }
   to {
     top: 0;
@@ -123,7 +97,7 @@ header {
 }
 @-moz-keyframes sticky-anim {
   from {
-    top: -20vh;
+    top: -100px;
   }
   to {
     top: 0;
@@ -131,7 +105,7 @@ header {
 }
 @-o-keyframes sticky-anim {
   from {
-    top: -20vh;
+    top: -100px;
   }
   to {
     top: 0;
@@ -139,7 +113,7 @@ header {
 }
 @keyframes sticky-anim {
   from {
-    top: -20vh;
+    top: -100px;
   }
   to {
     top: 0;

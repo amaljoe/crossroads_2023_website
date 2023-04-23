@@ -17,7 +17,8 @@ window.onscroll = function () {
         proshows.classList.remove("start");
         header.classList.add("sticky");
     } else {
-        //proshows.classList.add("start");
+        proshows.classList.add("start");
+        header.classList.remove("sticky");
     }
 };
 

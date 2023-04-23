@@ -18,7 +18,7 @@
   font-size: 32px;
   color: white;
   padding: 2rem;
-  z-index: 1;
+  z-index: 50;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -28,10 +28,11 @@
   -ms-perspective: 1000;
   perspective: 1000;
   /* Other transform properties here */
-  -webkit-transition: all 0.8s ease;
-  -moz-transition: all 0.8s ease;
-  -o-transition: all 0.8s ease;
-  transition: all 0.8s ease;
+  will-change: transform;
+  -webkit-transition: transform 0.8s ease;
+  -moz-transition: transform 0.8s ease;
+  -o-transition: transform 0.8s ease;
+  transition: transform 0.8s ease;
 }
 #proshows #proshows-heading.scrolled {
   transform: translate(0, -100px);
@@ -47,6 +48,7 @@
   -ms-perspective: 1000;
   perspective: 1000;
   /* Other transform properties here */
+  will-change: transform;
   font-family: "goodTimes", sans-serif;
   color: white;
   position: relative;
@@ -104,6 +106,7 @@
   -ms-perspective: 1000;
   perspective: 1000;
   /* Other transform properties here */
+  will-change: opacity;
   -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
@@ -126,6 +129,7 @@
   -ms-perspective: 1000;
   perspective: 1000;
   /* Other transform properties here */
+  will-change: opacity;
   -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
@@ -145,6 +149,7 @@
   -ms-perspective: 1000;
   perspective: 1000;
   /* Other transform properties here */
+  will-change: transform, opacity;
   -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
@@ -181,20 +186,29 @@
 
 .start .proshow-card:first-of-type {
   box-shadow: none;
+  -webkit-transform: scale(3);
+  -moz-transform: scale(3);
+  -ms-transform: scale(3);
   transform: scale(3);
 }
-.start .proshow-card:first-of-type img {
-  border-radius: 0;
-}
 .start .proshow-card:first-of-type .arrow {
+  -webkit-transform: translate(-20px, 20px);
+  -moz-transform: translate(-20px, 20px);
+  -ms-transform: translate(-20px, 20px);
   transform: translate(-20px, 20px);
   opacity: 0;
 }
 .start .proshow-card:first-of-type h2 {
+  -webkit-transform: translate(20px, -20px);
+  -moz-transform: translate(20px, -20px);
+  -ms-transform: translate(20px, -20px);
   transform: translate(20px, -20px);
   opacity: 0;
 }
 .start .proshow-card:first-of-type p {
+  -webkit-transform: translate(-20px, -20px);
+  -moz-transform: translate(-20px, -20px);
+  -ms-transform: translate(-20px, -20px);
   transform: translate(-20px, -20px);
   opacity: 0;
 }

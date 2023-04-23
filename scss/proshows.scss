@@ -24,9 +24,10 @@ $proshowCardMargin: 1rem;
         font-size: 32px;
         color: white;
         padding: 2rem;
-        z-index: 1;
+        z-index: 50;
         @include hardware-acceleration;
-        @include transition(all 0.8s ease);
+        will-change: transform;
+        @include transition(transform 0.8s ease);
 
         &.scrolled {
             transform: translate(0, -100px);
@@ -36,6 +37,7 @@ $proshowCardMargin: 1rem;
 
 .proshow-card {
     @include hardware-acceleration;
+    will-change: transform;
     font-family: $goodTimes;
     color: white;
     position: relative;
@@ -81,6 +83,7 @@ $proshowCardMargin: 1rem;
         z-index: 22;
         border-radius: 20px;
         @include hardware-acceleration;
+        will-change: opacity;
         @include transition($proshowTransition2);
         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #000000 100%);
     }
@@ -93,6 +96,7 @@ $proshowCardMargin: 1rem;
         z-index: 50;
         border-radius: 20px;
         @include hardware-acceleration;
+        will-change: opacity;
         @include transition($proshowTransition2);
         opacity: 0;
         background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 50%, #000000 100%);
@@ -102,6 +106,7 @@ $proshowCardMargin: 1rem;
     p,
     .arrow {
         @include hardware-acceleration;
+        will-change: transform, opacity;
         @include transition($proshowTransition2);
         display: inline-block;
         position: absolute;
@@ -142,24 +147,20 @@ $proshowCardMargin: 1rem;
 .start {
     .proshow-card:first-of-type {
         box-shadow: none;
-        transform: scale(3);
-
-        img {
-            border-radius: 0;
-        }
+        @include transform(scale(3));
 
         .arrow {
-            transform: translate(-20px, 20px);
+            @include transform(translate(-20px, 20px));
             opacity: 0;
         }
 
         h2 {
-            transform: translate(20px, -20px);
+            @include transform(translate(20px, -20px));
             opacity: 0;
         }
 
         p {
-            transform: translate(-20px, -20px);
+            @include transform(translate(-20px, -20px));
             opacity: 0;
         }
 
