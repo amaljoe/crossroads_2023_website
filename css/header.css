@@ -1,5 +1,10 @@
+/* Normal desktop :1200px. */
+/* Normal desktop :992px. */
+/* Tablet desktop :768px. */
+/* small mobile :320px. */
+/* Large Mobile :480px. */
 header {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
 }
@@ -11,12 +16,35 @@ header {
   width: 100%;
   z-index: 100;
   display: flex;
-  align-items: center;
   justify-content: space-around;
   padding: 20px 60px 0px 60px;
+  align-items: center;
   animation: nav-bar-anim 2s forwards 2.5s;
 }
-
+@-webkit-keyframes nav-bar-anim {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+@-moz-keyframes nav-bar-anim {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+@-o-keyframes nav-bar-anim {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
 @keyframes nav-bar-anim {
   from {
     top: -100%;
@@ -25,17 +53,26 @@ header {
     top: 0%;
   }
 }
-@media (max-width: 576px) {
+#nav-bar .main-menu,
+#nav-bar .buy-ticket {
+  display: block;
+}
+@media (max-width: 767px) {
   #nav-bar {
     justify-content: flex-start;
     padding: 20px;
   }
+  #nav-bar .main-menu,
+  #nav-bar .buy-ticket {
+    display: none;
+  }
 }
+
 #side-nav {
   left: -100%;
   width: 100%;
-  height: 100%;
-  display: flex;
+  height: 100vh;
+  display: none;
   background-color: #000;
   flex-direction: column;
   position: fixed;
@@ -45,21 +82,22 @@ header {
   transition: 0.4s;
   z-index: 90;
 }
+@media (max-width: 767px) {
+  #side-nav {
+    display: flex;
+  }
+}
 
 .change #side-nav {
   transform: translate(100%, 0);
   overflow: hidden;
-  height: 100vh;
 }
-
 .change .bar1 {
   transform: translate(0, 9.8px) rotate(-45deg);
 }
-
 .change .bar2 {
   opacity: 0;
 }
-
 .change .bar3 {
   transform: translate(0, -9.8px) rotate(45deg);
 }
@@ -72,7 +110,33 @@ header {
   background: #000;
   animation: sticky-anim 0.8s forwards;
 }
-
+.sticky .menu-icon {
+  padding-top: 20px;
+}
+@-webkit-keyframes sticky-anim {
+  from {
+    top: -20vh;
+  }
+  to {
+    top: 0;
+  }
+}
+@-moz-keyframes sticky-anim {
+  from {
+    top: -20vh;
+  }
+  to {
+    top: 0;
+  }
+}
+@-o-keyframes sticky-anim {
+  from {
+    top: -20vh;
+  }
+  to {
+    top: 0;
+  }
+}
 @keyframes sticky-anim {
   from {
     top: -20vh;
@@ -81,12 +145,11 @@ header {
     top: 0;
   }
 }
+
 .menu-icon {
-  transform: scale(0.8);
   display: none;
   cursor: pointer;
 }
-
 .menu-icon .bar1,
 .menu-icon .bar2,
 .menu-icon .bar3 {
@@ -97,30 +160,10 @@ header {
   border-radius: 3px;
   transition: 0.4s;
 }
-
-.main-menu {
-  text-align: center;
-  justify-content: center;
-  list-style-type: none;
-  padding: 0;
-}
-
-.main-menu li {
-  display: inline-block;
-  position: relative;
-  margin: 0 20px;
-  padding: 20px 0;
-}
-
-.main-menu li a {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.main-menu li a:hover {
-  color: #c42e71;
-  text-decoration: none;
+@media (max-width: 767px) {
+  .menu-icon {
+    display: inline-block;
+  }
 }
 
 .buy-ticket {
@@ -132,7 +175,6 @@ header {
   position: relative;
   border: 1px solid transparent;
 }
-
 .buy-ticket:hover {
   color: #c42e71;
   text-decoration: none;
@@ -140,24 +182,31 @@ header {
   border: 1px solid #c42e71;
 }
 
-@media (max-width: 576px) {
-  #nav-bar {
-    justify-content: flex-start;
-    padding: 15px 20px;
-  }
-  #nav-bar .main-menu {
-    display: none;
-  }
-  #nav-bar .buy-ticket {
-    display: none;
-  }
-  #nav-bar .menu-icon {
-    display: inline-block;
-  }
+.main-menu {
+  text-align: center;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+.main-menu li {
+  display: inline-block;
+  position: relative;
+  margin: 0 20px;
+  padding: 20px 0;
+}
+.main-menu li a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+.main-menu li a:hover {
+  color: #c42e71;
+  text-decoration: none;
+}
+@media (max-width: 767px) {
   .main-menu li {
     display: block;
   }
 }
-
 
 /*# sourceMappingURL=header.css.map */

@@ -19,6 +19,18 @@
   color: white;
   padding: 2rem;
   z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  /* Other transform properties here */
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
   transition: all 0.8s ease;
 }
 #proshows #proshows-heading.scrolled {
@@ -26,6 +38,15 @@
 }
 
 .proshow-card {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  /* Other transform properties here */
   font-family: "goodTimes", sans-serif;
   color: white;
   position: relative;
@@ -35,23 +56,31 @@
   margin: 1rem;
   display: inline-block;
   overflow: hidden;
-  transition: all 0.8s ease;
   transform-origin: top center;
 }
 .proshow-card:nth-of-type(1) {
   z-index: 21;
   box-shadow: 1px 2px 9px -5px #B9926A;
+  -webkit-transition: transform 0.8s ease, opacity 0.8s ease;
+  -moz-transition: transform 0.8s ease, opacity 0.8s ease;
+  -o-transition: transform 0.8s ease, opacity 0.8s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 .proshow-card:nth-of-type(2) {
   z-index: 20;
   box-shadow: 1px 2px 9px -5px #B9926A;
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
 }
 .proshow-card:nth-of-type(3) {
   z-index: 19;
   box-shadow: 1px 2px 9px -5px #5698B0;
-}
-.proshow-card:not(:first-of-type) {
-  transition: all 0.8s ease 0.8s;
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
 }
 .proshow-card img {
   position: relative;
@@ -66,7 +95,19 @@
   top: 0;
   z-index: 22;
   border-radius: 20px;
-  transition: all 0.8s ease 0.8s;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  /* Other transform properties here */
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #000000 100%);
 }
 .proshow-card .bg-overlay {
@@ -76,14 +117,38 @@
   top: 0;
   z-index: 50;
   border-radius: 20px;
-  transition: all 0.8s ease;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  /* Other transform properties here */
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   opacity: 0;
   background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 50%, #000000 100%);
 }
 .proshow-card h2,
 .proshow-card p,
 .proshow-card .arrow {
-  transition: all 0.8s ease 0.8s;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  /* Other transform properties here */
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   display: inline-block;
   position: absolute;
   z-index: 30;
@@ -114,23 +179,24 @@
   bottom: 0;
 }
 
-.start #proshows-heading {
-  z-index: 50;
-}
 .start .proshow-card:first-of-type {
   box-shadow: none;
-  border-radius: 0;
-  margin: 0;
   transform: scale(3);
 }
 .start .proshow-card:first-of-type img {
   border-radius: 0;
 }
-.start .proshow-card:first-of-type h2,
-.start .proshow-card:first-of-type p,
 .start .proshow-card:first-of-type .arrow {
+  transform: translate(-20px, 20px);
   opacity: 0;
-  padding: 40px;
+}
+.start .proshow-card:first-of-type h2 {
+  transform: translate(20px, -20px);
+  opacity: 0;
+}
+.start .proshow-card:first-of-type p {
+  transform: translate(-20px, -20px);
+  opacity: 0;
 }
 .start .proshow-card:first-of-type .bottom-overlay {
   opacity: 0;
@@ -139,9 +205,15 @@
   opacity: 100;
 }
 .start .proshow-card:nth-of-type(2) {
+  -webkit-transform: translate(0, calc(-100% - 2rem - 5px));
+  -moz-transform: translate(0, calc(-100% - 2rem - 5px));
+  -ms-transform: translate(0, calc(-100% - 2rem - 5px));
   transform: translate(0, calc(-100% - 2rem - 5px));
 }
 .start .proshow-card:nth-of-type(3) {
+  -webkit-transform: translate(0, calc(-200% - 4rem - 10px));
+  -moz-transform: translate(0, calc(-200% - 4rem - 10px));
+  -ms-transform: translate(0, calc(-200% - 4rem - 10px));
   transform: translate(0, calc(-200% - 4rem - 10px));
 }
 

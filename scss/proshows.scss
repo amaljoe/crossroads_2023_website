@@ -1,7 +1,10 @@
 @import "variables";
+@import "mixins";
 
-$proshowTransition1: all 0.8s ease;
-$proshowTransition2: all 0.8s ease 0.8s;
+$duration: 0.8s;
+
+$proshowTransition1: transform $duration ease, opacity $duration ease;
+$proshowTransition2: transform $duration ease $duration, opacity $duration ease $duration;
 
 $proshowCardMargin: 1rem;
 
@@ -22,7 +25,8 @@ $proshowCardMargin: 1rem;
         color: white;
         padding: 2rem;
         z-index: 1;
-        transition: all 0.8s ease;
+        @include hardware-acceleration;
+        @include transition(all 0.8s ease);
 
         &.scrolled {
             transform: translate(0, -100px);
@@ -31,6 +35,7 @@ $proshowCardMargin: 1rem;
 }
 
 .proshow-card {
+    @include hardware-acceleration;
     font-family: $goodTimes;
     color: white;
     position: relative;
@@ -40,28 +45,25 @@ $proshowCardMargin: 1rem;
     margin: $proshowCardMargin;
     display: inline-block;
     overflow: hidden;
-    transition: $proshowTransition1;
     transform-origin: top center;
 
 
     &:nth-of-type(1) {
         z-index: 21;
         box-shadow: 1px 2px 9px -5px #B9926A;
+        @include transition($proshowTransition1);
     }
 
     &:nth-of-type(2) {
         z-index: 20;
         box-shadow: 1px 2px 9px -5px #B9926A;
+        @include transition($proshowTransition2);
     }
 
     &:nth-of-type(3) {
         z-index: 19;
         box-shadow: 1px 2px 9px -5px #5698B0;
-
-    }
-
-    &:not(:first-of-type) {
-        transition: $proshowTransition2;
+        @include transition($proshowTransition2);
     }
 
     img {
@@ -78,7 +80,8 @@ $proshowCardMargin: 1rem;
         top: 0;
         z-index: 22;
         border-radius: 20px;
-        transition: $proshowTransition2;
+        @include hardware-acceleration;
+        @include transition($proshowTransition2);
         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #000000 100%);
     }
 
@@ -89,7 +92,8 @@ $proshowCardMargin: 1rem;
         top: 0;
         z-index: 50;
         border-radius: 20px;
-        transition: $proshowTransition1;
+        @include hardware-acceleration;
+        @include transition($proshowTransition2);
         opacity: 0;
         background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 50%, #000000 100%);
     }
@@ -97,7 +101,8 @@ $proshowCardMargin: 1rem;
     h2,
     p,
     .arrow {
-        transition: $proshowTransition2;
+        @include hardware-acceleration;
+        @include transition($proshowTransition2);
         display: inline-block;
         position: absolute;
         z-index: 30;
@@ -135,25 +140,27 @@ $proshowCardMargin: 1rem;
 }
 
 .start {
-    #proshows-heading {
-        z-index: 50;
-    }
-
     .proshow-card:first-of-type {
         box-shadow: none;
-        border-radius: 0;
-        margin: 0;
         transform: scale(3);
 
         img {
             border-radius: 0;
         }
 
-        h2,
-        p,
         .arrow {
+            transform: translate(-20px, 20px);
             opacity: 0;
-            padding: 40px;
+        }
+
+        h2 {
+            transform: translate(20px, -20px);
+            opacity: 0;
+        }
+
+        p {
+            transform: translate(-20px, -20px);
+            opacity: 0;
         }
 
         .bottom-overlay {
@@ -167,10 +174,10 @@ $proshowCardMargin: 1rem;
 
 
     .proshow-card:nth-of-type(2) {
-        transform: translate(0, calc(-100% - #{$proshowCardMargin * 2} - 5px));
+        @include transform(translate(0, calc(-100% - #{$proshowCardMargin * 2} - 5px)));
     }
 
     .proshow-card:nth-of-type(3) {
-        transform: translate(0, calc(-200% - #{$proshowCardMargin * 4} - 10px));
+        @include transform(translate(0, calc(-200% - #{$proshowCardMargin * 4} - 10px)));
     }
 }
