@@ -25,11 +25,9 @@ window.onscroll = function () {
 function onClickMenu(x) {
     if (showNav) {
         header.classList.remove("change");
-        document.body.style.overflow = "auto";
         showNav = false;
     } else {
         header.classList.add("change");
-        document.body.style.overflow = "hidden";
         showNav = true;
     }
 }
