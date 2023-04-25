@@ -39,6 +39,8 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
     background-position: center;
     background-size: cover;
     box-sizing: content-box;
+    @include transition($eventTransition2);
+
   }
 
   #events-left-arrow {
@@ -108,12 +110,20 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
   &.start {
     #c0 {
-      @include transition($eventTransition1);
       @include transform(translate(calc(200% - 50%), -50%) rotate(75deg));
     }
 
+    #events-left-arrow {
+      @include transform(translate(32px, -50%));
+      opacity: 0;
+    }
+
+    #events-right-arrow {
+      @include transform(translate(-32px, -50%) rotate(180deg));
+      opacity: 0;
+    }
+
     .event-card:not(#c0) {
-      @include transition($eventTransition2);
       opacity: 0;
       @include transform(translate(- 50%, -50%));
     }

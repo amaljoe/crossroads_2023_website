@@ -32,6 +32,10 @@
   background-position: center;
   background-size: cover;
   box-sizing: content-box;
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
 }
 #events #events-left-arrow {
   left: 0;
@@ -114,20 +118,26 @@
   transform: translate(110%, 30%) rotate(15deg);
 }
 #events.start #c0 {
-  -webkit-transition: transform 0.8s ease, opacity 0.8s ease;
-  -moz-transition: transform 0.8s ease, opacity 0.8s ease;
-  -o-transition: transform 0.8s ease, opacity 0.8s ease;
-  transition: transform 0.8s ease, opacity 0.8s ease;
   -webkit-transform: translate(150%, -50%) rotate(75deg);
   -moz-transform: translate(150%, -50%) rotate(75deg);
   -ms-transform: translate(150%, -50%) rotate(75deg);
   transform: translate(150%, -50%) rotate(75deg);
 }
+#events.start #events-left-arrow {
+  -webkit-transform: translate(32px, -50%);
+  -moz-transform: translate(32px, -50%);
+  -ms-transform: translate(32px, -50%);
+  transform: translate(32px, -50%);
+  opacity: 0;
+}
+#events.start #events-right-arrow {
+  -webkit-transform: translate(-32px, -50%) rotate(180deg);
+  -moz-transform: translate(-32px, -50%) rotate(180deg);
+  -ms-transform: translate(-32px, -50%) rotate(180deg);
+  transform: translate(-32px, -50%) rotate(180deg);
+  opacity: 0;
+}
 #events.start .event-card:not(#c0) {
-  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
-  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
-  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
-  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   opacity: 0;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
