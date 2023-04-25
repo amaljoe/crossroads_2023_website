@@ -4,6 +4,7 @@
   src: url("/fonts/good_times.otf");
 }
 #events {
+  overflow: hidden;
   position: relative;
   height: 100vh;
 }

@@ -1,8 +1,8 @@
 @import "variables";
 @import "mixins";
 
-
 #events {
+  overflow: hidden;
   position: relative;
   height: 100vh;
 
@@ -42,8 +42,8 @@
 
   #center {
     z-index: 5;
-    .overlay{
-        opacity: 0;
+    .overlay {
+      opacity: 0;
     }
   }
 

@@ -1,166 +1,162 @@
-@import 'mixins.scss';
-@import 'responsive.scss';
+@import "mixins.scss";
+@import "responsive.scss";
 
 header {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 #nav-bar {
-    left: 0;
-    right: 0;
-    top: -100%;
-    width: 100%;
-    z-index: 100;
-    display: flex;
-    justify-content: space-around;
-    padding: 20px 60px 0px 60px;
-    align-items: center;
+  left: 0;
+  right: 0;
+  top: -100%;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 60px 0px 60px;
+  align-items: center;
+
+  .main-menu,
+  .buy-ticket {
+    display: block;
+  }
+
+  @media #{$mobile_device} {
+    justify-content: flex-start;
+    padding: 20px;
 
     .main-menu,
     .buy-ticket {
-        display: block;
+      display: none;
     }
-
-    @media #{$mobile_device} {
-        justify-content: flex-start;
-        padding: 20px;
-
-        .main-menu,
-        .buy-ticket {
-            display: none;
-        }
-    }
+  }
 }
 
-
-
 #side-nav {
-    left: -100%;
-    width: 100%;
-    height: 100vh;
-    display: none;
-    background-color: #000;
-    flex-direction: column;
-    overflow: hidden;
-    position: fixed;
-    align-items: center;
-    justify-content: space-around;
-    padding: 20px 60px 0px 60px;
-    transition: 0.4s;
-    z-index: 90;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  display: none;
+  background-color: #000;
+  flex-direction: column;
+  overflow: hidden;
+  position: fixed;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 60px 0px 60px;
+  transition: 0.4s;
+  z-index: 90;
 
-    @media #{$mobile_device} {
-        display: flex;
-    }
+  @media #{$mobile_device} {
+    display: flex;
+  }
 }
 
 .change {
-    #side-nav {
-        @include transform(translate(100%, 0));
-    }
+  #side-nav {
+    @include transform(translate(100%, 0));
+  }
 
-    .bar1 {
-        @include transform(translate(0, 9.8px) rotate(-45deg));
-    }
+  .bar1 {
+    @include transform(translate(0, 9.8px) rotate(-45deg));
+  }
 
-    .bar2 {
-        opacity: 0;
-    }
+  .bar2 {
+    opacity: 0;
+  }
 
-    .bar3 {
-        @include transform(translate(0, -9.8px) rotate(45deg));
-    }
+  .bar3 {
+    @include transform(translate(0, -9.8px) rotate(45deg));
+  }
 }
 
 .sticky {
-    z-index: 100;
-    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.3);
-    position: fixed;
-    width: 100%;
-    top: -100px;
-    background: #000;
-    animation: sticky-anim 0.8s forwards 0.8s;
+  z-index: 100;
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 100%;
+  top: -100px;
+  background: #000;
+  animation: sticky-anim 0.8s forwards 0.8s;
 
-
-    @include keyframes(sticky-anim) {
-        from {
-            top: -100px;
-        }
-
-        to {
-            top: 0;
-        }
+  @include keyframes(sticky-anim) {
+    from {
+      top: -100px;
     }
+
+    to {
+      top: 0;
+    }
+  }
 }
 
 .menu-icon {
-    display: none;
-    cursor: pointer;
+  display: none;
+  cursor: pointer;
 
-    .bar1,
-    .bar2,
-    .bar3 {
-        width: 30px;
-        height: 4px;
-        background-color: #fff;
-        margin: 6px 0;
-        border-radius: 3px;
-        transition: 0.4s;
-    }
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 6px 0;
+    border-radius: 3px;
+    transition: 0.4s;
+  }
 
-    @media #{$mobile_device} {
-        display: inline-block;
-    }
+  @media #{$mobile_device} {
+    display: inline-block;
+  }
 }
 
 .buy-ticket {
-    color: #fff;
-    border-radius: 10px;
-    padding: 10px 30px;
-    text-align: center;
-    background: #c42e71;
-    position: relative;
-    border: 1px solid transparent;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 30px;
+  text-align: center;
+  background: #c42e71;
+  position: relative;
+  border: 1px solid transparent;
 
-    &:hover {
-        color: #c42e71;
-        text-decoration: none;
-        background: transparent;
-        border: 1px solid #c42e71;
-    }
+  &:hover {
+    color: #c42e71;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid #c42e71;
+  }
 }
 
-
 .main-menu {
-    text-align: center;
-    justify-content: center;
-    list-style-type: none;
-    padding: 0;
+  text-align: center;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
 
+  li {
+    display: inline-block;
+    position: relative;
+    margin: 0 20px;
+    padding: 20px 0;
+
+    a {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+
+      &:hover {
+        color: #c42e71;
+        text-decoration: none;
+      }
+    }
+  }
+
+  @media #{$mobile_device} {
     li {
-        display: inline-block;
-        position: relative;
-        margin: 0 20px;
-        padding: 20px 0;
-
-        a {
-            color: #fff;
-            font-size: 16px;
-            font-weight: 600;
-
-            &:hover {
-                color: #c42e71;
-                text-decoration: none;
-            }
-        }
+      display: block;
     }
-
-    @media #{$mobile_device} {
-        li {
-            display: block;
-        }
-    }
+  }
 }
