@@ -2,8 +2,9 @@
 @import "mixins";
 
 $duration: 0.8s;
-$eventTransition1: transform $duration ease, opacity $duration ease;
-$eventTransition2: transform $duration ease $duration, opacity $duration ease $duration;
+$eventTransition1: transform $duration ease, opacity 0s ease $duration;
+$eventTransition2: transform $duration ease $duration, opacity 0s ease $duration;
+$eventTransition2WithOpacity: transform $duration ease $duration, opacity $duration ease $duration;
 $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), opacity $duration cubic-bezier(.47, 1.64, .41, .8);
 
 
@@ -39,8 +40,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
     background-position: center;
     background-size: cover;
     box-sizing: content-box;
-    @include transition($eventTransition2);
-
+    @include transition($eventTransition2WithOpacity);
   }
 
   #events-left-arrow {
@@ -58,7 +58,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
   .event-card {
     left: 50%;
     @include transform(translate(-50%, -50%) rotate(15deg));
-    @include transition($eventChangeTransition);
+    @include transition($eventTransition2);
 
     top: 50%;
     position: absolute;
@@ -91,6 +91,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
   }
 
   #c0 {
+    @include transition($eventTransition1);
     z-index: 5;
 
     .overlay {
@@ -110,6 +111,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
   &.start {
     #c0 {
+      @include transition($eventTransition2);
       @include transform(translate(calc(200% - 50%), -50%) rotate(75deg));
     }
 
@@ -125,7 +127,18 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
     .event-card:not(#c0) {
       opacity: 0;
-      @include transform(translate(- 50%, -50%));
+      @include transition($eventTransition1);
+      @include transform(translate(- 50%, -50%) rotate(15deg));
+    }
+  }
+
+  &.completed {
+    .event-card {
+      @include transition($eventChangeTransition);
+    }
+
+    #c0 {
+      @include transition($eventChangeTransition);
     }
   }
 }

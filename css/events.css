@@ -59,10 +59,10 @@
   -moz-transform: translate(-50%, -50%) rotate(15deg);
   -ms-transform: translate(-50%, -50%) rotate(15deg);
   transform: translate(-50%, -50%) rotate(15deg);
-  -webkit-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
-  -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
-  -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
-  transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
   top: 50%;
   position: absolute;
 }
@@ -98,6 +98,10 @@
   transform: translate(-130%, -90%) rotate(15deg);
 }
 #events #c0 {
+  -webkit-transition: transform 0.8s ease, opacity 0s ease 0.8s;
+  -moz-transition: transform 0.8s ease, opacity 0s ease 0.8s;
+  -o-transition: transform 0.8s ease, opacity 0s ease 0.8s;
+  transition: transform 0.8s ease, opacity 0s ease 0.8s;
   z-index: 5;
 }
 #events #c0 .overlay {
@@ -118,6 +122,10 @@
   transform: translate(110%, 30%) rotate(15deg);
 }
 #events.start #c0 {
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
   -webkit-transform: translate(150%, -50%) rotate(75deg);
   -moz-transform: translate(150%, -50%) rotate(75deg);
   -ms-transform: translate(150%, -50%) rotate(75deg);
@@ -139,10 +147,26 @@
 }
 #events.start .event-card:not(#c0) {
   opacity: 0;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transition: transform 0.8s ease, opacity 0s ease 0.8s;
+  -moz-transition: transform 0.8s ease, opacity 0s ease 0.8s;
+  -o-transition: transform 0.8s ease, opacity 0s ease 0.8s;
+  transition: transform 0.8s ease, opacity 0s ease 0.8s;
+  -webkit-transform: translate(-50%, -50%) rotate(15deg);
+  -moz-transform: translate(-50%, -50%) rotate(15deg);
+  -ms-transform: translate(-50%, -50%) rotate(15deg);
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+#events.completed .event-card {
+  -webkit-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+#events.completed #c0 {
+  -webkit-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }
 
 /*# sourceMappingURL=events.css.map */

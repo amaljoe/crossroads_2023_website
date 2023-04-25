@@ -32,11 +32,11 @@ window.onscroll = function () {
     header.classList.remove("sticky");
   }
 
-  console.log(eventsHeadingTop);
-
+  // events animation
   if (eventsHeadingTop < window.innerHeight / 3) {
     events.classList.remove("start");
   } else {
+    events.classList.remove("completed");
     events.classList.add("start");
   }
 };
@@ -63,7 +63,6 @@ function onClickEventsRightArrow(x) {
 
 const maxIndex = Math.ceil((eventsCount - 1) / 2);
 for (const eventCard of eventCards) {
-  // set id for each event card
   eventCard.addEventListener('click', (e) => {
     const id = e.currentTarget.id;
     const index = parseInt(id.substring(1));
@@ -72,6 +71,7 @@ for (const eventCard of eventCards) {
 }
 
 function shiftEventCards(index) {
+  events.classList.add('completed');
   for (const eventCard of eventCards) {
     let newIndex = parseInt(eventCard.id.substring(1)) - index;
     if (Math.abs(newIndex) > maxIndex) {
