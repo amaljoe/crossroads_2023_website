@@ -2,10 +2,16 @@ const header = document.getElementById("header");
 const proshows = document.getElementById("proshows");
 const body = document.getElementById("body");
 const proshowsHeading = document.getElementById("proshows-heading");
+const eventsHeading = document.getElementById("events-heading");
+const events = document.getElementById("events");
+const eventCards = document.getElementsByClassName("event-card");
+
+const eventsCount = 5;
 var showNav = false;
 
 window.onscroll = function () {
   const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
+  const eventsHeadingTop = eventsHeading.getBoundingClientRect().top;
   // proshow heading animation
   if (
     document.documentElement.scrollTop > window.innerHeight / 8 ||
@@ -25,6 +31,14 @@ window.onscroll = function () {
     proshows.classList.add("start");
     header.classList.remove("sticky");
   }
+
+  console.log(eventsHeadingTop);
+
+  if (eventsHeadingTop < window.innerHeight / 3) {
+    events.classList.remove("start");
+  } else {
+    events.classList.add("start");
+  }
 };
 
 function onClickMenu(x) {
@@ -36,5 +50,33 @@ function onClickMenu(x) {
     header.classList.add("change");
     body.classList.add("no-scroll");
     showNav = true;
+  }
+}
+
+function onClickEventsLeftArrow(x) {
+  shiftEventCards(-1);
+}
+
+function onClickEventsRightArrow(x) {
+  shiftEventCards(1);
+}
+
+const maxIndex = Math.ceil((eventsCount - 1) / 2);
+for (const eventCard of eventCards) {
+  // set id for each event card
+  eventCard.addEventListener('click', (e) => {
+    const id = e.currentTarget.id;
+    const index = parseInt(id.substring(1));
+    shiftEventCards(index);
+  })
+}
+
+function shiftEventCards(index) {
+  for (const eventCard of eventCards) {
+    let newIndex = parseInt(eventCard.id.substring(1)) - index;
+    if (Math.abs(newIndex) > maxIndex) {
+      newIndex = -1 * (newIndex + index);
+    }
+    eventCard.id = "c" + newIndex;
   }
 }

@@ -4,16 +4,50 @@
   src: url("/fonts/good_times.otf");
 }
 #events {
-  overflow: hidden;
   position: relative;
-  height: 100vh;
+  overflow: hidden;
 }
-#events h2 {
-  position: absolute;
+#events #events-heading {
+  position: relative;
   font-family: "goodTimes", sans-serif;
   font-size: 32px;
   color: white;
   padding: 2rem 0 0 2rem;
+}
+#events .container {
+  position: relative;
+  height: 100vh;
+}
+#events #events-left-arrow,
+#events #events-right-arrow {
+  display: inline-block;
+  position: absolute;
+  z-index: 30;
+  color: #ACACAC;
+  background: url(../images/icons/nav-arrow.svg);
+  background-repeat: no-repeat;
+  width: 3rem;
+  height: 3rem;
+  background-origin: content-box;
+  background-position: center;
+  background-size: cover;
+  box-sizing: content-box;
+}
+#events #events-left-arrow {
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+#events #events-right-arrow {
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%) rotate(180deg);
+  -moz-transform: translate(0, -50%) rotate(180deg);
+  -ms-transform: translate(0, -50%) rotate(180deg);
+  transform: translate(0, -50%) rotate(180deg);
 }
 #events .event-card {
   left: 50%;
@@ -21,15 +55,23 @@
   -moz-transform: translate(-50%, -50%) rotate(15deg);
   -ms-transform: translate(-50%, -50%) rotate(15deg);
   transform: translate(-50%, -50%) rotate(15deg);
+  -webkit-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   top: 50%;
   position: absolute;
 }
 #events .event-card img {
-  width: 250px;
+  width: 60vw;
   transform-origin: center;
   position: relative;
 }
 #events .event-card .overlay {
+  -webkit-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   width: 100%;
   height: 100%;
   z-index: 100;
@@ -37,23 +79,60 @@
   background: rgba(0, 0, 0, 0.69);
   opacity: 1;
 }
-#events #left {
+#events #c-2 {
+  opacity: 0;
+  -webkit-transform: translate(-210%, -130%) rotate(15deg);
+  -moz-transform: translate(-210%, -130%) rotate(15deg);
+  -ms-transform: translate(-210%, -130%) rotate(15deg);
+  transform: translate(-210%, -130%) rotate(15deg);
+}
+#events #c-1 {
+  z-index: 4;
   -webkit-transform: translate(-130%, -90%) rotate(15deg);
   -moz-transform: translate(-130%, -90%) rotate(15deg);
   -ms-transform: translate(-130%, -90%) rotate(15deg);
   transform: translate(-130%, -90%) rotate(15deg);
 }
-#events #center {
+#events #c0 {
   z-index: 5;
 }
-#events #center .overlay {
+#events #c0 .overlay {
   opacity: 0;
 }
-#events #right {
+#events #c1 {
+  z-index: 4;
   -webkit-transform: translate(30%, -10%) rotate(15deg);
   -moz-transform: translate(30%, -10%) rotate(15deg);
   -ms-transform: translate(30%, -10%) rotate(15deg);
   transform: translate(30%, -10%) rotate(15deg);
+}
+#events #c2 {
+  opacity: 0;
+  -webkit-transform: translate(110%, 30%) rotate(15deg);
+  -moz-transform: translate(110%, 30%) rotate(15deg);
+  -ms-transform: translate(110%, 30%) rotate(15deg);
+  transform: translate(110%, 30%) rotate(15deg);
+}
+#events.start #c0 {
+  -webkit-transition: transform 0.8s ease, opacity 0.8s ease;
+  -moz-transition: transform 0.8s ease, opacity 0.8s ease;
+  -o-transition: transform 0.8s ease, opacity 0.8s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  -webkit-transform: translate(150%, -50%) rotate(75deg);
+  -moz-transform: translate(150%, -50%) rotate(75deg);
+  -ms-transform: translate(150%, -50%) rotate(75deg);
+  transform: translate(150%, -50%) rotate(75deg);
+}
+#events.start .event-card:not(#c0) {
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=events.css.map */
