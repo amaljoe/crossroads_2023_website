@@ -1,0 +1,55 @@
+@import "variables";
+@import "mixins";
+
+
+#events {
+  position: relative;
+  height: 100vh;
+
+  h2 {
+    position: absolute;
+    font-family: $goodTimes;
+    font-size: 32px;
+    color: white;
+    padding: 2rem 0 0 2rem;
+  }
+
+  .event-card {
+    left: 50%;
+    @include transform(translate(-50%, -50%) rotate(15deg));
+    top: 50%;
+    position: absolute;
+
+    img {
+      width: 250px;
+      transform-origin: center;
+      position: relative;
+    }
+    .overlay {
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.69);
+      opacity: 1;
+    }
+  }
+  #left {
+    @include transform(
+      translate(calc(-80% - 50%), calc(-40% - 50%)) rotate(15deg)
+    );
+  }
+
+  #center {
+    z-index: 5;
+    .overlay{
+        opacity: 0;
+    }
+  }
+
+  #right {
+    @include transform(
+      translate(calc(80% - 50%), calc(40% - 50%)) rotate(15deg)
+    );
+  }
+}

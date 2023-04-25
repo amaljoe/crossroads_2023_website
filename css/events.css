@@ -1,3 +1,58 @@
-
+@import url("https://fonts.googleapis.com/css?family=Anton|Monoton|Muli:400,400i,500,500i,600&display=swap");
+@font-face {
+  font-family: "goodTimes";
+  src: url("/fonts/good_times.otf");
+}
+#events {
+  position: relative;
+  height: 100vh;
+}
+#events h2 {
+  position: absolute;
+  font-family: "goodTimes", sans-serif;
+  font-size: 32px;
+  color: white;
+  padding: 2rem 0 0 2rem;
+}
+#events .event-card {
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(15deg);
+  -moz-transform: translate(-50%, -50%) rotate(15deg);
+  -ms-transform: translate(-50%, -50%) rotate(15deg);
+  transform: translate(-50%, -50%) rotate(15deg);
+  top: 50%;
+  position: absolute;
+}
+#events .event-card img {
+  width: 250px;
+  transform-origin: center;
+  position: relative;
+}
+#events .event-card .overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.69);
+  opacity: 1;
+}
+#events #left {
+  -webkit-transform: translate(-130%, -90%) rotate(15deg);
+  -moz-transform: translate(-130%, -90%) rotate(15deg);
+  -ms-transform: translate(-130%, -90%) rotate(15deg);
+  transform: translate(-130%, -90%) rotate(15deg);
+}
+#events #center {
+  z-index: 5;
+}
+#events #center .overlay {
+  opacity: 0;
+}
+#events #right {
+  -webkit-transform: translate(30%, -10%) rotate(15deg);
+  -moz-transform: translate(30%, -10%) rotate(15deg);
+  -ms-transform: translate(30%, -10%) rotate(15deg);
+  transform: translate(30%, -10%) rotate(15deg);
+}
 
 /*# sourceMappingURL=events.css.map */
