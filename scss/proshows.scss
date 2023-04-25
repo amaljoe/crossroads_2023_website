@@ -2,7 +2,6 @@
 @import "mixins";
 
 $duration: 0.8s;
-
 $proshowTransition1: transform $duration ease, opacity $duration ease;
 $proshowTransition2: transform $duration ease $duration, opacity $duration ease $duration;
 
@@ -145,6 +144,7 @@ $proshowCardMargin: 1rem;
 }
 
 .start {
+    
     .proshow-card:first-of-type {
         box-shadow: none;
         @include transform(scale(3));
@@ -176,9 +176,11 @@ $proshowCardMargin: 1rem;
 
     .proshow-card:nth-of-type(2) {
         @include transform(translate(0, calc(-100% - #{$proshowCardMargin * 2} - 5px)));
+        @include transition(all 0s);
     }
 
     .proshow-card:nth-of-type(3) {
         @include transform(translate(0, calc(-200% - #{$proshowCardMargin * 4} - 10px)));
+        @include transition(all 0s);
     }
 }

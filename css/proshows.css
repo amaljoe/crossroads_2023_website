@@ -223,12 +223,20 @@
   -moz-transform: translate(0, calc(-100% - 2rem - 5px));
   -ms-transform: translate(0, calc(-100% - 2rem - 5px));
   transform: translate(0, calc(-100% - 2rem - 5px));
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
 }
 .start .proshow-card:nth-of-type(3) {
   -webkit-transform: translate(0, calc(-200% - 4rem - 10px));
   -moz-transform: translate(0, calc(-200% - 4rem - 10px));
   -ms-transform: translate(0, calc(-200% - 4rem - 10px));
   transform: translate(0, calc(-200% - 4rem - 10px));
+  -webkit-transition: all 0s;
+  -moz-transition: all 0s;
+  -o-transition: all 0s;
+  transition: all 0s;
 }
 
 /*# sourceMappingURL=proshows.css.map */
