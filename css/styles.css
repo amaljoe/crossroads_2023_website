@@ -3,6 +3,11 @@
   font-family: "goodTimes";
   src: url("/fonts/good_times.otf");
 }
+/* Normal desktop :1200px. */
+/* Normal desktop :992px. */
+/* Tablet desktop :768px. */
+/* small mobile :320px. */
+/* Large Mobile :480px. */
 html,
 body {
   overflow-x: hidden;
