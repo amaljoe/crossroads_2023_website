@@ -57,13 +57,13 @@ $proshowCardMargin: 1rem;
 
     &:nth-of-type(2) {
         z-index: 20;
-        box-shadow: 1px 2px 9px -5px #B9926A;
+        box-shadow: 1px 2px 9px -5px #DC1D25;
         @include transition($proshowTransition2);
     }
 
     &:nth-of-type(3) {
         z-index: 19;
-        box-shadow: 1px 2px 9px -5px #5698B0;
+        box-shadow: 1px 2px 9px -5px #6D0355;
         @include transition($proshowTransition2);
     }
 
@@ -84,7 +84,7 @@ $proshowCardMargin: 1rem;
         @include hardware-acceleration;
         will-change: opacity;
         @include transition($proshowTransition2);
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, #000000 100%);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 80%, #000000 100%);
     }
 
     .bg-overlay {

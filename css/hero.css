@@ -1,13 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Monoton|Muli:400,400i,500,500i,600&display=swap");
+@font-face {
+  font-family: "goodTimes";
+  src: url("../fonts/good_times.otf");
+}
+@font-face {
+  font-family: "onam";
+  src: url("../fonts/ml_tt_onam_bold.ttf");
+}
 #hero {
   height: 100vh;
   width: 100%;
   position: relative;
   top: 0;
-  background-image: url(../images/elephant-bg.png), linear-gradient(180deg, rgba(0, 0, 0, 0.003) 0%, #000000 100%);
+  background-image: url(../images/elephant-bg.png), linear-gradient(180deg, rgba(0, 0, 0, 0.81) 0%, rgba(0, 0, 0, 0.72) 45.72%, #000000 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-blend-mode: overlay;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#hero .top-content,
+#hero .center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#hero .edition {
+  font-family: "goodTimes", sans-serif;
+  color: white;
+}
+#hero .wordmark {
+  width: 30%;
+}
+#hero .logo {
+  width: 40%;
+}
+#hero .dates {
+  font-family: "goodTimes", sans-serif;
+  color: white;
+  text-align: center;
+}
+#hero .dates .month {
+  font-size: 2rem;
+}
+#hero .dates .days {
+  font-size: 1.5rem;
+}
+#hero .tagline {
+  font-family: "onam", sans-serif;
+  font-size: 2.5rem;
+  color: #D4A50D;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 /*# sourceMappingURL=hero.css.map */

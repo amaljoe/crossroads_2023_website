@@ -2,8 +2,17 @@
 
 @font-face {
     font-family: "goodTimes";
-    src: url("/fonts/good_times.otf");
+    src: url("../fonts/good_times.otf");
+}
+
+@font-face {
+    font-family: "onam";
+    src: url("../fonts/ml_tt_onam_bold.ttf");
 }
 
 // fonts
 $goodTimes: 'goodTimes', sans-serif;
+$onam: 'onam', sans-serif;
+
+// colors
+$primary: #D4A50D;
