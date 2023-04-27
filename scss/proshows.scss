@@ -22,7 +22,7 @@ $proshowCardMargin: 1rem;
         font-family: $goodTimes;
         font-size: 32px;
         color: white;
-        padding: 2rem;
+        padding-left: 2rem;
         z-index: 50;
         @include hardware-acceleration;
         will-change: transform;

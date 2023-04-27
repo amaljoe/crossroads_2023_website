@@ -28,7 +28,7 @@
   font-family: "goodTimes", sans-serif;
   font-size: 32px;
   color: white;
-  padding: 2rem;
+  padding-left: 2rem;
   z-index: 50;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
