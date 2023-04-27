@@ -10,9 +10,15 @@
     src: url("../fonts/ml_tt_onam_bold.ttf");
 }
 
+@font-face {
+    font-family: "teko";
+    src: url("../fonts/Teko-Medium.ttf");
+}
+
 // fonts
 $goodTimes: 'goodTimes', sans-serif;
 $onam: 'onam', sans-serif;
+$teko: 'teko', sans-serif;
 
 // colors
 $primary: #D4A50D;
