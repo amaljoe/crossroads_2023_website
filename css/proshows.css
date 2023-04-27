@@ -24,7 +24,7 @@
   background-blend-mode: overlay;
 }
 #proshows #proshows-heading {
-  position: absolute;
+  position: relative;
   font-family: "goodTimes", sans-serif;
   font-size: 32px;
   color: white;
@@ -40,13 +40,16 @@
   perspective: 1000;
   /* Other transform properties here */
   will-change: transform;
-  -webkit-transition: transform 0.8s ease;
-  -moz-transition: transform 0.8s ease;
-  -o-transition: transform 0.8s ease;
-  transition: transform 0.8s ease;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  transform: translate(100px, 0);
+  opacity: 0;
 }
 #proshows #proshows-heading.scrolled {
-  transform: translate(0, -100px);
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 .proshow-card {

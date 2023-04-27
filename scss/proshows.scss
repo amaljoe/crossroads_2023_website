@@ -18,7 +18,7 @@ $proshowCardMargin: 1rem;
 
 
     #proshows-heading {
-        position: absolute;
+        position: relative;
         font-family: $goodTimes;
         font-size: 32px;
         color: white;
@@ -26,10 +26,13 @@ $proshowCardMargin: 1rem;
         z-index: 50;
         @include hardware-acceleration;
         will-change: transform;
-        @include transition(transform 0.8s ease);
+        @include transition(all 0.8s ease);
+        transform: translate(100px, 0);
+        opacity: 0;
 
         &.scrolled {
-            transform: translate(0, -100px);
+            transform: translate(0, 0);
+            opacity: 1;
         }
     }
 }

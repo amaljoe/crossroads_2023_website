@@ -16,11 +16,7 @@ window.onscroll = function () {
   const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
   const eventsHeadingTop = eventsHeading.getBoundingClientRect().top;
   // proshow heading animation
-  if (
-    document.documentElement.scrollTop > window.innerHeight / 8 ||
-    (proshowsHeadingTop < window.innerHeight &&
-      document.documentElement.scrollTop > 0)
-  ) {
+  if (proshowsHeadingTop < window.innerHeight) {
     proshowsHeading.classList.add("scrolled");
   } else {
     proshowsHeading.classList.remove("scrolled");
