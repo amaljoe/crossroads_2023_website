@@ -24,6 +24,13 @@
         justify-content: center;
     }
 
+    .bottom-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
     .edition {
         font-family: $goodTimes;
         color: white;
@@ -51,11 +58,54 @@
         }
     }
 
-    .tagline {
+    .caret {
+        width: 4px;
+        height: 2rem;
+        background-color: $primary;
+        display: inline;
+        animation: blink-caret .75s step-end infinite;
+
+        /* The typewriter cursor effect */
+        @include keyframes(blink-caret) {
+
+            from,
+            to {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+    }
+
+    #tagline {
+        display: inline;
         font-family: $onam;
         font-size: 2.5rem;
         color: $primary;
         text-align: center;
-        margin-bottom: 2rem;
+        margin: 0;
+        padding-right: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 0;
+
+        &.animate {
+            animation: typing 3s steps(8, end) 1;
+        }
+
+        @include keyframes(typing) {
+
+            from,
+            to {
+                width: 0
+            }
+
+            20%,
+            80% {
+                width: 100%
+            }
+        }
     }
 }

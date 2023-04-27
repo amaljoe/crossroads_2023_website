@@ -2,14 +2,17 @@
 @font-face {
   font-family: "goodTimes";
   src: url("../fonts/good_times.otf");
+  font-display: block;
 }
 @font-face {
   font-family: "onam";
   src: url("../fonts/ml_tt_onam_bold.ttf");
+  font-display: block;
 }
 @font-face {
   font-family: "teko";
   src: url("../fonts/Teko-Medium.ttf");
+  font-display: block;
 }
 #hero {
   height: 100vh;
@@ -30,6 +33,12 @@
 #hero .center-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#hero .bottom-content {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 }
@@ -54,12 +63,92 @@
 #hero .dates .days {
   font-size: 1.5rem;
 }
-#hero .tagline {
+#hero .caret {
+  width: 4px;
+  height: 2rem;
+  background-color: #D4A50D;
+  display: inline;
+  animation: blink-caret 0.75s step-end infinite;
+  /* The typewriter cursor effect */
+}
+@-webkit-keyframes blink-caret {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes blink-caret {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@-o-keyframes blink-caret {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes blink-caret {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+#hero #tagline {
+  display: inline;
   font-family: "onam", sans-serif;
   font-size: 2.5rem;
   color: #D4A50D;
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0;
+  padding-right: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+#hero #tagline.animate {
+  animation: typing 3s steps(8, end) 1;
+}
+@-webkit-keyframes typing {
+  from, to {
+    width: 0;
+  }
+  20%, 80% {
+    width: 100%;
+  }
+}
+@-moz-keyframes typing {
+  from, to {
+    width: 0;
+  }
+  20%, 80% {
+    width: 100%;
+  }
+}
+@-o-keyframes typing {
+  from, to {
+    width: 0;
+  }
+  20%, 80% {
+    width: 100%;
+  }
+}
+@keyframes typing {
+  from, to {
+    width: 0;
+  }
+  20%, 80% {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=hero.css.map */

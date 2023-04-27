@@ -3,11 +3,14 @@ const proshows = document.getElementById("proshows");
 const body = document.getElementById("body");
 const proshowsHeading = document.getElementById("proshows-heading");
 const eventsHeading = document.getElementById("events-heading");
+const tagline = document.getElementById("tagline");
 const events = document.getElementById("events");
 const eventCards = document.getElementsByClassName("event-card");
 
 const eventsCount = 5;
 var showNav = false;
+var currentTaglineIndex = 0;
+const taglines = ["A-c-§v", "A-Wn-b-d", "Xn-c-Èo-e-"];
 
 window.onscroll = function () {
   const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
@@ -80,3 +83,12 @@ function shiftEventCards(index) {
     eventCard.id = "c" + newIndex;
   }
 }
+
+tagline.addEventListener("animationend", () => {
+  console.log("end");
+  tagline.classList.remove("animate");
+  currentTaglineIndex = (currentTaglineIndex + 1) % taglines.length;
+  tagline.innerHTML = taglines[currentTaglineIndex];
+  void tagline.offsetWidth;
+  tagline.classList.add("animate");
+});
