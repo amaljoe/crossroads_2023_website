@@ -43,6 +43,7 @@
   justify-content: center;
 }
 #hero .edition {
+  margin-top: 16px;
   font-family: "goodTimes", sans-serif;
   color: white;
 }
@@ -56,6 +57,7 @@
   font-family: "goodTimes", sans-serif;
   color: white;
   text-align: center;
+  margin-top: 16px;
 }
 #hero .dates .month {
   font-size: 2rem;
