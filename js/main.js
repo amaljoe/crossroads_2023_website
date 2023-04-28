@@ -6,6 +6,7 @@ const eventsHeading = document.getElementById("events-heading");
 const tagline = document.getElementById("tagline");
 const events = document.getElementById("events");
 const eventCards = document.getElementsByClassName("event-card");
+const proshowCards = document.getElementsByClassName("proshow-card");
 
 const eventsCount = 5;
 var showNav = false;
@@ -69,6 +70,13 @@ for (const eventCard of eventCards) {
   })
 }
 
+for (const proshowCard of proshowCards) {
+  proshowCard.addEventListener('click', (e) => {
+    console.log("clicked");
+    const id = e.currentTarget.classList.toggle("clicked");
+  })
+}
+
 function shiftEventCards(index) {
   events.classList.add('completed');
   for (const eventCard of eventCards) {
@@ -81,7 +89,6 @@ function shiftEventCards(index) {
 }
 
 tagline.addEventListener("animationend", () => {
-  console.log("end");
   tagline.classList.remove("animate");
   currentTaglineIndex = (currentTaglineIndex + 1) % taglines.length;
   tagline.innerHTML = taglines[currentTaglineIndex];
