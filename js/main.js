@@ -78,14 +78,6 @@ for (const eventCard of eventCards) {
   })
 }
 
-for (const proshowCard of proshowCards) {
-  proshowCard.addEventListener('click', (e) => {
-    console.log(e.target.tagName);
-    if (e.target.tagName === "A") return;
-    const id = e.currentTarget.classList.toggle("clicked");
-  })
-}
-
 function shiftEventCards(index) {
   events.classList.add('completed');
   for (const eventCard of eventCards) {
@@ -112,6 +104,34 @@ for (const child of sideNav.getElementsByTagName("a")) {
     showNav = false;
   })
 }
+
+async function getIpAddress() {
+  const response = await fetch('https://httpbin.org/ip');
+  const data = await response.json();
+  return data.origin;
+}
+
+async function getRegionFromIp() {
+  const ipAddress = await getIpAddress();
+  const response = await fetch(`http://ip-api.com/json/${ipAddress}`);
+  const data = await response.json();
+  if (data.status === 'success') {
+    return data;
+  }
+  return null;
+}
+
+getRegionFromIp().then((data) => {
+  console.log(data.region);
+  if (data.region === "KL" && data.countryCode === "IN") {
+    for (const proshowCard of proshowCards) {
+      proshowCard.addEventListener('click', (e) => {
+        if (e.target.tagName === "A") return;
+        const id = e.currentTarget.classList.toggle("clicked");
+      })
+    }
+  }
+});
 
 window.onload = () => {
   loading.style.display = "none";
