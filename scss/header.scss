@@ -1,11 +1,19 @@
 @import "mixins.scss";
 @import "responsive.scss";
 
+$heroTransition4: transform 0.8s ease 1.6s;
+
 header {
   position: absolute;
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  &.start {
+    #nav-bar {
+      transform: translate(0, -100%);
+    }
+  }
 }
 
 #nav-bar {
@@ -18,6 +26,7 @@ header {
   justify-content: space-around;
   padding: 20px 60px 0px 60px;
   align-items: center;
+  @include transition($heroTransition4);
 
   .main-menu,
   .buy-ticket {

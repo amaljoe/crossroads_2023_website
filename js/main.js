@@ -116,17 +116,14 @@ async function getIpAddress() {
 
 async function getRegionFromIp() {
   const ipAddress = await getIpAddress();
-  const response = await fetch(`http://ip-api.com/json/${ipAddress}`);
+  const response = await fetch(`https://ipapi.co/${ipAddress}/json/`);
   const data = await response.json();
-  if (data.status === 'success') {
-    return data;
-  }
-  return null;
+  return data;
 }
 
 getRegionFromIp().then((data) => {
   console.log(data.region);
-  if (data.region === "KL" && data.countryCode === "IN") {
+  if (data.region === "Kerala") {
     for (const proshowCard of proshowCards) {
       proshowCard.addEventListener('click', (e) => {
         if (e.target.tagName === "A") return;
@@ -139,4 +136,5 @@ getRegionFromIp().then((data) => {
 window.onload = () => {
   loading.style.display = "none";
   hero.classList.remove("start");
+  header.classList.remove("start");
 }

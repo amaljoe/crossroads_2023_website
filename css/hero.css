@@ -46,10 +46,10 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
-  -webkit-transition: transform 0.8s ease 0.5333333333s, opacity 0.8s ease 0.5333333333s;
-  -moz-transition: transform 0.8s ease 0.5333333333s, opacity 0.8s ease 0.5333333333s;
-  -o-transition: transform 0.8s ease 0.5333333333s, opacity 0.8s ease 0.5333333333s;
-  transition: transform 0.8s ease 0.5333333333s, opacity 0.8s ease 0.5333333333s;
+  -webkit-transition: transform 0.8s ease 1.2s, opacity 0.8s ease 0.5333333333s;
+  -moz-transition: transform 0.8s ease 1.2s, opacity 0.8s ease 0.5333333333s;
+  -o-transition: transform 0.8s ease 1.2s, opacity 0.8s ease 0.5333333333s;
+  transition: transform 0.8s ease 1.2s, opacity 0.8s ease 0.5333333333s;
 }
 #hero .bottom-content {
   display: flex;
@@ -85,8 +85,9 @@
   width: 4px;
   height: 2rem;
   background-color: #D4A50D;
+  opacity: 0;
   display: inline;
-  animation: blink-caret 0.75s step-end infinite;
+  animation: blink-caret 0.75s step-end 1.6s infinite;
   /* The typewriter cursor effect */
 }
 @-webkit-keyframes blink-caret {
@@ -248,6 +249,7 @@
 }
 #hero.start .caret {
   opacity: 0;
+  animation: none;
 }
 #hero.start .elephant {
   -webkit-transform: scale(0.7) translate(-100%, -10%);

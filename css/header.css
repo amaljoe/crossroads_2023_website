@@ -9,6 +9,9 @@ header {
   flex-direction: column;
   width: 100%;
 }
+header.start #nav-bar {
+  transform: translate(0, -100%);
+}
 
 #nav-bar {
   left: 0;
@@ -20,6 +23,10 @@ header {
   justify-content: space-around;
   padding: 20px 60px 0px 60px;
   align-items: center;
+  -webkit-transition: transform 0.8s ease 1.6s;
+  -moz-transition: transform 0.8s ease 1.6s;
+  -o-transition: transform 0.8s ease 1.6s;
+  transition: transform 0.8s ease 1.6s;
 }
 #nav-bar .main-menu,
 #nav-bar .buy-ticket {
