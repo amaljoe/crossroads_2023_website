@@ -26,11 +26,8 @@ body {
   font-family: "goodTimes", sans-serif;
   max-width: 100%;
   overflow-x: hidden;
-}
-html.no-scroll,
-body.no-scroll {
-  position: fixed;
-  overflow-y: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 @media (min-width: 768px) {
   html,

@@ -8,10 +8,13 @@ body {
   font-family: $goodTimes;
   max-width: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
 
   &.no-scroll {
-    position: fixed;
-    overflow-y: hidden;
+    // position: fixed;
+    // overflow-y: hidden;
   }
 
   @media #{$not_mobile_device} {

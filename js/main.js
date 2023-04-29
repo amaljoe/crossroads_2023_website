@@ -8,6 +8,8 @@ const events = document.getElementById("events");
 const eventCards = document.getElementsByClassName("event-card");
 const proshowCards = document.getElementsByClassName("proshow-card");
 const loading = document.getElementById("loading");
+const sideNav = document.getElementById("side-nav");
+
 
 const eventsCount = 5;
 var showNav = false;
@@ -30,7 +32,9 @@ window.onscroll = function () {
     header.classList.add("sticky");
   } else {
     proshows.classList.add("start");
-    header.classList.remove("sticky");
+    if (!showNav) {
+      header.classList.remove("sticky");
+    }
     for (const proshowCard of proshowCards) {
       proshowCard.classList.remove("clicked");
     }
@@ -100,6 +104,14 @@ tagline.addEventListener("animationend", () => {
   void tagline.offsetWidth;
   tagline.classList.add("animate");
 });
+
+for (const child of sideNav.getElementsByTagName("a")) {
+  child.addEventListener("click", () => {
+    header.classList.remove("change");
+    body.classList.remove("no-scroll");
+    showNav = false;
+  })
+}
 
 window.onload = () => {
   loading.style.display = "none";
