@@ -7,6 +7,7 @@ const tagline = document.getElementById("tagline");
 const events = document.getElementById("events");
 const eventCards = document.getElementsByClassName("event-card");
 const proshowCards = document.getElementsByClassName("proshow-card");
+const loading = document.getElementById("loading");
 
 const eventsCount = 5;
 var showNav = false;
@@ -99,3 +100,7 @@ tagline.addEventListener("animationend", () => {
   void tagline.offsetWidth;
   tagline.classList.add("animate");
 });
+
+window.onload = () => {
+  loading.style.display = "none";
+}
