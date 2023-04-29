@@ -134,7 +134,7 @@ getRegionFromIp().then((data) => {
 });
 
 window.onload = () => {
-  loading.style.display = "none";
+  loading.classList.add("completed");
   hero.classList.remove("start");
   header.classList.remove("start");
 }

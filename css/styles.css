@@ -29,13 +29,6 @@ body {
   overflow-y: auto;
   scroll-behavior: smooth;
 }
-@media (min-width: 768px) {
-  html,
-  body {
-    display: none;
-  }
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
