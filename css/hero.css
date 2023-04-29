@@ -187,7 +187,7 @@
 }
 #hero .elephant {
   position: absolute;
-  height: 100%;
+  height: max(100vh, 150vw);
   -webkit-transform: scale(0.7) translate(-11%, -10%);
   -moz-transform: scale(0.7) translate(-11%, -10%);
   -ms-transform: scale(0.7) translate(-11%, -10%);

@@ -148,7 +148,7 @@ $heroTransition3: transform $duration ease #{calc($duration / 2)* 3};
 
     .elephant {
         position: absolute;
-        height: 100%;
+        height: max(100vh, 100vw * 1.5);
         @include transform(scale(0.7) translate(-11%, -10%));
         background-position: center;
         box-sizing: content-box;
