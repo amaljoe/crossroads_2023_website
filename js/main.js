@@ -1,4 +1,6 @@
 const header = document.getElementById("header");
+const hero = document.getElementById("hero");
+
 const proshows = document.getElementById("proshows");
 const body = document.getElementById("body");
 const proshowsHeading = document.getElementById("proshows-heading");
@@ -14,7 +16,7 @@ const sideNav = document.getElementById("side-nav");
 const eventsCount = 5;
 var showNav = false;
 var currentTaglineIndex = 0;
-const taglines = ["A-c-§v", "A-Wn-b-d", "Xn-c-Èo-e-"];
+const taglines = ["A-Wn-b-d", "A-c-§v", "Xn-c-Èo-e-"];
 
 window.onscroll = function () {
   const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
@@ -91,6 +93,7 @@ function shiftEventCards(index) {
 
 tagline.addEventListener("animationend", () => {
   tagline.classList.remove("animate");
+  tagline.classList.remove("start-animate");
   currentTaglineIndex = (currentTaglineIndex + 1) % taglines.length;
   tagline.innerHTML = taglines[currentTaglineIndex];
   void tagline.offsetWidth;
@@ -135,4 +138,5 @@ getRegionFromIp().then((data) => {
 
 window.onload = () => {
   loading.style.display = "none";
+  hero.classList.remove("start");
 }

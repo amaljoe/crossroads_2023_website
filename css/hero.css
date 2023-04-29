@@ -27,15 +27,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
-#hero .top-content,
+#hero .top-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+}
 #hero .center-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 10;
+  -webkit-transition: transform 0.8s ease 0.5333333333s, opacity 0.8s ease 0.5333333333s;
+  -moz-transition: transform 0.8s ease 0.5333333333s, opacity 0.8s ease 0.5333333333s;
+  -o-transition: transform 0.8s ease 0.5333333333s, opacity 0.8s ease 0.5333333333s;
+  transition: transform 0.8s ease 0.5333333333s, opacity 0.8s ease 0.5333333333s;
 }
 #hero .bottom-content {
   display: flex;
@@ -122,6 +136,10 @@
 #hero #tagline.animate {
   animation: typing 3s steps(8, end) 1;
 }
+#hero #tagline.start-animate {
+  padding-right: 0;
+  animation: typing 3s steps(8, end) 1 1.6s;
+}
 @-webkit-keyframes typing {
   from, to {
     width: 0;
@@ -161,15 +179,26 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.81) 0%, rgba(0, 0, 0, 0.72) 45.72%, #000000 100%);
   opacity: 1;
   z-index: 3;
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
 }
 #hero .elephant {
   position: absolute;
   height: 100%;
+  -webkit-transform: scale(0.7) translate(-11%, -10%);
+  -moz-transform: scale(0.7) translate(-11%, -10%);
+  -ms-transform: scale(0.7) translate(-11%, -10%);
   transform: scale(0.7) translate(-11%, -10%);
   background-position: center;
   box-sizing: content-box;
   z-index: 1;
   opacity: 2;
+  -webkit-transition: transform 0.8s ease, opacity 0.8s ease;
+  -moz-transition: transform 0.8s ease, opacity 0.8s ease;
+  -o-transition: transform 0.8s ease, opacity 0.8s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 #hero .yellow-overlay {
   position: absolute;
@@ -178,6 +207,10 @@
   opacity: 1;
   background: linear-gradient(180deg, rgba(212, 165, 13, 0.8) 0%, rgba(212, 165, 13, 0) 100%);
   z-index: 1;
+  -webkit-transition: transform 0.8s ease, opacity 0.8s ease;
+  -moz-transition: transform 0.8s ease, opacity 0.8s ease;
+  -o-transition: transform 0.8s ease, opacity 0.8s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
 }
 #hero .bg-overlay-bottom {
   position: absolute;
@@ -186,6 +219,41 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.81) 0%, rgba(0, 0, 0, 0.72) 45.72%, #000000 100%);
   opacity: 0;
   z-index: 0;
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+}
+#hero.start #tagline.start-animate {
+  animation: none;
+}
+#hero.start .bg-overlay-top,
+#hero.start .yellow-overlay {
+  opacity: 0;
+}
+#hero.start .bg-overlay-bottom {
+  opacity: 1;
+}
+#hero.start .top-content {
+  -webkit-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+}
+#hero.start .center-content {
+  -webkit-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+}
+#hero.start .caret {
+  opacity: 0;
+}
+#hero.start .elephant {
+  -webkit-transform: scale(0.7) translate(-100%, -10%);
+  -moz-transform: scale(0.7) translate(-100%, -10%);
+  -ms-transform: scale(0.7) translate(-100%, -10%);
+  transform: scale(0.7) translate(-100%, -10%);
 }
 
 /*# sourceMappingURL=hero.css.map */

@@ -1,6 +1,12 @@
 @import "variables";
 @import "mixins";
 
+$duration: 0.8s;
+$heroTransition1: transform $duration ease, opacity $duration ease;
+$heroTransition2: transform $duration ease $duration, opacity $duration ease $duration;
+$heroTransition3: transform $duration ease #{$duration / 3 * 2}, opacity $duration ease #{$duration / 3 * 2};
+
+
 #hero {
     height: 100vh;
     width: 100%;
@@ -14,16 +20,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
-    .top-content,
+    .top-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        @include transition($heroTransition2);
+    }
+
     .center-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         z-index: 10;
-
+        @include transition($heroTransition3);
     }
 
     .bottom-content {
@@ -101,6 +115,12 @@
             animation: typing 3s steps(8, end) 1;
         }
 
+        &.start-animate {
+            padding-right: 0;
+            // delay of 2x duration
+            animation: typing 3s steps(8, end) 1 #{$duration * 2};
+        }
+
         @include keyframes(typing) {
 
             from,
@@ -122,16 +142,19 @@
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.81) 0%, rgba(0, 0, 0, 0.72) 45.72%, #000000 100%);
         opacity: 1;
         z-index: 3;
+        @include transition($heroTransition2);
     }
 
     .elephant {
         position: absolute;
         height: 100%;
-        transform: scale(0.7) translate(-11%, -10%);
+        @include transform(scale(0.7) translate(-11%, -10%));
         background-position: center;
         box-sizing: content-box;
         z-index: 1;
         opacity: 2;
+        @include transition($heroTransition1);
+
     }
 
     .yellow-overlay {
@@ -141,6 +164,7 @@
         opacity: 1;
         background: linear-gradient(180deg, rgba(212, 165, 13, 0.8) 0%, rgba(212, 165, 13, 0) 100%);
         z-index: 1;
+        @include transition($heroTransition1);
     }
 
     .bg-overlay-bottom {
@@ -150,5 +174,39 @@
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.81) 0%, rgba(0, 0, 0, 0.72) 45.72%, #000000 100%);
         opacity: 0;
         z-index: 0;
+        @include transition($heroTransition2);
+
+    }
+
+    &.start {
+        #tagline.start-animate {
+            animation: none;
+        }
+
+        .bg-overlay-top,
+        .yellow-overlay {
+            opacity: 0;
+        }
+
+        .bg-overlay-bottom {
+            opacity: 1;
+        }
+
+        .top-content {
+            @include transform(translate(100%, 0));
+        }
+
+
+        .center-content {
+            @include transform(translate(100%, 0));
+        }
+
+        .caret {
+            opacity: 0;
+        }
+
+        .elephant {
+            @include transform(scale(0.7) translate(-100%, -10%))
+        }
     }
 }
