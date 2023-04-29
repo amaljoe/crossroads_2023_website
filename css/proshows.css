@@ -128,7 +128,7 @@
   padding: 0;
   margin: 0;
   text-overflow: ellipsis;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 .proshow-card .back .buy-ticket {
   margin-top: 16px;
