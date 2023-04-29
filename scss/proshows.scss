@@ -8,6 +8,7 @@ $proshowTransition2: transform $duration ease $duration, opacity $duration ease 
 $proshowCardMargin: 1rem;
 
 #proshows {
+    z-index: 20;
     width: 100%;
     perspective: 10000px;
     position: relative;
@@ -27,7 +28,7 @@ $proshowCardMargin: 1rem;
         z-index: 50;
         @include hardware-acceleration;
         will-change: transform;
-        @include transition(all 0.8s ease);
+        @include transition(all 0.8s cubic-bezier(.47, 1.64, .41, .8));
         opacity: 0;
 
         &.scrolled {

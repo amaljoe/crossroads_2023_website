@@ -19,7 +19,7 @@
   width: 100%;
   position: relative;
   top: 0;
-  background-image: url(../images/elephant-bg.png), linear-gradient(180deg, rgba(0, 0, 0, 0.81) 0%, rgba(0, 0, 0, 0.72) 45.72%, #000000 100%);
+  background-image: url(../images/elephant-bg.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -35,12 +35,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 #hero .bottom-content {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 #hero .edition {
   margin-top: 16px;
@@ -151,6 +153,39 @@
   20%, 80% {
     width: 100%;
   }
+}
+#hero .bg-overlay-top {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.81) 0%, rgba(0, 0, 0, 0.72) 45.72%, #000000 100%);
+  opacity: 1;
+  z-index: 3;
+}
+#hero .elephant {
+  position: absolute;
+  height: 100%;
+  transform: scale(0.7) translate(-11%, -10%);
+  background-position: center;
+  box-sizing: content-box;
+  z-index: 1;
+  opacity: 2;
+}
+#hero .yellow-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background: linear-gradient(180deg, rgba(212, 165, 13, 0.8) 0%, rgba(212, 165, 13, 0) 100%);
+  z-index: 1;
+}
+#hero .bg-overlay-bottom {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.81) 0%, rgba(0, 0, 0, 0.72) 45.72%, #000000 100%);
+  opacity: 0;
+  z-index: 0;
 }
 
 /*# sourceMappingURL=hero.css.map */
