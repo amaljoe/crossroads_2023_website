@@ -16,6 +16,7 @@
 }
 #proshows {
   width: 100%;
+  perspective: 1000px;
   position: relative;
   background-image: url(../images/bg-concert.png), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.8) 25%, #000000 100%);
   background-repeat: no-repeat;
@@ -24,7 +25,7 @@
   background-blend-mode: overlay;
 }
 #proshows #proshows-heading {
-  position: relative;
+  position: absolute;
   font-family: "goodTimes", sans-serif;
   font-size: 32px;
   color: white;
@@ -44,11 +45,10 @@
   -moz-transition: all 0.8s ease;
   -o-transition: all 0.8s ease;
   transition: all 0.8s ease;
-  transform: translate(100px, 0);
   opacity: 0;
 }
 #proshows #proshows-heading.scrolled {
-  transform: translate(0, 0);
+  transform: translate(0, -50px);
   opacity: 1;
 }
 
@@ -67,33 +67,46 @@
   color: white;
   position: relative;
   display: inline-block;
-  border-radius: 20px;
-  box-shadow: 1px 2px 9px -5px #D08453;
   margin: 1rem;
   transform-origin: top center;
   transform-style: preserve-3d;
 }
-.proshow-card .front {
-  backface-visibility: hidden;
-}
+.proshow-card .front,
 .proshow-card .back {
   backface-visibility: hidden;
-  transform: rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  /* Other transform properties here */
+  will-change: transform;
+  -webkit-transition: transform 0.5s ease-in-out;
+  -moz-transition: transform 0.5s ease-in-out;
+  -o-transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  border-radius: 20px;
+  box-shadow: 1px 2px 9px -5px #D08453;
+}
+.proshow-card .back {
+  transform: rotateY(-180deg);
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  border-radius: 20px;
   left: 0;
+  padding: 16px;
   background-color: #000000;
   display: flex;
   flex-direction: column;
-  box-shadow: 1px 2px 9px -5px #D08453;
+  justify-content: space-between;
 }
 .proshow-card .back .return {
-  position: relative;
-  top: 0;
-  right: 0;
+  float: right;
+  align-self: flex-end;
   background: url(../images/icons/return.svg);
   background-repeat: no-repeat;
   width: 1.2rem;
@@ -103,75 +116,92 @@
   background-size: cover;
   box-sizing: content-box;
   color: white;
-  display: inline-block;
-  position: absolute;
   z-index: 30;
-  margin: 0;
-  padding: 16px;
+  margin-bottom: 8px;
   color: white;
 }
 .proshow-card .back p {
   position: relative;
-  font-family: "teko", sans-serif;
   font-size: 16px;
   color: white;
+  padding: 0;
   margin: 0;
-  padding: 16px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .proshow-card .back .buy-ticket {
+  margin-top: 16px;
+  padding: 8px;
   align-self: center;
+}
+.proshow-card .back .buy-ticket:hover {
+  background: transparent;
 }
 .proshow-card:nth-of-type(1) {
   z-index: 21;
-  box-shadow: 1px 2px 9px -5px #017FBF;
   -webkit-transition: transform 0.8s ease, opacity 0.8s ease;
   -moz-transition: transform 0.8s ease, opacity 0.8s ease;
   -o-transition: transform 0.8s ease, opacity 0.8s ease;
   transition: transform 0.8s ease, opacity 0.8s ease;
 }
+.proshow-card:nth-of-type(1) .front,
 .proshow-card:nth-of-type(1) .back {
-  box-shadow: 1px 2px 9px -5px #017FBF;
+  box-shadow: 1px 2px 9px -3px #017FBF;
 }
 .proshow-card:nth-of-type(1) .buy-ticket {
   background: #017FBF;
 }
+.proshow-card:nth-of-type(1) .buy-ticket:hover {
+  color: #017FBF;
+  border: 1px solid #017FBF;
+}
 .proshow-card:nth-of-type(2) {
   z-index: 20;
-  box-shadow: 1px 2px 9px -5px #DC1D25;
   -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
 }
+.proshow-card:nth-of-type(2) .front,
 .proshow-card:nth-of-type(2) .back {
-  box-shadow: 1px 2px 9px -5px #DC1D25;
+  box-shadow: 1px 2px 9px -3px #DC1D25;
 }
 .proshow-card:nth-of-type(2) .buy-ticket {
   background: #DC1D25;
 }
+.proshow-card:nth-of-type(2) .buy-ticket:hover {
+  color: #DC1D25;
+  border: 1px solid #DC1D25;
+}
 .proshow-card:nth-of-type(3) {
   z-index: 19;
-  box-shadow: 1px 2px 9px -5px #6D0355;
   -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
 }
+.proshow-card:nth-of-type(3) .front,
 .proshow-card:nth-of-type(3) .back {
-  box-shadow: 1px 2px 9px -5px #6D0355;
+  box-shadow: 1px 2px 9px -3px #6D0355;
 }
 .proshow-card:nth-of-type(3) .buy-ticket {
   background: #6D0355;
 }
-.proshow-card.clicked {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+.proshow-card:nth-of-type(3) .buy-ticket:hover {
+  color: #6D0355;
+  border: 1px solid #6D0355;
+}
+.proshow-card.clicked .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
+}
+.proshow-card.clicked .back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
 .proshow-card img {
   position: relative;
@@ -206,6 +236,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
+  pointer-events: none;
   top: 0;
   z-index: 50;
   border-radius: 20px;
@@ -219,10 +250,10 @@
   perspective: 1000;
   /* Other transform properties here */
   will-change: opacity;
-  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
-  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
-  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
-  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -webkit-transition: transform 0.8s ease, opacity 0.8s ease;
+  -moz-transition: transform 0.8s ease, opacity 0.8s ease;
+  -o-transition: transform 0.8s ease, opacity 0.8s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
   opacity: 0;
   background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 50%, #000000 100%);
 }
@@ -248,16 +279,16 @@
   position: absolute;
   z-index: 30;
   margin: 0;
-  padding: 16px;
+  padding: 8px;
   color: white;
 }
 .proshow-card .arrow {
   right: 0;
   top: 0;
-  background: url(../images/icons/arrow.svg);
+  background: url(../images/icons/arrow.png);
   background-repeat: no-repeat;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   background-origin: content-box;
   background-position: center;
   background-size: cover;
@@ -321,11 +352,14 @@
 }
 
 .start .proshow-card:first-of-type {
-  box-shadow: none;
   -webkit-transform: scale(3);
   -moz-transform: scale(3);
   -ms-transform: scale(3);
   transform: scale(3);
+}
+.start .proshow-card:first-of-type .front,
+.start .proshow-card:first-of-type .back {
+  box-shadow: none;
 }
 .start .proshow-card:first-of-type .arrow {
   -webkit-transform: translate(-20px, 20px);

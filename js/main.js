@@ -17,14 +17,14 @@ window.onscroll = function () {
   const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
   const eventsHeadingTop = eventsHeading.getBoundingClientRect().top;
   // proshow heading animation
-  if (proshowsHeadingTop < window.innerHeight) {
+  if (proshowsHeadingTop < window.innerHeight && document.documentElement.scrollTop > 10) {
     proshowsHeading.classList.add("scrolled");
   } else {
     proshowsHeading.classList.remove("scrolled");
   }
 
   // proshows animation and sticky header
-  if (document.documentElement.scrollTop > (window.innerHeight / 3) * 2) {
+  if (document.documentElement.scrollTop > window.innerHeight / 4) {
     proshows.classList.remove("start");
     header.classList.add("sticky");
   } else {
@@ -75,7 +75,8 @@ for (const eventCard of eventCards) {
 
 for (const proshowCard of proshowCards) {
   proshowCard.addEventListener('click', (e) => {
-    console.log("clicked");
+    console.log(e.target.tagName);
+    if (e.target.tagName === "A") return;
     const id = e.currentTarget.classList.toggle("clicked");
   })
 }
@@ -98,11 +99,3 @@ tagline.addEventListener("animationend", () => {
   void tagline.offsetWidth;
   tagline.classList.add("animate");
 });
-
-const backs = document.getElementsByClassName("back");
-
-for (const back of backs) {
-  back.addEventListener('click', (e) => {
-    console.log("back clicked");
-  })
-}
