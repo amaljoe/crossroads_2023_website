@@ -46,10 +46,10 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
-  -webkit-transition: transform 0.8s ease 1.2s, opacity 0.8s ease 0.5333333333s;
-  -moz-transition: transform 0.8s ease 1.2s, opacity 0.8s ease 0.5333333333s;
-  -o-transition: transform 0.8s ease 1.2s, opacity 0.8s ease 0.5333333333s;
-  transition: transform 0.8s ease 1.2s, opacity 0.8s ease 0.5333333333s;
+  -webkit-transition: transform 0.8s ease 1.2s;
+  -moz-transition: transform 0.8s ease 1.2s;
+  -o-transition: transform 0.8s ease 1.2s;
+  transition: transform 0.8s ease 1.2s;
 }
 #hero .bottom-content {
   display: flex;

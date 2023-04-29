@@ -4,7 +4,7 @@
 $duration: 0.8s;
 $heroTransition1: transform $duration ease, opacity $duration ease;
 $heroTransition2: transform $duration ease $duration, opacity $duration ease $duration;
-$heroTransition3: transform $duration ease #{$duration / 2 * 3}, opacity $duration ease #{$duration / 3 * 2};
+$heroTransition3: transform $duration ease #{calc($duration / 2)* 3};
 
 
 #hero {
