@@ -15,6 +15,7 @@
   font-display: block;
 }
 #events {
+  display: none;
   position: relative;
   overflow: hidden;
 }
