@@ -19,7 +19,7 @@
   width: 100%;
   perspective: 10000px;
   position: relative;
-  background-image: url(../images/bg-concert.png), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.8) 25%, #000000 100%);
+  background-image: url(../images/bg-concert.webp), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.8) 25%, #000000 100%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
