@@ -9,8 +9,14 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
 
 #events {
+  display: none;
   position: relative;
   overflow: hidden;
+  background: url(../images/concert-10.png), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.5) 50%, #000000 100%);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
 
   #events-heading {
