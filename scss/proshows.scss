@@ -61,27 +61,94 @@ $proshowCardMargin: 1rem;
         width: 100%;
         height: 100%;
         top: 0;
+        border-radius: 20px;
+
         left: 0;
         background-color: #000000;
+        display: flex;
+        flex-direction: column;
         box-shadow: 1px 2px 9px -5px #D08453;
+
+        .return {
+            position: relative;
+            top: 0;
+            right: 0;
+            background: url(../images/icons/return.svg);
+            background-repeat: no-repeat;
+            width: 1.2rem;
+            height: 1.2rem;
+            background-origin: content-box;
+            background-position: center;
+            background-size: cover;
+            box-sizing: content-box;
+            color: white;
+            display: inline-block;
+            position: absolute;
+            z-index: 30;
+            margin: 0;
+            padding: 16px;
+            color: white;
+        }
+
+
+        p {
+            position: relative;
+            font-family: $teko;
+            font-size: 16px;
+            color: white;
+            margin: 0;
+            padding: 16px;
+        }
+
+
+        .buy-ticket {
+            align-self: center;
+        }
     }
 
 
     &:nth-of-type(1) {
         z-index: 21;
-        box-shadow: 1px 2px 9px -5px #B9926A;
+        box-shadow: 1px 2px 9px -5px #017FBF;
+
+        .back {
+            box-shadow: 1px 2px 9px -5px #017FBF;
+        }
+
+        .buy-ticket {
+            background: #017FBF;
+        }
+
         @include transition($proshowTransition1);
     }
 
     &:nth-of-type(2) {
         z-index: 20;
         box-shadow: 1px 2px 9px -5px #DC1D25;
+
+        .back {
+            box-shadow: 1px 2px 9px -5px #DC1D25;
+        }
+
+        .buy-ticket {
+            background: #DC1D25;
+        }
+
         @include transition($proshowTransition2);
     }
 
     &:nth-of-type(3) {
         z-index: 19;
         box-shadow: 1px 2px 9px -5px #6D0355;
+
+        .back {
+            box-shadow: 1px 2px 9px -5px #6D0355;
+        }
+
+        .buy-ticket {
+            background: #6D0355;
+        }
+
         @include transition($proshowTransition2);
     }
 
@@ -136,7 +203,7 @@ $proshowCardMargin: 1rem;
         z-index: 30;
         margin: 0;
         padding: 16px;
-        color: #ACACAC;
+        color: white;
     }
 
     .arrow {
@@ -144,12 +211,13 @@ $proshowCardMargin: 1rem;
         top: 0;
         background: url(../images/icons/arrow.svg);
         background-repeat: no-repeat;
-        width: 1rem;
-        height: 1rem;
+        width: 1.2rem;
+        height: 1.2rem;
         background-origin: content-box;
         background-position: center;
         background-size: cover;
         box-sizing: content-box;
+        color: white;
         animation: arrow-movement 3s ease-in-out infinite;
 
         @include keyframes(arrow-movement) {
@@ -215,12 +283,12 @@ $proshowCardMargin: 1rem;
 
 
     .proshow-card:nth-of-type(2) {
-        @include transform(translate(0, calc(-100% - #{$proshowCardMargin * 2} - 5px)));
+        @include transform(translate(0, calc(-100% - #{$proshowCardMargin * 2} + 5px)));
         @include transition(all 0s);
     }
 
     .proshow-card:nth-of-type(3) {
-        @include transform(translate(0, calc(-200% - #{$proshowCardMargin * 4} - 10px)));
+        @include transform(translate(0, calc(-200% - #{$proshowCardMargin * 4} + 5px)));
         @include transition(all 0s);
     }
 }

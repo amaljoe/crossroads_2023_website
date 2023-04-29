@@ -30,6 +30,9 @@ window.onscroll = function () {
   } else {
     proshows.classList.add("start");
     header.classList.remove("sticky");
+    for (const proshowCard of proshowCards) {
+      proshowCard.classList.remove("clicked");
+    }
   }
 
   // events animation
@@ -95,3 +98,11 @@ tagline.addEventListener("animationend", () => {
   void tagline.offsetWidth;
   tagline.classList.add("animate");
 });
+
+const backs = document.getElementsByClassName("back");
+
+for (const back of backs) {
+  back.addEventListener('click', (e) => {
+    console.log("back clicked");
+  })
+}
