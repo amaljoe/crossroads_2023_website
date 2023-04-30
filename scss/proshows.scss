@@ -134,20 +134,25 @@ $proshowCardMargin: 1rem;
 
         .day-pass:not(.disabled) {
             background: #017FBF;
+            border: 1px solid transparent;
+            color: white;
 
             &:hover {
                 color: #017FBF;
                 border: 1px solid #017FBF;
+                background: transparent;
             }
         }
 
         .combo-entry {
             color: #017FBF;
             border: 1px solid #017FBF;
-
+            background: transparent;
 
             &:hover {
                 background: #017FBF;
+                border: 1px solid transparent;
+                color: white;
             }
         }
 
@@ -164,20 +169,25 @@ $proshowCardMargin: 1rem;
 
         .day-pass:not(.disabled) {
             background: #DC1D25;
+            border: 1px solid transparent;
+            color: white;
 
             &:hover {
                 color: #DC1D25;
                 border: 1px solid #DC1D25;
+                background: transparent;
             }
         }
 
         .combo-entry {
             color: #DC1D25;
             border: 1px solid #DC1D25;
-
+            background: transparent;
 
             &:hover {
                 background: #DC1D25;
+                border: 1px solid transparent;
+                color: white;
             }
         }
 
@@ -194,20 +204,25 @@ $proshowCardMargin: 1rem;
 
         .day-pass:not(.disabled) {
             background: #6D0355;
+            border: 1px solid transparent;
+            color: white;
 
             &:hover {
                 color: #6D0355;
                 border: 1px solid #6D0355;
+                background: transparent;
             }
         }
 
         .combo-entry {
             color: #6D0355;
             border: 1px solid #6D0355;
-
+            background: transparent;
 
             &:hover {
                 background: #6D0355;
+                border: 1px solid transparent;
+                color: white;
             }
         }
 

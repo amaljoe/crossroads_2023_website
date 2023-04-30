@@ -29,7 +29,7 @@ body {
 }
 
 *:hover {
-  transition: all 0.1s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .fill-button {
@@ -76,6 +76,5 @@ body {
     text-decoration: none;
     border: 1px solid transparent;
     background: $primary;
-
   }
 }
