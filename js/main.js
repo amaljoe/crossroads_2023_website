@@ -108,6 +108,29 @@ for (const child of sideNav.getElementsByTagName("a")) {
   })
 }
 
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
 async function getIpAddress() {
   const response = await fetch('https://httpbin.org/ip');
   const data = await response.json();
@@ -116,14 +139,21 @@ async function getIpAddress() {
 
 async function getRegionFromIp() {
   const ipAddress = await getIpAddress();
+  const regionFromCookie = getCookie(ipAddress);
+  if (regionFromCookie !== "") {
+    console.log(`cookie found`);
+    return regionFromCookie;
+  }
+  console.log(`cookie not found`);
   const response = await fetch(`https://ipapi.co/${ipAddress}/json/`);
   const data = await response.json();
-  return data;
+  setCookie(ipAddress, data.region, 10);
+  return data.region;
 }
 
-getRegionFromIp().then((data) => {
-  console.log(data.region);
-  if (data.region === "Kerala") {
+getRegionFromIp().then((region) => {
+  console.log(region);
+  if (region === "Kerala") {
     for (const proshowCard of proshowCards) {
       proshowCard.addEventListener('click', (e) => {
         if (e.target.tagName === "A") return;
