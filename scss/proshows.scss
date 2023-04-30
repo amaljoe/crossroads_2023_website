@@ -113,6 +113,17 @@ $proshowCardMargin: 1rem;
                 background: transparent;
             }
         }
+
+        .combo-entry {
+            margin-top: 16px;
+            padding: 8px;
+            align-self: center;
+
+
+            &:hover {
+                background: transparent;
+            }
+        }
     }
 
 
