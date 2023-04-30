@@ -107,49 +107,7 @@ $proshowCardMargin: 1rem;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
-        }
-
-
-        .day-pass {
-            margin-top: 16px;
-            padding: 8px;
-            color: #fff;
-            border-radius: 10px;
-            text-align: center;
-            background: #D4A50D;
-            position: relative;
-            border: 1px solid transparent;
-
-            &:hover {
-                color: #D4A50D;
-                text-decoration: none;
-                background: transparent;
-                border: 1px solid #D4A50D;
-            }
-
-            &.disabled {
-                background: #ACACAC;
-                pointer-events: none;
-            }
-        }
-
-        .combo-entry {
-            margin-top: 16px;
-            padding: 8px;
-            color: #D4A50D;
-            border-radius: 10px;
-            text-align: center;
-            background: transparent;
-            position: relative;
-            border: 1px solid #D4A50D;
-
-            &:hover {
-                color: #fff;
-                text-decoration: none;
-                border: 1px solid transparent;
-                background: #D4A50D;
-
-            }
+            gap: 16px;
         }
 
 
@@ -174,7 +132,7 @@ $proshowCardMargin: 1rem;
             box-shadow: 1px 2px 9px -3px #017FBF;
         }
 
-        .day-pass {
+        .day-pass:not(.disabled) {
             background: #017FBF;
 
             &:hover {
@@ -204,7 +162,7 @@ $proshowCardMargin: 1rem;
             box-shadow: 1px 2px 9px -3px #DC1D25;
         }
 
-        .day-pass {
+        .day-pass:not(.disabled) {
             background: #DC1D25;
 
             &:hover {
@@ -234,7 +192,7 @@ $proshowCardMargin: 1rem;
             box-shadow: 1px 2px 9px -3px #6D0355;
         }
 
-        .day-pass {
+        .day-pass:not(.disabled) {
             background: #6D0355;
 
             &:hover {

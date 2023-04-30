@@ -136,42 +136,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-}
-.proshow-card .back .day-pass {
-  margin-top: 16px;
-  padding: 8px;
-  color: #fff;
-  border-radius: 10px;
-  text-align: center;
-  background: #D4A50D;
-  position: relative;
-  border: 1px solid transparent;
-}
-.proshow-card .back .day-pass:hover {
-  color: #D4A50D;
-  text-decoration: none;
-  background: transparent;
-  border: 1px solid #D4A50D;
-}
-.proshow-card .back .day-pass.disabled {
-  background: #ACACAC;
-  pointer-events: none;
-}
-.proshow-card .back .combo-entry {
-  margin-top: 16px;
-  padding: 8px;
-  color: #D4A50D;
-  border-radius: 10px;
-  text-align: center;
-  background: transparent;
-  position: relative;
-  border: 1px solid #D4A50D;
-}
-.proshow-card .back .combo-entry:hover {
-  color: #fff;
-  text-decoration: none;
-  border: 1px solid transparent;
-  background: #D4A50D;
+  gap: 16px;
 }
 .proshow-card .back .combo-entry {
   margin-top: 16px;
@@ -192,10 +157,10 @@
 .proshow-card:nth-of-type(1) .back {
   box-shadow: 1px 2px 9px -3px #017FBF;
 }
-.proshow-card:nth-of-type(1) .day-pass {
+.proshow-card:nth-of-type(1) .day-pass:not(.disabled) {
   background: #017FBF;
 }
-.proshow-card:nth-of-type(1) .day-pass:hover {
+.proshow-card:nth-of-type(1) .day-pass:not(.disabled):hover {
   color: #017FBF;
   border: 1px solid #017FBF;
 }
@@ -217,10 +182,10 @@
 .proshow-card:nth-of-type(2) .back {
   box-shadow: 1px 2px 9px -3px #DC1D25;
 }
-.proshow-card:nth-of-type(2) .day-pass {
+.proshow-card:nth-of-type(2) .day-pass:not(.disabled) {
   background: #DC1D25;
 }
-.proshow-card:nth-of-type(2) .day-pass:hover {
+.proshow-card:nth-of-type(2) .day-pass:not(.disabled):hover {
   color: #DC1D25;
   border: 1px solid #DC1D25;
 }
@@ -242,10 +207,10 @@
 .proshow-card:nth-of-type(3) .back {
   box-shadow: 1px 2px 9px -3px #6D0355;
 }
-.proshow-card:nth-of-type(3) .day-pass {
+.proshow-card:nth-of-type(3) .day-pass:not(.disabled) {
   background: #6D0355;
 }
-.proshow-card:nth-of-type(3) .day-pass:hover {
+.proshow-card:nth-of-type(3) .day-pass:not(.disabled):hover {
   color: #6D0355;
   border: 1px solid #6D0355;
 }

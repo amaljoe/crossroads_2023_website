@@ -1,0 +1,10 @@
+@import "variables";
+@import "mixins";
+
+#about {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    text-align: center;
+    color: #aab1b7;
+    font-family: $teko;
+}

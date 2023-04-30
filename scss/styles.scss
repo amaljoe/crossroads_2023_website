@@ -31,3 +31,51 @@ body {
 *:hover {
   transition: all 0.1s ease 0s;
 }
+
+.fill-button {
+  font-size: 12px;
+  margin-top: 16px;
+  padding: 8px;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  background: $primary;
+  position: relative;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  width: 100%;
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid $primary;
+  }
+
+  &.disabled {
+    background: #ACACAC;
+    pointer-events: none;
+  }
+}
+
+.outline-button {
+  margin-top: 16px;
+  padding: 8px;
+  font-size: 12px;
+  color: $primary;
+  border-radius: 10px;
+  text-align: center;
+  background: transparent;
+  position: relative;
+  border: 1px solid $primary;
+  box-sizing: border-box;
+  width: 100%;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid transparent;
+    background: $primary;
+
+  }
+}

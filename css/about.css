@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Monoton|Muli:400,400i,500,500i,600&display=swap");
+@font-face {
+  font-family: "goodTimes";
+  src: url("../fonts/good_times.otf");
+  font-display: block;
+}
+@font-face {
+  font-family: "onam";
+  src: url("../fonts/ml_tt_onam_bold.ttf");
+  font-display: block;
+}
+@font-face {
+  font-family: "teko";
+  src: url("../fonts/Teko-Medium.ttf");
+  font-display: block;
+}
+#about {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #aab1b7;
+  font-family: "teko", sans-serif;
+}
+
+/*# sourceMappingURL=about.css.map */
