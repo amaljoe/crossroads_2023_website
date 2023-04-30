@@ -102,17 +102,56 @@ $proshowCardMargin: 1rem;
             overflow-y: scroll;
         }
 
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
 
-        .buy-ticket {
+
+        .day-pass {
             margin-top: 16px;
             padding: 8px;
-            align-self: center;
-
+            color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            background: #D4A50D;
+            position: relative;
+            border: 1px solid transparent;
 
             &:hover {
+                color: #D4A50D;
+                text-decoration: none;
                 background: transparent;
+                border: 1px solid #D4A50D;
+            }
+
+            &.disabled {
+                background: #ACACAC;
+                pointer-events: none;
             }
         }
+
+        .combo-entry {
+            margin-top: 16px;
+            padding: 8px;
+            color: #D4A50D;
+            border-radius: 10px;
+            text-align: center;
+            background: transparent;
+            position: relative;
+            border: 1px solid #D4A50D;
+
+            &:hover {
+                color: #fff;
+                text-decoration: none;
+                border: 1px solid transparent;
+                background: #D4A50D;
+
+            }
+        }
+
 
         .combo-entry {
             margin-top: 16px;
@@ -135,12 +174,22 @@ $proshowCardMargin: 1rem;
             box-shadow: 1px 2px 9px -3px #017FBF;
         }
 
-        .buy-ticket {
+        .day-pass {
             background: #017FBF;
 
             &:hover {
                 color: #017FBF;
                 border: 1px solid #017FBF;
+            }
+        }
+
+        .combo-entry {
+            color: #017FBF;
+            border: 1px solid #017FBF;
+
+
+            &:hover {
+                background: #017FBF;
             }
         }
 
@@ -155,12 +204,22 @@ $proshowCardMargin: 1rem;
             box-shadow: 1px 2px 9px -3px #DC1D25;
         }
 
-        .buy-ticket {
+        .day-pass {
             background: #DC1D25;
 
             &:hover {
                 color: #DC1D25;
                 border: 1px solid #DC1D25;
+            }
+        }
+
+        .combo-entry {
+            color: #DC1D25;
+            border: 1px solid #DC1D25;
+
+
+            &:hover {
+                background: #DC1D25;
             }
         }
 
@@ -175,12 +234,22 @@ $proshowCardMargin: 1rem;
             box-shadow: 1px 2px 9px -3px #6D0355;
         }
 
-        .buy-ticket {
+        .day-pass {
             background: #6D0355;
 
             &:hover {
                 color: #6D0355;
                 border: 1px solid #6D0355;
+            }
+        }
+
+        .combo-entry {
+            color: #6D0355;
+            border: 1px solid #6D0355;
+
+
+            &:hover {
+                background: #6D0355;
             }
         }
 

@@ -137,6 +137,11 @@ header {
     background: transparent;
     border: 1px solid #D4A50D;
   }
+
+  &.disabled {
+    background: #ACACAC;
+    pointer-events: none;
+  }
 }
 
 .main-menu {

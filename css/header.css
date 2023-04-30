@@ -163,6 +163,10 @@ header.start #nav-bar {
   background: transparent;
   border: 1px solid #D4A50D;
 }
+.buy-ticket.disabled {
+  background: #ACACAC;
+  pointer-events: none;
+}
 
 .main-menu {
   text-align: center;
