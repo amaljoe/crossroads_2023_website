@@ -7,6 +7,12 @@
 }
 
 @font-face {
+    font-family: "syne";
+    src: url("../fonts/syne.ttf");
+    font-display: block;
+}
+
+@font-face {
     font-family: "onam";
     src: url("../fonts/ml_tt_onam_bold.ttf");
     font-display: block;
@@ -22,6 +28,7 @@
 $goodTimes: 'goodTimes', sans-serif;
 $onam: 'onam', sans-serif;
 $teko: 'teko', sans-serif;
+$syne: 'syne', sans-serif;
 
 // colors
 $primary: #D4A50D;

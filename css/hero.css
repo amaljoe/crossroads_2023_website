@@ -5,6 +5,11 @@
   font-display: block;
 }
 @font-face {
+  font-family: "syne";
+  src: url("../fonts/syne.ttf");
+  font-display: block;
+}
+@font-face {
   font-family: "onam";
   src: url("../fonts/ml_tt_onam_bold.ttf");
   font-display: block;
@@ -77,9 +82,12 @@
 }
 #hero .dates .month {
   font-size: 2rem;
+  font-family: "syne", sans-serif;
+  font-weight: 800;
 }
 #hero .dates .days {
   font-size: 1.5rem;
+  font-family: "goodTimes", sans-serif;
 }
 #hero .caret {
   width: 4px;

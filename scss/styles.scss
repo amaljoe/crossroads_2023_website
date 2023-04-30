@@ -10,16 +10,6 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   scroll-behavior: smooth;
-
-
-  &.no-scroll {
-    // position: fixed;
-    // overflow-y: hidden;
-  }
-
-  // @media #{$not_mobile_device} {
-  //   display: none;
-  // }
 }
 
 * {
