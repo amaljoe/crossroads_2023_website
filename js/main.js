@@ -12,7 +12,6 @@ const proshowCards = document.getElementsByClassName("proshow-card");
 const loading = document.getElementById("loading");
 const sideNav = document.getElementById("side-nav");
 
-
 const eventsCount = 5;
 var showNav = false;
 var currentTaglineIndex = 0;
@@ -22,7 +21,10 @@ window.onscroll = function () {
   const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
   const eventsHeadingTop = eventsHeading.getBoundingClientRect().top;
   // proshow heading animation
-  if (proshowsHeadingTop < window.innerHeight && document.documentElement.scrollTop > 10) {
+  if (
+    proshowsHeadingTop < window.innerHeight &&
+    document.documentElement.scrollTop > 10
+  ) {
     proshowsHeading.classList.add("scrolled");
   } else {
     proshowsHeading.classList.remove("scrolled");
@@ -73,15 +75,15 @@ function onClickEventsRightArrow(x) {
 
 const maxIndex = Math.ceil((eventsCount - 1) / 2);
 for (const eventCard of eventCards) {
-  eventCard.addEventListener('click', (e) => {
+  eventCard.addEventListener("click", (e) => {
     const id = e.currentTarget.id;
     const index = parseInt(id.substring(1));
     shiftEventCards(index);
-  })
+  });
 }
 
 function shiftEventCards(index) {
-  events.classList.add('completed');
+  events.classList.add("completed");
   for (const eventCard of eventCards) {
     let newIndex = parseInt(eventCard.id.substring(1)) - index;
     if (Math.abs(newIndex) > maxIndex) {
@@ -105,12 +107,12 @@ for (const child of sideNav.getElementsByTagName("a")) {
     header.classList.remove("change");
     body.classList.remove("no-scroll");
     showNav = false;
-  })
+  });
 }
 
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
@@ -118,10 +120,10 @@ function setCookie(cname, cvalue, exdays) {
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
+  let ca = decodedCookie.split(";");
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
-    while (c.charAt(0) == ' ') {
+    while (c.charAt(0) == " ") {
       c = c.substring(1);
     }
     if (c.indexOf(name) == 0) {
@@ -132,7 +134,7 @@ function getCookie(cname) {
 }
 
 async function getIpAddress() {
-  const response = await fetch('https://httpbin.org/ip');
+  const response = await fetch("https://httpbin.org/ip");
   const data = await response.json();
   return data.origin;
 }
@@ -155,10 +157,11 @@ getRegionFromIp().then((region) => {
   console.log(region);
   if (region === "Kerala") {
     for (const proshowCard of proshowCards) {
-      proshowCard.addEventListener('click', (e) => {
+      proshowCard.addEventListener("click", (e) => {
+        if(proshowCard.id==="Darshan") return;
         if (e.target.tagName === "A") return;
         const id = e.currentTarget.classList.toggle("clicked");
-      })
+      });
     }
   }
 });
@@ -167,4 +170,4 @@ window.onload = () => {
   loading.classList.add("completed");
   hero.classList.remove("start");
   header.classList.remove("start");
-}
+};
