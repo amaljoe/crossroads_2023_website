@@ -153,14 +153,15 @@ async function getRegionFromIp() {
 
 getRegionFromIp().then((region) => {
   console.log(region);
-  if (region === "Kerala") {
-    for (const proshowCard of proshowCards) {
-      proshowCard.addEventListener('click', (e) => {
-        if (e.target.tagName === "A") return;
-        const id = e.currentTarget.classList.toggle("clicked");
-      })
+for (const proshowCard of proshowCards) {
+  proshowCard.addEventListener("click", (e) => {
+    if (region === "Kerala" && proshowCard.id !== "Day2" && e.target.tagName !== "A") {
+      proshowCard.classList.toggle("clicked");
+    } else if (region !== "Kerala" && proshowCard.id === "Combo") {
+      proshowCard.classList.toggle("clicked");
     }
-  }
+  });
+}
 });
 
 window.onload = () => {
