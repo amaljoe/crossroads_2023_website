@@ -11,8 +11,8 @@ const eventCards = document.getElementsByClassName("event-card");
 const proshowCards = document.getElementsByClassName("proshow-card");
 const loading = document.getElementById("loading");
 const sideNav = document.getElementById("side-nav");
-
-const eventsCount = 5;
+const arrow = document.getElementById("arrow-disabled");
+const eventsCount = 13;
 var showNav = false;
 var currentTaglineIndex = 0;
 const taglines = ["A-Wn-b-d", "A-c-§v", "Xn-c-Èo-e-"];
@@ -155,19 +155,16 @@ async function getRegionFromIp() {
 
 getRegionFromIp().then((region) => {
   console.log(region);
-  if (region === "Kerala") {
-    for (const proshowCard of proshowCards) {
+
+  for (const proshowCard of proshowCards) {
+    if (proshowCard.id === "Day2"||proshowCard.id === "Combo"&& region!="Kerala") {
+      arrow.classList.remove("arrow");
+      continue;
+    }
+    else {
       proshowCard.addEventListener("click", (e) => {
-        if(proshowCard.id==="Darshan") return;
         if (e.target.tagName === "A") return;
         const id = e.currentTarget.classList.toggle("clicked");
-      });
-    }
-  }
-  else{
-    for (const proshowCard of proshowCards) {
-      proshowCard.addEventListener("click", () => {
-        if(proshowCard.id==="Combo") return;
       });
     }
   }
