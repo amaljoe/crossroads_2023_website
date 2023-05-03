@@ -2,7 +2,7 @@
 @import "mixins";
 
 $duration: 0.8s;
-$eventTransition1: transform $duration ease, opacity 0s ease $duration;
+$eventTransition1: transform $duration cubic-bezier(.47, 1.64, .41, .8), opacity 0s cubic-bezier(.47, 1.64, .41, .8) $duration;
 $eventTransition2: transform $duration ease $duration, opacity 0s ease $duration;
 $eventTransition2WithOpacity: transform $duration ease $duration, opacity $duration ease $duration;
 $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), opacity $duration cubic-bezier(.47, 1.64, .41, .8);
@@ -76,13 +76,15 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
     will-change: transform opacity;
     @include transform(translate(-50%, -50%) rotate(15deg));
     @include transition($eventTransition2);
-
+    width: 63vw;
+    height: 112vw;
     top: 50%;
     position: absolute;
 
+
     img {
-      width: 60vw;
-      transform-origin: center;
+      width: 63vw;
+      height: 112vw;
       position: relative;
     }
 
@@ -142,12 +144,12 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
   .c-2 {
     opacity: 0;
-    @include transform(translate(calc(-160% - 50%), calc(-80% - 50%)) rotate(15deg));
+    @include transform(translate(-210%, -130%) rotate(15deg));
   }
 
   .c-1 {
     z-index: 4;
-    @include transform(translate(calc(-80% - 50%), calc(-40% - 50%)) rotate(15deg));
+    @include transform(translate(-130%, -90%) rotate(15deg));
 
     .arrow {
       display: inline-block;
@@ -171,7 +173,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
   .c1 {
     z-index: 4;
-    @include transform(translate(calc(80% - 50%), calc(40% - 50%)) rotate(15deg));
+    @include transform(translate(30%, -10%) rotate(15deg));
 
     .arrow {
       display: inline-block;
@@ -181,13 +183,13 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
   .c2 {
     opacity: 0;
-    @include transform(translate(calc(160% - 50%), calc(80% - 50%)) rotate(15deg));
+    @include transform(translate(110%, 30%) rotate(15deg));
   }
 
   &.start {
     .c0 {
       @include transition($eventTransition2);
-      @include transform(translate(calc(200% - 50%), -50%) rotate(75deg));
+      @include transform(translate(150%, -50%) rotate(75deg));
     }
 
     #events-left-arrow {

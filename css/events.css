@@ -125,12 +125,14 @@
   -moz-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
   -o-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
   transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
+  width: 63vw;
+  height: 112vw;
   top: 50%;
   position: absolute;
 }
 #events .event-card img {
-  width: 60vw;
-  transform-origin: center;
+  width: 63vw;
+  height: 112vw;
   position: relative;
 }
 #events .event-card .overlay {
@@ -257,10 +259,10 @@
   opacity: 0;
 }
 #events .c0 {
-  -webkit-transition: transform 0.8s ease, opacity 0s ease 0.8s;
-  -moz-transition: transform 0.8s ease, opacity 0s ease 0.8s;
-  -o-transition: transform 0.8s ease, opacity 0s ease 0.8s;
-  transition: transform 0.8s ease, opacity 0s ease 0.8s;
+  -webkit-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
+  -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
+  -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
+  transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
   z-index: 5;
 }
 #events .c0 .overlay {
@@ -314,10 +316,10 @@
 }
 #events.start .event-card:not(.c0) {
   opacity: 0;
-  -webkit-transition: transform 0.8s ease, opacity 0s ease 0.8s;
-  -moz-transition: transform 0.8s ease, opacity 0s ease 0.8s;
-  -o-transition: transform 0.8s ease, opacity 0s ease 0.8s;
-  transition: transform 0.8s ease, opacity 0s ease 0.8s;
+  -webkit-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
+  -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
+  -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
+  transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
   -webkit-transform: translate(-50%, -50%) rotate(15deg);
   -moz-transform: translate(-50%, -50%) rotate(15deg);
   -ms-transform: translate(-50%, -50%) rotate(15deg);
