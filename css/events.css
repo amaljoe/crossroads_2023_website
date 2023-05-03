@@ -27,6 +27,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  height: 100vh;
 }
 #events #events-heading {
   position: relative;
@@ -58,7 +59,7 @@
 }
 #events .container {
   position: relative;
-  height: 100vh;
+  height: 100%;
 }
 #events #events-left-arrow,
 #events #events-right-arrow {
@@ -72,6 +73,7 @@
   height: 3rem;
   background-origin: content-box;
   background-position: center;
+  opacity: 0.75;
   background-size: cover;
   box-sizing: content-box;
   -webkit-backface-visibility: hidden;
@@ -125,14 +127,11 @@
   -moz-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
   -o-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
   transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
-  width: 63vw;
-  height: 112vw;
-  top: 50%;
+  top: 45%;
   position: absolute;
 }
 #events .event-card img {
-  width: 63vw;
-  height: 112vw;
+  height: min(112vw, 50vh);
   position: relative;
 }
 #events .event-card .overlay {
@@ -264,6 +263,7 @@
   -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
   transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
   z-index: 5;
+  box-shadow: #000000 2px 2px 10px;
 }
 #events .c0 .overlay {
   opacity: 0;
@@ -342,6 +342,9 @@
   -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+#events .out {
+  display: none;
 }
 
 /*# sourceMappingURL=events.css.map */

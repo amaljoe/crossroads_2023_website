@@ -16,6 +16,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  height: 100vh;
 
 
   #events-heading {
@@ -36,7 +37,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
   .container {
     position: relative;
-    height: 100vh;
+    height: 100%;
   }
 
   #events-left-arrow,
@@ -51,6 +52,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
     height: 3rem;
     background-origin: content-box;
     background-position: center;
+    opacity: 0.75;
     background-size: cover;
     box-sizing: content-box;
     @include hardware-acceleration;
@@ -76,15 +78,12 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
     will-change: transform opacity;
     @include transform(translate(-50%, -50%) rotate(15deg));
     @include transition($eventTransition2);
-    width: 63vw;
-    height: 112vw;
-    top: 50%;
+    top: 45%;
     position: absolute;
 
 
     img {
-      width: 63vw;
-      height: 112vw;
+      height: min(112vw, 50vh);
       position: relative;
     }
 
@@ -160,6 +159,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
   .c0 {
     @include transition($eventTransition1);
     z-index: 5;
+    box-shadow: #000000 2px 2px 10px;
 
     .overlay {
       opacity: 0;
@@ -221,5 +221,9 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
     .c0 {
       @include transition($eventChangeTransition);
     }
+  }
+
+  .out {
+    display: none;
   }
 }
