@@ -11,8 +11,7 @@ const eventCards = document.getElementsByClassName("event-card");
 const proshowCards = document.getElementsByClassName("proshow-card");
 const loading = document.getElementById("loading");
 const sideNav = document.getElementById("side-nav");
-const arrow = document.getElementById("arrow-disabled");
-const eventsCount = 13;
+const eventsCount = 12;
 var showNav = false;
 var currentTaglineIndex = 0;
 const taglines = ["A-Wn-b-d", "A-c-§v", "Xn-c-Èo-e-"];
@@ -157,16 +156,17 @@ getRegionFromIp().then((region) => {
   console.log(region);
 
   for (const proshowCard of proshowCards) {
-    if (proshowCard.id === "Day2"||proshowCard.id === "Combo"&& region!="Kerala") {
-      arrow.classList.remove("arrow");
+    if (
+      proshowCard.id === "Day2" ||
+      (proshowCard.id === "Combo" && region != "Kerala")
+    ) {
       continue;
     }
-    else {
-      proshowCard.addEventListener("click", (e) => {
-        if (e.target.tagName === "A") return;
-        const id = e.currentTarget.classList.toggle("clicked");
-      });
-    }
+    proshowCard.classList.add("clickable");
+    proshowCard.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") return;
+      const id = e.currentTarget.classList.toggle("clicked");
+    });
   }
 });
 

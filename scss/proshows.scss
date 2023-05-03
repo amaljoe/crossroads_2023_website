@@ -94,6 +94,7 @@ $proshowCardMargin: 1rem;
         p {
             font-family: $teko;
             position: relative;
+            text-align: center;
             font-size: 16px;
             color: white;
             padding: 0;
@@ -286,6 +287,8 @@ $proshowCardMargin: 1rem;
         box-sizing: content-box;
         color: white;
         animation: arrow-movement 3s ease-in-out infinite;
+        opacity: 0;
+
 
         @include keyframes(arrow-movement) {
             30% {
@@ -299,6 +302,11 @@ $proshowCardMargin: 1rem;
             70% {
                 transform: translate(0, 0);
             }
+        }
+    }
+    &.clickable{
+        .arrow{
+            opacity: 1;
         }
     }
 }

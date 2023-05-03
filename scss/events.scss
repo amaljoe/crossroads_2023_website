@@ -89,9 +89,50 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
       background: rgba(0, 0, 0, 0.69);
       opacity: 1;
     }
+    .arrow {
+      font-family: $teko;
+      @include hardware-acceleration;
+      will-change: transform, opacity;
+      @include transition($eventTransition2);
+      display: inline-block;
+      position: absolute;
+      z-index: 30;
+      margin: 0;
+      padding: 8px;
+      color: white;
+      right: 0;
+      top: 0;
+      background: url(../images/icons/arrow.png);
+      background-repeat: no-repeat;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-origin: content-box;
+      background-position: center;
+      background-size: cover;
+      box-sizing: content-box;
+      color: white;
+      animation: arrow-movement 3s ease-in-out infinite;
+      opacity: 0;
+
+
+      @include keyframes(arrow-movement) {
+          30% {
+              transform: translate(0, 0);
+          }
+
+          50% {
+              transform: translate(-5px, 5px);
+          }
+
+          70% {
+              transform: translate(0, 0);
+          }
+      }
   }
 
-  #c-2 {
+  }
+
+  #c-2 , #c-3,#c-4,#c-5,#c-6{
     opacity: 0;
     @include transform(translate(calc(-160% - 50%), calc(-80% - 50%)) rotate(15deg));
   }
@@ -108,6 +149,9 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
     .overlay {
       opacity: 0;
     }
+    .arrow{
+      opacity: 1;
+    }
   }
 
   #c1 {
@@ -115,7 +159,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
     @include transform(translate(calc(80% - 50%), calc(40% - 50%)) rotate(15deg));
   }
 
-  #c2 {
+  #c2 , #c3,#c4,#c5 {
     opacity: 0;
     @include transform(translate(calc(160% - 50%), calc(80% - 50%)) rotate(15deg));
   }
@@ -150,6 +194,9 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
     #c0 {
       @include transition($eventChangeTransition);
+      .arrow{
+        opacity: 1;
+      }
     }
   }
 }

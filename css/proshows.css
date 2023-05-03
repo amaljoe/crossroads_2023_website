@@ -129,6 +129,7 @@
 .proshow-card .back p {
   font-family: "teko", sans-serif;
   position: relative;
+  text-align: center;
   font-size: 16px;
   color: white;
   padding: 0;
@@ -321,6 +322,7 @@
   box-sizing: content-box;
   color: white;
   animation: arrow-movement 3s ease-in-out infinite;
+  opacity: 0;
 }
 @-webkit-keyframes arrow-movement {
   30% {
@@ -365,6 +367,9 @@
   70% {
     transform: translate(0, 0);
   }
+}
+.proshow-card.clickable .arrow {
+  opacity: 1;
 }
 
 .start .proshow-card:first-of-type {
