@@ -122,8 +122,6 @@ function shiftEventCards(index) {
     eventsIndex[id] = newIndex;
     if (Math.abs(newIndex) <= 2) {
       eventCard.className = `event-card c${newIndex}`;
-    } else {
-      eventCard.className = "event-card out";
     }
   }
 }
