@@ -202,6 +202,18 @@ getRegionFromIp().then((region) => {
       const id = e.currentTarget.classList.toggle("clicked");
     });
   }
+}).catch((err) => {
+  console.log(err);
+  for (const proshowCard of proshowCards) {
+    if (proshowCard.id === "Day2" || proshowCard.id === "Combo") {
+      continue;
+    }
+    proshowCard.classList.add("clickable");
+    proshowCard.addEventListener("click", (e) => {
+      if (e.target.tagName === "A") return;
+      const id = e.currentTarget.classList.toggle("clicked");
+    });
+  }
 });
 
 window.onload = () => {
