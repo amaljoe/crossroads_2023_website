@@ -242,17 +242,17 @@
 }
 #events .c-2 {
   opacity: 0;
-  -webkit-transform: translate(-210%, -130%) rotate(15deg);
-  -moz-transform: translate(-210%, -130%) rotate(15deg);
-  -ms-transform: translate(-210%, -130%) rotate(15deg);
-  transform: translate(-210%, -130%) rotate(15deg);
+  -webkit-transform: translate(-210%, -110%) rotate(15deg);
+  -moz-transform: translate(-210%, -110%) rotate(15deg);
+  -ms-transform: translate(-210%, -110%) rotate(15deg);
+  transform: translate(-210%, -110%) rotate(15deg);
 }
 #events .c-1 {
   z-index: 4;
-  -webkit-transform: translate(-130%, -90%) rotate(15deg);
-  -moz-transform: translate(-130%, -90%) rotate(15deg);
-  -ms-transform: translate(-130%, -90%) rotate(15deg);
-  transform: translate(-130%, -90%) rotate(15deg);
+  -webkit-transform: translate(-130%, -80%) rotate(15deg);
+  -moz-transform: translate(-130%, -80%) rotate(15deg);
+  -ms-transform: translate(-130%, -80%) rotate(15deg);
+  transform: translate(-130%, -80%) rotate(15deg);
 }
 #events .c-1 .arrow {
   display: inline-block;
@@ -274,10 +274,10 @@
 }
 #events .c1 {
   z-index: 4;
-  -webkit-transform: translate(30%, -10%) rotate(15deg);
-  -moz-transform: translate(30%, -10%) rotate(15deg);
-  -ms-transform: translate(30%, -10%) rotate(15deg);
-  transform: translate(30%, -10%) rotate(15deg);
+  -webkit-transform: translate(30%, -20%) rotate(15deg);
+  -moz-transform: translate(30%, -20%) rotate(15deg);
+  -ms-transform: translate(30%, -20%) rotate(15deg);
+  transform: translate(30%, -20%) rotate(15deg);
 }
 #events .c1 .arrow {
   display: inline-block;
@@ -285,10 +285,10 @@
 }
 #events .c2 {
   opacity: 0;
-  -webkit-transform: translate(110%, 30%) rotate(15deg);
-  -moz-transform: translate(110%, 30%) rotate(15deg);
-  -ms-transform: translate(110%, 30%) rotate(15deg);
-  transform: translate(110%, 30%) rotate(15deg);
+  -webkit-transform: translate(110%, 10%) rotate(15deg);
+  -moz-transform: translate(110%, 10%) rotate(15deg);
+  -ms-transform: translate(110%, 10%) rotate(15deg);
+  transform: translate(110%, 10%) rotate(15deg);
 }
 #events.start .c0 {
   -webkit-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;

@@ -144,12 +144,12 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
   .c-2 {
     opacity: 0;
-    @include transform(translate(-210%, -130%) rotate(15deg));
+    @include transform(translate(-210%, -110%) rotate(15deg));
   }
 
   .c-1 {
     z-index: 4;
-    @include transform(translate(-130%, -90%) rotate(15deg));
+    @include transform(translate(-130%, -80%) rotate(15deg));
 
     .arrow {
       display: inline-block;
@@ -173,7 +173,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
   .c1 {
     z-index: 4;
-    @include transform(translate(30%, -10%) rotate(15deg));
+    @include transform(translate(30%, -20%) rotate(15deg));
 
     .arrow {
       display: inline-block;
@@ -183,7 +183,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
 
   .c2 {
     opacity: 0;
-    @include transform(translate(110%, 30%) rotate(15deg));
+    @include transform(translate(110%, 10%) rotate(15deg));
   }
 
   &.start {
