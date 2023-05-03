@@ -159,7 +159,7 @@ $eventChangeTransition: transform $duration cubic-bezier(.47, 1.64, .41, .8), op
     @include transform(translate(calc(80% - 50%), calc(40% - 50%)) rotate(15deg));
   }
 
-  #c2 , #c3,#c4,#c5 {
+  #c2 , #c3,#c4,#c5,#c6 {
     opacity: 0;
     @include transform(translate(calc(160% - 50%), calc(80% - 50%)) rotate(15deg));
   }

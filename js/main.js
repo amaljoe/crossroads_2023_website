@@ -77,6 +77,9 @@ for (const eventCard of eventCards) {
   eventCard.addEventListener("click", (e) => {
     const id = e.currentTarget.id;
     const index = parseInt(id.substring(1));
+    if (index != 0) {
+      e.preventDefault();
+    }
     shiftEventCards(index);
   });
 }
@@ -87,6 +90,12 @@ function shiftEventCards(index) {
     let newIndex = parseInt(eventCard.id.substring(1)) - index;
     if (Math.abs(newIndex) > maxIndex) {
       newIndex = -1 * (newIndex + index);
+      if (newIndex > 0) {
+        newIndex--;
+      }
+      else{
+        newIndex++;
+      }
     }
     eventCard.id = "c" + newIndex;
   }
