@@ -55,7 +55,7 @@ $heroTransition3: transform $duration ease #{calc($duration / 2)* 3};
     }
 
     .wordmark {
-        width: 30%;
+        width: 40%;
     }
 
     .logo {
@@ -198,7 +198,7 @@ $heroTransition3: transform $duration ease #{calc($duration / 2)* 3};
         }
 
         .top-content {
-            @include transform(translate(100%, 0));
+            @include transform(translate(150%, 0));
         }
 
 

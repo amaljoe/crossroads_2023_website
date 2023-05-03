@@ -69,7 +69,7 @@
   color: white;
 }
 #hero .wordmark {
-  width: 30%;
+  width: 40%;
 }
 #hero .logo {
   width: 40%;
@@ -244,10 +244,10 @@
   opacity: 1;
 }
 #hero.start .top-content {
-  -webkit-transform: translate(100%, 0);
-  -moz-transform: translate(100%, 0);
-  -ms-transform: translate(100%, 0);
-  transform: translate(100%, 0);
+  -webkit-transform: translate(150%, 0);
+  -moz-transform: translate(150%, 0);
+  -ms-transform: translate(150%, 0);
+  transform: translate(150%, 0);
 }
 #hero.start .center-content {
   -webkit-transform: translate(100%, 0);
