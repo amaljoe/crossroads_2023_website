@@ -11,14 +11,29 @@ const eventCards = document.getElementsByClassName("event-card");
 const proshowCards = document.getElementsByClassName("proshow-card");
 const loading = document.getElementById("loading");
 const sideNav = document.getElementById("side-nav");
-const eventsCount = 12;
+const eventsCount = 13;
 var showNav = false;
 var currentTaglineIndex = 0;
 const taglines = ["A-Wn-b-d", "A-c-§v", "Xn-c-Èo-e-"];
+var eventsIndex = {
+  "battle-of-bands": -6,
+  "campus-ambassador": -5,
+  "choreonite": -4,
+  "duo": -3,
+  "footloose": -2,
+  "frame-it": -1,
+  "futsal": 0,
+  "haute-culture": 1,
+  "henshin": 2,
+  "mx-cr": 3,
+  "rj-hunt": 4,
+  "voc": 5,
+}
 
 window.onscroll = function () {
   const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
   const eventsHeadingTop = eventsHeading.getBoundingClientRect().top;
+
   // proshow heading animation
   if (
     proshowsHeadingTop < window.innerHeight &&
@@ -41,6 +56,13 @@ window.onscroll = function () {
     for (const proshowCard of proshowCards) {
       proshowCard.classList.remove("clicked");
     }
+  }
+
+  // events heading animation
+  if (eventsHeadingTop < window.innerHeight) {
+    eventsHeading.classList.remove("start");
+  } else {
+    eventsHeading.classList.add("start");
   }
 
   // events animation
@@ -75,8 +97,7 @@ function onClickEventsRightArrow(x) {
 const maxIndex = Math.ceil((eventsCount - 1) / 2);
 for (const eventCard of eventCards) {
   eventCard.addEventListener("click", (e) => {
-    const id = e.currentTarget.id;
-    const index = parseInt(id.substring(1));
+    const index = eventsIndex[e.currentTarget.id];
     if (index != 0) {
       e.preventDefault();
     }
@@ -87,17 +108,21 @@ for (const eventCard of eventCards) {
 function shiftEventCards(index) {
   events.classList.add("completed");
   for (const eventCard of eventCards) {
-    let newIndex = parseInt(eventCard.id.substring(1)) - index;
+    const id = eventCard.id;
+    let newIndex = eventsIndex[id] - index;
     if (Math.abs(newIndex) > maxIndex) {
       newIndex = -1 * (newIndex + index);
       if (newIndex > 0) {
         newIndex--;
       }
-      else{
+      else {
         newIndex++;
       }
     }
-    eventCard.id = "c" + newIndex;
+    eventsIndex[id] = newIndex;
+    if (Math.abs(newIndex) <= 2) {
+      eventCard.className = `event-card c${newIndex}`;
+    }
   }
 }
 

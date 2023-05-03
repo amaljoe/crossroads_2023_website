@@ -34,6 +34,27 @@
   font-size: 32px;
   color: white;
   padding: 2rem 0 0 2rem;
+  -webkit-transition: all 0.8s ease;
+  -moz-transition: all 0.8s ease;
+  -o-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  /* Other transform properties here */
+  will-change: transform, opacity;
+}
+#events #events-heading.start {
+  -webkit-transform: translateX(100px);
+  -moz-transform: translateX(100px);
+  -ms-transform: translateX(100px);
+  transform: translateX(100px);
+  opacity: 0;
 }
 #events .container {
   position: relative;
@@ -95,7 +116,7 @@
   -ms-perspective: 1000;
   perspective: 1000;
   /* Other transform properties here */
-  will-change: transform;
+  will-change: transform opacity;
   -webkit-transform: translate(-50%, -50%) rotate(15deg);
   -moz-transform: translate(-50%, -50%) rotate(15deg);
   -ms-transform: translate(-50%, -50%) rotate(15deg);
@@ -135,7 +156,6 @@
   opacity: 1;
 }
 #events .event-card .arrow {
-  font-family: "teko", sans-serif;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -145,11 +165,11 @@
   -ms-perspective: 1000;
   perspective: 1000;
   /* Other transform properties here */
-  will-change: transform, opacity;
-  -webkit-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
-  -moz-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
-  -o-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
-  transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
+  will-change: opacity transform;
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
   display: inline-block;
   position: absolute;
   z-index: 30;
@@ -167,8 +187,12 @@
   background-size: cover;
   box-sizing: content-box;
   color: white;
+  display: none;
   animation: arrow-movement 3s ease-in-out infinite;
-  opacity: 0;
+  -webkit-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -moz-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  -o-transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
 }
 @-webkit-keyframes arrow-movement {
   30% {
@@ -214,48 +238,57 @@
     transform: translate(0, 0);
   }
 }
-#events #c-2, #events #c-3, #events #c-4, #events #c-5, #events #c-6 {
+#events .c-2 {
   opacity: 0;
   -webkit-transform: translate(-210%, -130%) rotate(15deg);
   -moz-transform: translate(-210%, -130%) rotate(15deg);
   -ms-transform: translate(-210%, -130%) rotate(15deg);
   transform: translate(-210%, -130%) rotate(15deg);
 }
-#events #c-1 {
+#events .c-1 {
   z-index: 4;
   -webkit-transform: translate(-130%, -90%) rotate(15deg);
   -moz-transform: translate(-130%, -90%) rotate(15deg);
   -ms-transform: translate(-130%, -90%) rotate(15deg);
   transform: translate(-130%, -90%) rotate(15deg);
 }
-#events #c0 {
+#events .c-1 .arrow {
+  display: inline-block;
+  opacity: 0;
+}
+#events .c0 {
   -webkit-transition: transform 0.8s ease, opacity 0s ease 0.8s;
   -moz-transition: transform 0.8s ease, opacity 0s ease 0.8s;
   -o-transition: transform 0.8s ease, opacity 0s ease 0.8s;
   transition: transform 0.8s ease, opacity 0s ease 0.8s;
   z-index: 5;
 }
-#events #c0 .overlay {
+#events .c0 .overlay {
   opacity: 0;
 }
-#events #c0 .arrow {
+#events .c0 .arrow {
   opacity: 1;
+  display: inline-block;
 }
-#events #c1 {
+#events .c1 {
   z-index: 4;
   -webkit-transform: translate(30%, -10%) rotate(15deg);
   -moz-transform: translate(30%, -10%) rotate(15deg);
   -ms-transform: translate(30%, -10%) rotate(15deg);
   transform: translate(30%, -10%) rotate(15deg);
 }
-#events #c2, #events #c3, #events #c4, #events #c5, #events #c6 {
+#events .c1 .arrow {
+  display: inline-block;
+  opacity: 0;
+}
+#events .c2 {
   opacity: 0;
   -webkit-transform: translate(110%, 30%) rotate(15deg);
   -moz-transform: translate(110%, 30%) rotate(15deg);
   -ms-transform: translate(110%, 30%) rotate(15deg);
   transform: translate(110%, 30%) rotate(15deg);
 }
-#events.start #c0 {
+#events.start .c0 {
   -webkit-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
   -moz-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
   -o-transition: transform 0.8s ease 0.8s, opacity 0s ease 0.8s;
@@ -279,7 +312,7 @@
   transform: translate(-32px, -50%) rotate(180deg);
   opacity: 0;
 }
-#events.start .event-card:not(#c0) {
+#events.start .event-card:not(.c0) {
   opacity: 0;
   -webkit-transition: transform 0.8s ease, opacity 0s ease 0.8s;
   -moz-transition: transform 0.8s ease, opacity 0s ease 0.8s;
@@ -296,14 +329,17 @@
   -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }
-#events.completed #c0 {
+#events.completed .arrow {
   -webkit-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }
-#events.completed #c0 .arrow {
-  opacity: 1;
+#events.completed .c0 {
+  -webkit-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
 }
 
 /*# sourceMappingURL=events.css.map */
