@@ -192,7 +192,7 @@ getRegionFromIp().then((region) => {
   for (const proshowCard of proshowCards) {
     if (
       proshowCard.id === "Day2" ||
-      (proshowCard.id === "Combo" && region != "Kerala")
+      (proshowCard.id === "Combo" )
     ) {
       continue;
     }
