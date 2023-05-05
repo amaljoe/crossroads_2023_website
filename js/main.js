@@ -205,7 +205,7 @@ getRegionFromIp().then((region) => {
 }).catch((err) => {
   console.log(err);
   for (const proshowCard of proshowCards) {
-    if (proshowCard.id === "Day2" || proshowCard.id === "Combo") {
+    if (proshowCard.id === "Day2" ||(proshowCard.id === "Combo" && region != "Kerala")) {
       continue;
     }
     proshowCard.classList.add("clickable");
