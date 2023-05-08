@@ -1,5 +1,6 @@
 @import "variables";
 @import "responsive";
+
 #loading {
   position: fixed;
   display: flex;
@@ -16,23 +17,16 @@
   #loading-image {
     position: absolute;
     width: 50%;
-    display: none;
-  }
-  p{
-    color: white;
-    text-align: center;
     display: block;
   }
 
-  @media #{$mobile_device} {
-    &.completed{
-        display: none;
-    }
-    p{
-        display: none;
-    }
-    #loading-image{
-        display: block;
-    }
+  p {
+    color: white;
+    text-align: center;
+    display: none;
+  }
+
+  &.completed {
+    display: none;
   }
 }

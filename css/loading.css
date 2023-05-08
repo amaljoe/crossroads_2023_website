@@ -40,23 +40,15 @@
 #loading #loading-image {
   position: absolute;
   width: 50%;
-  display: none;
+  display: block;
 }
 #loading p {
   color: white;
   text-align: center;
-  display: block;
+  display: none;
 }
-@media (max-width: 767px) {
-  #loading.completed {
-    display: none;
-  }
-  #loading p {
-    display: none;
-  }
-  #loading #loading-image {
-    display: block;
-  }
+#loading.completed {
+  display: none;
 }
 
 /*# sourceMappingURL=loading.css.map */
