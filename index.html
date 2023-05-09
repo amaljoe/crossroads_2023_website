@@ -1,262 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Bootstrap CSS -->
+    <link rel="icon" href="/images/logo.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/proshows.css" />
+    <link rel="stylesheet" href="css/events.css" />
+    <link rel="stylesheet" href="css/loading.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/schedule.css" />
+    <title>Crossroads '23</title>
 
-  <!-- Bootstrap CSS -->
-  <link rel="icon" href="/images/logo.svg" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/header.css" />
-  <link rel="stylesheet" href="css/hero.css" />
-  <link rel="stylesheet" href="css/proshows.css" />
-  <link rel="stylesheet" href="css/events.css" />
-  <link rel="stylesheet" href="css/loading.css" />
-  <link rel="stylesheet" href="css/about.css" />
-  <title>Crossroads '23</title>
+    <meta property="og:title" content="Crossroads '23" />
+    <meta
+      property="og:description"
+      content="Mark your calendars for the biggest cultural fest of Trivandrum, Crossroads'23"
+    />
+    <meta property="og:url" content="https://crossroadsmbcet.com" />
+    <meta
+      property="og:image"
+      content="https://crossroadsmbcet.com/cr-image.webp"
+    />
+    <meta name="twitter:title" content="Crossroads '23" />
+    <meta
+      name="twitter:description"
+      content="Mark your calendars for the biggest cultural fest of Trivandrum, Crossroads'23"
+    />
+    <meta name="twitter:url" content="https://crossroadsmbcet.com" />
+    <meta
+      name="twitter:image"
+      content="https://crossroadsmbcet.com/images/cr-image.webp"
+    />
+  </head>
 
-  <meta property="og:title" content="Crossroads '23">
-  <meta property="og:description"
-    content="Mark your calendars for the biggest cultural fest of Trivandrum, Crossroads'23">
-  <meta property="og:url" content="https://crossroadsmbcet.com">
-  <meta property="og:image" content="https://crossroadsmbcet.com/cr-image.webp">
-  <meta name="twitter:title" content="Crossroads '23">
-  <meta name="twitter:description"
-    content="Mark your calendars for the biggest cultural fest of Trivandrum, Crossroads'23">
-  <meta name="twitter:url" content="https://crossroadsmbcet.com">
-  <meta name="twitter:image" content="https://crossroadsmbcet.com/images/cr-image.webp">
-</head>
-
-<body id="body">
-  <div id="loading">
-    <img id="loading-image" src="images/icons/loader.svg" alt="Loading..." />
-    <p>
-      We recommend accessing our services through <br />your mobile phone as
-      our website is optimized for mobile devices.
-    </p>
-  </div>
-  <!-- header-start -->
-  <header id="header" class="start">
-    <div id="nav-bar">
-      <div class="menu-icon" onclick="onClickMenu(this)">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
-      <ul class="main-menu">
-        <li>
-          <a href="#hero">HOME</a>
-        </li>
-        <li>
-          <a href="#proshows">PROSHOWS</a>
-        </li>
-        <li>
-          <a href="#events">EVENTS</a>
-        </li>
-        <!-- <li>
-                    <a href="#sponsors">SPONSORS</a>
-                </li> -->
-        <li>
-          <a href="#contact">CONTACT</a>
-        </li>
-      </ul>
-      <a class="buy-ticket" href="">DOWNLOAD BROCHURE</a>
+  <body id="body">
+    <div id="loading">
+      <img id="loading-image" src="images/icons/loader.svg" alt="Loading..." />
+      <p>
+        We recommend accessing our services through <br />your mobile phone as
+        our website is optimized for mobile devices.
+      </p>
     </div>
-    <div id="side-nav">
-      <ul class="main-menu">
-        <li>
-          <a href="#hero">HOME</a>
-        </li>
-        <li>
-          <a href="#proshows">PROSHOWS</a>
-        </li>
-        <li>
-          <a href="#events">EVENTS</a>
-        </li>
-        <!-- <li>
+    <!-- header-start -->
+    <header id="header" class="start">
+      <div id="nav-bar">
+        <div class="menu-icon" onclick="onClickMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+        <ul class="main-menu">
+          <li>
+            <a href="#hero">HOME</a>
+          </li>
+          <li>
+            <a href="#proshows">PROSHOWS</a>
+          </li>
+          <li>
+            <a href="#events">EVENTS</a>
+          </li>
+          <!-- <li>
                     <a href="#sponsors">SPONSORS</a>
                 </li> -->
-        <!-- <li>
+          <li>
+            <a href="#contact">CONTACT</a>
+          </li>
+        </ul>
+        <a class="buy-ticket" href="">DOWNLOAD BROCHURE</a>
+      </div>
+      <div id="side-nav">
+        <ul class="main-menu">
+          <li>
+            <a href="#hero">HOME</a>
+          </li>
+          <li>
+            <a href="#proshows">PROSHOWS</a>
+          </li>
+          <li>
+            <a href="#events">EVENTS</a>
+          </li>
+          <!-- <li>
+                    <a href="#sponsors">SPONSORS</a>
+                </li> -->
+          <!-- <li>
           <a href="#contact">CONTACT</a>
         </li> -->
-      </ul>
-      <a class="buy-ticket disabled" href="">DOWNLOAD BROCHURE</a>
-    </div>
-  </header>
-  <!-- header-end -->
+        </ul>
+        <a class="buy-ticket disabled" href="">DOWNLOAD BROCHURE</a>
+      </div>
+    </header>
+    <!-- header-end -->
 
-  <div id="hero" class="start">
-    <div class="bg-overlay-bottom"></div>
-    <div class="yellow-overlay"></div>
-    <img src="images/elephant-eyes-open.webp" class="elephant" />
-    <div class="bg-overlay-top"></div>
-    <div class="top-content">
-      <img class="wordmark" src="images/wordmark.svg" alt="" />
-      <div class="edition">17th Edition</div>
-    </div>
-    <div class="center-content">
-      <img class="logo" src="images/logo.svg" alt="" />
-      <div class="dates">
-        <div class="month">MAY</div>
-        <div class="days">12 | 13 | 14</div>
+    <div id="hero" class="start">
+      <div class="bg-overlay-bottom"></div>
+      <div class="yellow-overlay"></div>
+      <img src="images/elephant-eyes-open.webp" class="elephant" />
+      <div class="bg-overlay-top"></div>
+      <div class="top-content">
+        <img class="wordmark" src="images/wordmark.svg" alt="" />
+        <div class="edition">17th Edition</div>
+      </div>
+      <div class="center-content">
+        <img class="logo" src="images/logo.svg" alt="" />
+        <div class="dates">
+          <div class="month">MAY</div>
+          <div class="days">12 | 13 | 14</div>
+        </div>
+      </div>
+      <div class="bottom-content">
+        <div id="tagline" class="start-animate">A-Wn-b-d</div>
+        <div class="caret"></div>
       </div>
     </div>
-    <div class="bottom-content">
-      <div id="tagline" class="start-animate">A-Wn-b-d</div>
-      <div class="caret"></div>
-    </div>
-  </div>
 
-  <div id="proshows" class="start">
-    <h1 id="proshows-heading">Proshows</h1>
-    <div id="Day2" class="proshow-card">
-      <div class="bg-overlay"></div>
-      <div class="front">
-        <img src="images/proshows/Day 2.webp" alt="" />
-        <div class="arrow"></div>
+    <div id="proshows" class="start">
+      <h1 id="proshows-heading">Proshows</h1>
+      <div id="Day2" class="proshow-card">
+        <div class="bg-overlay"></div>
+        <div class="front">
+          <img src="images/proshows/Day 2.webp" alt="" />
+          <div class="arrow"></div>
+        </div>
+        <div class="back">
+          <div class="return"></div>
+          <p>
+            Darshan Raval is one of the most talented singers in the music
+            industry, and he has mesmerised us time and again with his soulful
+            voice in songs such as Pehli Mohabbat, Tere Zikr, Ek Ladki Ko Dekha
+            Toh AIsa Laga, among others.
+          </p>
+          <div class="buttons">
+            <a
+              class="fill-button day-pass"
+              target="_blank"
+              href="https://rebrand.ly/CR_Day2"
+              >Day 2 Pass</a
+            >
+            <a
+              class="outline-button combo-entry"
+              target="_blank"
+              href="https://rebrand.ly/CR_Combo"
+              >Combo Entry</a
+            >
+          </div>
+        </div>
       </div>
-      <div class="back">
-        <div class="return"></div>
-        <p>
-          Darshan Raval is one of the most talented singers in the music
-          industry, and he has mesmerised us time and again with his soulful
-          voice in songs such as Pehli Mohabbat, Tere Zikr, Ek Ladki Ko Dekha
-          Toh AIsa Laga, among others.
-        </p>
-        <div class="buttons">
-          <a class="fill-button day-pass" target="_blank" href="https://rebrand.ly/CR_Day2">Day 2 Pass</a>
-          <a class="outline-button combo-entry" target="_blank" href="https://rebrand.ly/CR_Combo">Combo Entry</a>
+      <div id="Day3" class="proshow-card">
+        <div class="front">
+          <img src="images/proshows/Day 3.webp" alt="" />
+          <div class="arrow"></div>
+        </div>
+        <div class="back">
+          <div class="return"></div>
+          <p>
+            Introducing the passionate Matadoria and electrifying Julia Bliss to
+            the spotlights of Crossroads '23!
+            <br />
+            Buy the tickets and join the crowd on Day 3.
+          </p>
+          <div class="buttons">
+            <a
+              class="fill-button day-pass"
+              target="_blank"
+              href="https://rebrand.ly/CR_Day3"
+              >Day 3 Pass</a
+            >
+            <!-- <a class="outline-button combo-entry" target="_blank" href="https://rebrand.ly/CR_Combo">Combo Entry</a> -->
+          </div>
+        </div>
+      </div>
+      <div id="Combo" class="proshow-card">
+        <div class="front">
+          <img src="images/proshows/Combo.webp" alt="" />
+          <div class="arrow"></div>
+        </div>
+        <div class="back">
+          <div class="return"></div>
+          <p>
+            Wanna have the killer experiences of day 3 and the famous Darshan
+            Raval all in one? Get ready to be mesmerized in the night of
+            Crossroads 23' !
+            <br />
+            Well then buy our combo deal and join the party!
+          </p>
+          <div class="buttons">
+            <a
+              class="fill-button day-pass"
+              target="_blank"
+              href="https://rebrand.ly/CR_Combo"
+              >Combo Entry</a
+            >
+          </div>
         </div>
       </div>
     </div>
-    <div id="Day3" class="proshow-card">
-      <div class="front">
-        <img src="images/proshows/Day 3.webp" alt="" />
-        <div class="arrow"></div>
-      </div>
-      <div class="back">
-        <div class="return"></div>
-        <p>
-          Introducing the passionate Matadoria and electrifying Julia Bliss to
-          the spotlights of Crossroads '23!
-          <br />
-          Buy the tickets and join the crowd on Day 3.
-        </p>
-        <div class="buttons">
-          <a class="fill-button day-pass" target="_blank" href="https://rebrand.ly/CR_Day3">Day 3 Pass</a>
-          <!-- <a class="outline-button combo-entry" target="_blank" href="https://rebrand.ly/CR_Combo">Combo Entry</a> -->
-        </div>
+
+    <div id="events" class="start">
+      <h2 id="events-heading">Events</h2>
+      <div class="container">
+        <div
+          id="events-left-arrow"
+          onclick="onClickEventsLeftArrow(this)"
+        ></div>
+        <a
+          href="https://rebrand.ly/CR_BattleOfBands"
+          target="_blank"
+          id="battle-of-bands"
+          class="event-card c-2"
+          href=""
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/BattleofBands.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <a
+          href="https://rebrand.ly/CR_CACall"
+          target="_blank"
+          id="campus-ambassador"
+          class="event-card c-2"
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/CampusAmbassador.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <a
+          href="https://rebrand.ly/CR_Choreonite"
+          target="_blank"
+          id="choreonite"
+          class="event-card c-2"
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/Choreonite.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <a
+          href="https://rebrand.ly/CR_Duo"
+          target="_blank"
+          id="duo"
+          class="event-card c-2"
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/Duo.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <a
+          href="https://rebrand.ly/CR_Footloose"
+          target="_blank"
+          id="footloose"
+          class="event-card c-2"
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/Footloose.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <a
+          href="https://rebrand.ly/CR_FrameIt"
+          target="_blank"
+          id="frame-it"
+          class="event-card c-1"
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/FrameIt.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <a
+          href="https://rebrand.ly/CR_Futsal"
+          target="_blank"
+          id="futsal"
+          class="event-card c0"
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/Futsal.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <a
+          href="https://rebrand.ly/CR_Haute"
+          target="_blank"
+          id="haute-culture"
+          class="event-card c1"
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/HauteCulture.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <a
+          href="https://rebrand.ly/CR_Cosplay"
+          target="_blank"
+          id="henshin"
+          class="event-card c2"
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/Henshin.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <a
+          href="https://rebrand.ly/CR_MxCr"
+          target="_blank"
+          id="mx-cr"
+          class="event-card c2"
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/MxCr.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <a
+          href="https://rebrand.ly/CR_RJHunt"
+          target="_blank"
+          id="rj-hunt"
+          class="event-card c2"
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/RjHunt.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <a
+          href="https://rebrand.ly/CR_VoiceOfCr"
+          target="_blank"
+          id="voc"
+          class="event-card c2"
+        >
+          <div class="overlay"></div>
+          <img src="./images/events/VOC.webp" alt="" />
+          <div class="arrow"></div>
+        </a>
+        <div
+          id="events-right-arrow"
+          onclick="onClickEventsRightArrow(this)"
+        ></div>
       </div>
     </div>
-    <div id="Combo" class="proshow-card">
-      <div class="front">
-        <img src="images/proshows/Combo.webp" alt="" />
-        <div class="arrow"></div>
-      </div>
-      <div class="back">
-        <div class="return"></div>
-        <p>
-          Wanna have the killer experiences of day 3 and the famous Darshan
-          Raval all in one? Get ready to be mesmerized in the night of
-          Crossroads 23' !
-          <br />
-          Well then buy our combo deal and join the party!
-        </p>
-        <div class="buttons">
-          <a class="fill-button day-pass" target="_blank" href="https://rebrand.ly/CR_Combo">Combo Entry</a>
-        </div>
+
+    <div id="schedule">
+      <h1 id="schedule-heading">Schedule</h1>
+      <div>
+        <div id="Day2" class="schedule-day">12 May</div>
       </div>
     </div>
-  </div>
 
-  <div id="events" class="start">
-    <h2 id="events-heading">Events</h2>
-    <div class="container">
-      <div id="events-left-arrow" onclick="onClickEventsLeftArrow(this)"></div>
-      <a href="https://rebrand.ly/CR_BattleOfBands" target="_blank" id="battle-of-bands" class="event-card c-2" href="">
-        <div class="overlay"></div>
-        <img src="./images/events/BattleofBands.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <a href="https://rebrand.ly/CR_CACall" target="_blank" id="campus-ambassador" class="event-card c-2">
-        <div class="overlay"></div>
-        <img src="./images/events/CampusAmbassador.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <a href="https://rebrand.ly/CR_Choreonite" target="_blank" id="choreonite" class="event-card c-2">
-        <div class="overlay"></div>
-        <img src="./images/events/Choreonite.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <a href="https://rebrand.ly/CR_Duo" target="_blank" id="duo" class="event-card c-2">
-        <div class="overlay"></div>
-        <img src="./images/events/Duo.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <a href="https://rebrand.ly/CR_Footloose" target="_blank" id="footloose" class="event-card c-2">
-        <div class="overlay"></div>
-        <img src="./images/events/Footloose.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <a href="https://rebrand.ly/CR_FrameIt" target="_blank" id="frame-it" class="event-card c-1">
-        <div class="overlay"></div>
-        <img src="./images/events/FrameIt.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <a href="https://rebrand.ly/CR_Futsal" target="_blank" id="futsal" class="event-card c0">
-        <div class="overlay"></div>
-        <img src="./images/events/Futsal.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <a href="https://rebrand.ly/CR_Haute" target="_blank" id="haute-culture" class="event-card c1">
-        <div class="overlay"></div>
-        <img src="./images/events/HauteCulture.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <a href="https://rebrand.ly/CR_Cosplay" target="_blank" id="henshin" class="event-card c2">
-        <div class="overlay"></div>
-        <img src="./images/events/Henshin.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <a href="https://rebrand.ly/CR_MxCr" target="_blank" id="mx-cr" class="event-card c2">
-        <div class="overlay"></div>
-        <img src="./images/events/MxCr.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <a href="https://rebrand.ly/CR_RJHunt" target="_blank" id="rj-hunt" class="event-card c2">
-        <div class="overlay"></div>
-        <img src="./images/events/RjHunt.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <a href="https://rebrand.ly/CR_VoiceOfCr" target="_blank" id="voc" class="event-card c2">
-        <div class="overlay"></div>
-        <img src="./images/events/VOC.webp" alt="" />
-        <div class="arrow"></div>
-      </a>
-      <div id="events-right-arrow" onclick="onClickEventsRightArrow(this)"></div>
+    <div id="about">
+      <hr />
+      <div class="copyright">Copyright © 2023 All rights reserved</div>
     </div>
-  </div>
 
-  <div id="about">
-    <hr />
-    <div class="copyright">Copyright © 2023 All rights reserved</div>
-  </div>
-
-  <script src="js/main.js"></script>
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-</body>
-
+    <script src="js/main.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

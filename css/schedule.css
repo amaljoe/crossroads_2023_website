@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Monoton|Muli:400,400i,500,500i,600&display=swap");
+@font-face {
+  font-family: "goodTimes";
+  src: url("../fonts/good_times.otf");
+  font-display: block;
+}
+@font-face {
+  font-family: "syne";
+  src: url("../fonts/syne.ttf");
+  font-display: block;
+}
+@font-face {
+  font-family: "onam";
+  src: url("../fonts/ml_tt_onam_bold.ttf");
+  font-display: block;
+}
+@font-face {
+  font-family: "teko";
+  src: url("../fonts/Teko-Medium.ttf");
+  font-display: block;
+}
+#schedule {
+  z-index: 20;
+  width: 100%;
+  perspective: 10000px;
+  position: relative;
+  background-image: url(../images/bg-concert.webp), linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.8) 25%, #000000 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-blend-mode: overlay;
+}
+#schedule #schedule-heading {
+  position: relative;
+  font-family: "goodTimes", sans-serif;
+  font-size: 32px;
+  color: white;
+  padding-left: 2rem;
+  z-index: 50;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  /* Other transform properties here */
+  will-change: transform;
+  -webkit-transition: all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -moz-transition: all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -o-transition: all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  opacity: 1;
+}
+#schedule .schedule-day {
+  background-color: red;
+  position: relative;
+  font-family: "goodTimes", sans-serif;
+  font-size: 16px;
+  color: white;
+  padding-left: 2rem;
+  z-index: 50;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=schedule.css.map */

@@ -1,0 +1,45 @@
+@import "variables";
+@import "mixins";
+
+$duration: 0.8s;
+$proshowTransition1: transform $duration ease, opacity $duration ease;
+$proshowTransition2: transform $duration ease $duration,
+  opacity $duration ease $duration;
+
+$proshowCardMargin: 1rem;
+
+#schedule {
+  z-index: 20;
+  width: 100%;
+  perspective: 10000px;
+  position: relative;
+  background-image: url(../images/bg-concert.webp),
+    linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.8) 25%, #000000 100%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-blend-mode: overlay;
+
+  #schedule-heading {
+    position: relative;
+    font-family: $goodTimes;
+    font-size: 32px;
+    color: white;
+    padding-left: 2rem;
+    z-index: 50;
+    @include hardware-acceleration;
+    will-change: transform;
+    @include transition(all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8));
+    opacity: 1;
+  }
+  .schedule-day {
+    background-color: red;
+    position: relative;
+    font-family: $goodTimes;
+    font-size: 16px;
+    color: white;
+    padding-left: 2rem;
+    z-index: 50;
+    opacity: 1;
+  }
+}
