@@ -36,7 +36,16 @@ $proshowCardMargin: 1rem;
       opacity: 0;
     }
   }
-  
+  #schedule-content-container {
+    @include hardware-acceleration;
+    will-change: transform, opacity;
+    @include transition(all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8));
+    &.start {
+      @include transform(translateX(100px));
+      opacity: 0;
+    }
+  }
+
   .schedule-day-container {
     display: flex;
   }
@@ -54,7 +63,7 @@ $proshowCardMargin: 1rem;
       border-bottom: 2px solid $primary;
       color: $primary;
     }
-    &.start{
+    &.start {
       @include transform(translateY(100px));
       opacity: 0;
     }

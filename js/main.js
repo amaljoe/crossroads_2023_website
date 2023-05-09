@@ -6,6 +6,7 @@ const body = document.getElementById("body");
 const proshowsHeading = document.getElementById("proshows-heading");
 const eventsHeading = document.getElementById("events-heading");
 const scheduleHeading=document.getElementById("schedule-heading");
+const scheduleContentContainer=document.getElementById("schedule-content-container");
 const tagline = document.getElementById("tagline");
 const events = document.getElementById("events");
 const eventCards = document.getElementsByClassName("event-card");
@@ -37,7 +38,8 @@ var eventsIndex = {
 window.onscroll = function () {
   const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
   const eventsHeadingTop = eventsHeading.getBoundingClientRect().top;
-const scheduleHeadingTop=scheduleHeading.getBoundingClientRect().top;
+  const scheduleHeadingTop=scheduleHeading.getBoundingClientRect().top;
+  const scheduleContentContainerTop=scheduleContentContainer.getBoundingClientRect().top;
   // proshow heading animation
   if (
     proshowsHeadingTop < window.innerHeight &&
@@ -81,6 +83,11 @@ const scheduleHeadingTop=scheduleHeading.getBoundingClientRect().top;
       scheduleHeading.classList.remove("start");
     } else {
       scheduleHeading.classList.add("start");
+    }
+    if (scheduleContentContainerTop < window.innerHeight) {
+      scheduleContentContainer.classList.remove("start");
+    } else {
+      scheduleContentContainer.classList.add("start");
     }
   
 };
