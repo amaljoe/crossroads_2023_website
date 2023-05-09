@@ -21,6 +21,7 @@ $proshowCardMargin: 1rem;
   background-blend-mode: overlay;
 
   #schedule-heading {
+    margin-top: 100px;
     position: relative;
     font-family: $goodTimes;
     font-size: 32px;
@@ -28,18 +29,60 @@ $proshowCardMargin: 1rem;
     padding-left: 2rem;
     z-index: 50;
     @include hardware-acceleration;
-    will-change: transform;
+    will-change: transform, opacity;
     @include transition(all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8));
-    opacity: 1;
+    &.start {
+      @include transform(translateX(100px));
+      opacity: 0;
+    }
+  }
+  
+  .schedule-day-container {
+    display: flex;
   }
   .schedule-day {
-    background-color: red;
+    flex: 1;
     position: relative;
     font-family: $goodTimes;
     font-size: 16px;
     color: white;
-    padding-left: 2rem;
-    z-index: 50;
-    opacity: 1;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 2px transparent;
+
+    &.selected {
+      border-bottom: 2px solid $primary;
+      color: $primary;
+    }
+    &.start{
+      @include transform(translateY(100px));
+      opacity: 0;
+    }
+  }
+
+  .schedule-item {
+    display: flex;
+    position: relative;
+    font-family: $teko;
+    font-size: 24px;
+    color: white;
+    padding: 1rem;
+    .title {
+      flex: 1;
+    }
+  }
+
+  .schedule-content {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    hr {
+      border-bottom: 1px solid grey;
+      margin: 0px 20px 0px 20px;
+    }
+    &.selected {
+      position: relative;
+      opacity: 1;
+    }
   }
 }

@@ -5,10 +5,14 @@ const proshows = document.getElementById("proshows");
 const body = document.getElementById("body");
 const proshowsHeading = document.getElementById("proshows-heading");
 const eventsHeading = document.getElementById("events-heading");
+const scheduleHeading=document.getElementById("schedule-heading");
 const tagline = document.getElementById("tagline");
 const events = document.getElementById("events");
 const eventCards = document.getElementsByClassName("event-card");
 const proshowCards = document.getElementsByClassName("proshow-card");
+const scheduleContents = document.getElementsByClassName("schedule-content");
+const scheduleDays = document.getElementsByClassName("schedule-day");
+
 const loading = document.getElementById("loading");
 const sideNav = document.getElementById("side-nav");
 const eventsCount = 13;
@@ -18,22 +22,22 @@ const taglines = ["A-Wn-b-d", "A-c-§v", "Xn-c-Èo-e-"];
 var eventsIndex = {
   "battle-of-bands": -6,
   "campus-ambassador": -5,
-  "choreonite": -4,
-  "duo": -3,
-  "footloose": -2,
+  choreonite: -4,
+  duo: -3,
+  footloose: -2,
   "frame-it": -1,
-  "futsal": 0,
+  futsal: 0,
   "haute-culture": 1,
-  "henshin": 2,
+  henshin: 2,
   "mx-cr": 3,
   "rj-hunt": 4,
-  "voc": 5,
-}
+  voc: 5,
+};
 
 window.onscroll = function () {
   const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
   const eventsHeadingTop = eventsHeading.getBoundingClientRect().top;
-
+const scheduleHeadingTop=scheduleHeading.getBoundingClientRect().top;
   // proshow heading animation
   if (
     proshowsHeadingTop < window.innerHeight &&
@@ -72,6 +76,13 @@ window.onscroll = function () {
     events.classList.remove("completed");
     events.classList.add("start");
   }
+    // schedule heading animation
+    if (scheduleHeadingTop < window.innerHeight) {
+      scheduleHeading.classList.remove("start");
+    } else {
+      scheduleHeading.classList.add("start");
+    }
+  
 };
 
 function onClickMenu(x) {
@@ -114,8 +125,7 @@ function shiftEventCards(index) {
       newIndex = -1 * (newIndex + index);
       if (newIndex > 0) {
         newIndex--;
-      }
-      else {
+      } else {
         newIndex++;
       }
     }
@@ -141,6 +151,23 @@ for (const child of sideNav.getElementsByTagName("a")) {
     body.classList.remove("no-scroll");
     showNav = false;
   });
+}
+function onClickDay(x) {
+  console.log(x.id);
+  for (const scheduleDay of scheduleDays) {
+    if (scheduleDay.dataset.day === x.dataset.day) {
+      scheduleDay.classList.add("selected");
+    } else {
+      scheduleDay.classList.remove("selected");
+    }
+  }
+  for (const scheduleContent of scheduleContents) {
+    if (scheduleContent.dataset.day === x.dataset.day) {
+      scheduleContent.classList.add("selected");
+    } else {
+      scheduleContent.classList.remove("selected");
+    }
+  }
 }
 
 function setCookie(cname, cvalue, exdays) {
@@ -186,35 +213,40 @@ async function getRegionFromIp() {
   return data.region;
 }
 
-getRegionFromIp().then((region) => {
-  console.log(region);
+getRegionFromIp()
+  .then((region) => {
+    console.log(region);
 
-  for (const proshowCard of proshowCards) {
-    if (
-      proshowCard.id === "Day2" ||
-      (proshowCard.id === "Combo" && region != "Kerala")
-    ) {
-      continue;
+    for (const proshowCard of proshowCards) {
+      if (
+        proshowCard.id === "Day2" ||
+        (proshowCard.id === "Combo" && region != "Kerala")
+      ) {
+        continue;
+      }
+      proshowCard.classList.add("clickable");
+      proshowCard.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") return;
+        const id = e.currentTarget.classList.toggle("clicked");
+      });
     }
-    proshowCard.classList.add("clickable");
-    proshowCard.addEventListener("click", (e) => {
-      if (e.target.tagName === "A") return;
-      const id = e.currentTarget.classList.toggle("clicked");
-    });
-  }
-}).catch((err) => {
-  console.log(err);
-  for (const proshowCard of proshowCards) {
-    if (proshowCard.id === "Day2" ||(proshowCard.id === "Combo" && region != "Kerala")) {
-      continue;
+  })
+  .catch((err) => {
+    console.log(err);
+    for (const proshowCard of proshowCards) {
+      if (
+        proshowCard.id === "Day2" ||
+        (proshowCard.id === "Combo" && region != "Kerala")
+      ) {
+        continue;
+      }
+      proshowCard.classList.add("clickable");
+      proshowCard.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") return;
+        const id = e.currentTarget.classList.toggle("clicked");
+      });
     }
-    proshowCard.classList.add("clickable");
-    proshowCard.addEventListener("click", (e) => {
-      if (e.target.tagName === "A") return;
-      const id = e.currentTarget.classList.toggle("clicked");
-    });
-  }
-});
+  });
 
 window.onload = () => {
   loading.classList.add("completed");
