@@ -94,11 +94,6 @@
   color: white;
   padding: 1rem;
   text-align: center;
-  border-bottom: 2px transparent;
-}
-#schedule .schedule-day.selected {
-  border-bottom: 2px solid #D4A50D;
-  color: #D4A50D;
 }
 #schedule .schedule-day.start {
   -webkit-transform: translateY(100px);
@@ -106,6 +101,44 @@
   -ms-transform: translateY(100px);
   transform: translateY(100px);
   opacity: 0;
+}
+#schedule #line {
+  height: 1px;
+  background-color: red;
+  margin: 10px 20px 0px 20px;
+  align-items: center;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+  /* Other transform properties here */
+  will-change: transform, opacity;
+  -webkit-transition: all 0.95s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -moz-transition: all 0.95s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -o-transition: all 0.95s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  transition: all 0.95s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  transform-origin: center;
+}
+#schedule #line.start {
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  opacity: 1;
+}
+#schedule #line.shrink {
+  -webkit-transform: scaleX(0.33) translate(-100%);
+  -moz-transform: scaleX(0.33) translate(-100%);
+  -ms-transform: scaleX(0.33) translate(-100%);
+  transform: scaleX(0.33) translate(-100%);
 }
 #schedule .schedule-item {
   display: flex;

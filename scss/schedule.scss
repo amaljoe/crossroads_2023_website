@@ -57,18 +57,31 @@ $proshowCardMargin: 1rem;
     color: white;
     padding: 1rem;
     text-align: center;
-    border-bottom: 2px transparent;
-
-    &.selected {
-      border-bottom: 2px solid $primary;
-      color: $primary;
-    }
     &.start {
       @include transform(translateY(100px));
       opacity: 0;
     }
   }
-
+  #line {
+    height: 1px; 
+    background-color: red; 
+    margin: 10px 20px 0px 20px;
+    align-items: center;
+    @include hardware-acceleration;
+    will-change: transform, opacity;
+    @include transition(all 0.95s cubic-bezier(0.47, 1.64, 0.41, 0.8));
+    @include transform(scaleX(1));
+    transform-origin: center; 
+    &.start {
+      @include transform(scaleX(0));
+      opacity: 1;
+    }
+    &.shrink {
+      @include transform(scaleX(0.33)  translate(-100%));
+    }
+  }
+  
+  
   .schedule-item {
     display: flex;
     position: relative;
