@@ -56,6 +56,10 @@
   opacity: 0;
 }
 #schedule #schedule-content-container {
+  z-index: 20;
+  position: relative;
+}
+#schedule #schedule-content-container .schedule-content * {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -65,15 +69,43 @@
   -ms-perspective: 1000;
   perspective: 1000;
   /* Other transform properties here */
-  will-change: transform;
+  will-change: transform, opacity;
   -webkit-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s, opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
   -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s, opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
   -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s, opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
   transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s, opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8) 0.8s;
-  z-index: 20;
-  position: relative;
 }
-#schedule #schedule-content-container.start {
+#schedule #schedule-content-container .schedule-content *:nth-child(1) {
+  transition-delay: 0s;
+}
+#schedule #schedule-content-container .schedule-content *:nth-child(2) {
+  transition-delay: 0.05s;
+}
+#schedule #schedule-content-container .schedule-content *:nth-child(3) {
+  transition-delay: 0.1s;
+}
+#schedule #schedule-content-container .schedule-content *:nth-child(4) {
+  transition-delay: 0.15s;
+}
+#schedule #schedule-content-container .schedule-content *:nth-child(5) {
+  transition-delay: 0.2s;
+}
+#schedule #schedule-content-container .schedule-content *:nth-child(6) {
+  transition-delay: 0.25s;
+}
+#schedule #schedule-content-container .schedule-content *:nth-child(7) {
+  transition-delay: 0.3s;
+}
+#schedule #schedule-content-container .schedule-content *:nth-child(8) {
+  transition-delay: 0.35s;
+}
+#schedule #schedule-content-container .schedule-content *:nth-child(9) {
+  transition-delay: 0.4s;
+}
+#schedule #schedule-content-container .schedule-content *:nth-child(10) {
+  transition-delay: 0.45s;
+}
+#schedule #schedule-content-container.start .schedule-content * {
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
   -ms-transform: translateX(100%);
@@ -82,6 +114,7 @@
   -moz-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   -o-transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
   transition: transform 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8), opacity 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  opacity: 0;
 }
 #schedule #schedule-day-container {
   display: flex;
