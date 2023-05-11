@@ -6,9 +6,8 @@ const body = document.getElementById("body");
 const proshowsHeading = document.getElementById("proshows-heading");
 const eventsHeading = document.getElementById("events-heading");
 const scheduleHeading = document.getElementById("schedule-heading");
-const scheduleContentContainer = document.getElementById(
-  "schedule-content-container"
-);
+const scheduleContentContainer = document.getElementById("schedule-content-container");
+const scheduleDayContainer = document.getElementById("schedule-day-container");
 const tagline = document.getElementById("tagline");
 const events = document.getElementById("events");
 const eventCards = document.getElementsByClassName("event-card");
@@ -90,15 +89,11 @@ window.onscroll = function () {
   if (scheduleLineTop < window.innerHeight / 3 * 2) {
     scheduleContentContainer.classList.remove("start");
     scheduleLine.classList.remove("start");
-    setTimeout(function () {
-      scheduleLine.classList.add("grow");
-      scheduleLine.classList.add("shrink");
-    }, 1000); // 1 second delay
+    scheduleDayContainer.classList.remove("start");
   } else {
     scheduleContentContainer.classList.add("start");
     scheduleLine.classList.add("start");
-    scheduleLine.classList.remove("grow");
-    scheduleLine.classList.remove("shrink");
+    scheduleDayContainer.classList.add("start");
   }
 };
 
@@ -170,7 +165,6 @@ for (const child of sideNav.getElementsByTagName("a")) {
   });
 }
 function onClickDay(x) {
-  console.log(x.id);
   for (const scheduleDay of scheduleDays) {
     if (scheduleDay.dataset.day === x.dataset.day) {
       scheduleDay.classList.add("selected");
@@ -185,9 +179,7 @@ function onClickDay(x) {
       scheduleContent.classList.remove("selected");
     }
   }
-  const selectedDay = document.getElementsByClassName("selected");
-  const xPosition = (selectedDay[0].dataset.day - 2) * scheduleLine.offsetWidth;
-  scheduleLine.style.transform = `scaleX(0.33) translateX(${xPosition}px)`;
+  scheduleLine.className = `d${x.dataset.day}`;
 }
 
 function setCookie(cname, cvalue, exdays) {
