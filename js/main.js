@@ -90,15 +90,16 @@ window.onscroll = function () {
   if (scheduleContentContainerTop < window.innerHeight) {
     scheduleContentContainer.classList.remove("start");
     scheduleLine.classList.remove("start");
-    setTimeout(function() {
+    setTimeout(function () {
+      scheduleLine.classList.add("grow");
       scheduleLine.classList.add("shrink");
-    }, 2000); // 1 second delay
+    }, 1000); // 1 second delay
   } else {
     scheduleContentContainer.classList.add("start");
     scheduleLine.classList.add("start");
-    scheduleLine.classList.remove("shrink"); 
+    scheduleLine.classList.remove("grow");
+    scheduleLine.classList.remove("shrink");
   }
-  
 };
 
 function onClickMenu(x) {
@@ -184,11 +185,8 @@ function onClickDay(x) {
       scheduleContent.classList.remove("selected");
     }
   }
-  const selectedDay = document.getElementsByClassName('selected');
-  console.log(selectedDay);
-  const xPosition =  (selectedDay[0].offsetWidth ) - (scheduleLine.offsetWidth / 2);
-  ;
-  console.log(xPosition);
+  const selectedDay = document.getElementsByClassName("selected");
+  const xPosition = (selectedDay[0].dataset.day - 2) * scheduleLine.offsetWidth;
   scheduleLine.style.transform = `scaleX(0.33) translateX(${xPosition}px)`;
 }
 
