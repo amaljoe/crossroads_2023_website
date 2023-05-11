@@ -43,7 +43,7 @@ $proshowCardMargin: 1rem;
     }
 
     @for $i from 1 through 20 {
-      .schedule-content *:nth-child(#{$i}) {
+      .selected *:nth-child(#{$i}) {
         transition-delay: ($i - 1) * 0.05s + $duration;
       }
     }
@@ -91,7 +91,7 @@ $proshowCardMargin: 1rem;
     }
 
     &.start {
-      .schedule-content * {
+      .selected * {
         @include transform(translateX(100%));
         @include transition($scheduleTransition1);
         opacity: 0;

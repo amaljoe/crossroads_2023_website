@@ -171,6 +171,13 @@ function onClickDay(x) {
       scheduleDay.classList.remove("selected");
     }
   }
+  for (const scheduleContent of scheduleContents) {
+    if (scheduleContent.dataset.day === x.dataset.day) {
+      scheduleContent.classList.add("selected");
+    } else {
+      scheduleContent.classList.remove("selected");
+    }
+  }
   scheduleContentContainer.className = `s${x.dataset.day}`;
   scheduleLine.className = `d${x.dataset.day}`;
 }
