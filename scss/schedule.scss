@@ -11,17 +11,11 @@ $proshowCardMargin: 1rem;
 #schedule {
   z-index: 20;
   width: 100%;
-  perspective: 10000px;
   position: relative;
-  background-image: url(../images/bg-concert.webp),
-    linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.8) 25%, #000000 100%);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  background-blend-mode: overlay;
 
   #schedule-heading {
     margin-top: 100px;
+    margin-bottom: 50px;
     position: relative;
     font-family: $goodTimes;
     font-size: 32px;
@@ -31,15 +25,18 @@ $proshowCardMargin: 1rem;
     @include hardware-acceleration;
     will-change: transform, opacity;
     @include transition(all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8));
+
     &.start {
       @include transform(translateX(100px));
       opacity: 0;
     }
   }
+
   #schedule-content-container {
     @include hardware-acceleration;
     will-change: transform, opacity;
     @include transition(all 0.8s cubic-bezier(0.47, 1.64, 0.41, 0.8));
+
     &.start {
       @include transform(translateX(100px));
       opacity: 0;
@@ -49,6 +46,7 @@ $proshowCardMargin: 1rem;
   .schedule-day-container {
     display: flex;
   }
+
   .schedule-day {
     flex: 1;
     position: relative;
@@ -63,29 +61,33 @@ $proshowCardMargin: 1rem;
       opacity: 0;
     }
   }
+
   #line {
-    height: 2px; 
-    background-color: $primary; 
+    height: 2px;
+    background-color: $primary;
     margin: 10px 20px 0px 20px;
     align-items: center;
     @include hardware-acceleration;
     will-change: transform, opacity;
     @include transition(all 0.95s cubic-bezier(0.47, 1.64, 0.41, 0.8));
     @include transform(scaleX(1));
-    transform-origin: center; 
+    transform-origin: center;
+
     &.start {
       @include transform(scaleX(0));
       opacity: 1;
     }
+
     &.grow {
       @include transform(scaleX(1));
     }
+
     &.shrink {
-      @include transform(scaleX(0.33)  translate(-100%));
+      @include transform(scaleX(0.33) translate(-100%));
     }
   }
-  
-  
+
+
   .schedule-item {
     display: flex;
     position: relative;
@@ -93,6 +95,7 @@ $proshowCardMargin: 1rem;
     font-size: 24px;
     color: white;
     padding: 1rem;
+
     .title {
       flex: 1;
     }
@@ -102,13 +105,20 @@ $proshowCardMargin: 1rem;
     position: absolute;
     width: 100%;
     opacity: 0;
+    top: 0;
+    left: 0;
+
     hr {
       border-bottom: 1px solid grey;
       margin: 0px 20px 0px 20px;
     }
+
     &.selected {
-      position: relative;
       opacity: 1;
+    }
+
+    &.tallest {
+      position: relative;
     }
   }
 }
