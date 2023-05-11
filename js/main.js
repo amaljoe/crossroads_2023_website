@@ -40,8 +40,7 @@ window.onscroll = function () {
   const proshowsHeadingTop = proshowsHeading.getBoundingClientRect().top;
   const eventsHeadingTop = eventsHeading.getBoundingClientRect().top;
   const scheduleHeadingTop = scheduleHeading.getBoundingClientRect().top;
-  const scheduleLineTop =
-    scheduleContentContainer.getBoundingClientRect().top;
+  const scheduleLineTop = scheduleLine.getBoundingClientRect().top;
   // proshow heading animation
   if (
     proshowsHeadingTop < window.innerHeight &&
@@ -86,7 +85,7 @@ window.onscroll = function () {
   } else {
     scheduleHeading.classList.add("start");
   }
-  if (scheduleLineTop < window.innerHeight / 3 * 2) {
+  if (scheduleLineTop < window.innerHeight) {
     scheduleContentContainer.classList.remove("start");
     scheduleLine.classList.remove("start");
     scheduleDayContainer.classList.remove("start");
