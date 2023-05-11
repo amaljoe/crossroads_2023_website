@@ -48,6 +48,48 @@ $proshowCardMargin: 1rem;
       }
     }
 
+    &.s1 {
+      #d1 {
+        @include transform(translateX(0));
+      }
+
+      #d2 {
+        @include transform(translateX(100%));
+      }
+
+      #d3 {
+        @include transform(translateX(200%));
+      }
+    }
+
+    &.s2 {
+      #d1 {
+        @include transform(translateX(-100%));
+      }
+
+      #d2 {
+        @include transform(translateX(0));
+      }
+
+      #d3 {
+        @include transform(translateX(100%));
+      }
+    }
+
+    &.s3 {
+      #d1 {
+        @include transform(translateX(-200%));
+      }
+
+      #d2 {
+        @include transform(translateX(-100%));
+      }
+
+      #d3 {
+        @include transform(translateX(0));
+      }
+    }
+
     &.start {
       .schedule-content * {
         @include transform(translateX(100%));
@@ -91,6 +133,10 @@ $proshowCardMargin: 1rem;
       @include transform(translateY(100px));
       opacity: 0;
     }
+
+    &.selected {
+      color: $primary;
+    }
   }
 
   .line-container {
@@ -119,7 +165,6 @@ $proshowCardMargin: 1rem;
         transform: scaleX(0);
       }
 
-      40%,
       50% {
         transform: scaleX(3);
       }
@@ -161,19 +206,15 @@ $proshowCardMargin: 1rem;
   .schedule-content {
     position: absolute;
     width: 100%;
-    opacity: 0;
     top: 0;
     left: 0;
     @include hardware-acceleration;
     will-change: transform;
+    @include transition(transform $duration ease);
 
     hr {
       border-bottom: 1px solid grey;
       margin: 0px 20px 0px 20px;
-    }
-
-    &.selected {
-      opacity: 1;
     }
 
     &.tallest {

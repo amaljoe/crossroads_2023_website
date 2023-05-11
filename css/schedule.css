@@ -105,6 +105,60 @@
 #schedule #schedule-content-container .schedule-content *:nth-child(10) {
   transition-delay: 0.45s;
 }
+#schedule #schedule-content-container.s1 #d1 {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+#schedule #schedule-content-container.s1 #d2 {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+#schedule #schedule-content-container.s1 #d3 {
+  -webkit-transform: translateX(200%);
+  -moz-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  transform: translateX(200%);
+}
+#schedule #schedule-content-container.s2 #d1 {
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+#schedule #schedule-content-container.s2 #d2 {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+#schedule #schedule-content-container.s2 #d3 {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+#schedule #schedule-content-container.s3 #d1 {
+  -webkit-transform: translateX(-200%);
+  -moz-transform: translateX(-200%);
+  -ms-transform: translateX(-200%);
+  transform: translateX(-200%);
+}
+#schedule #schedule-content-container.s3 #d2 {
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+#schedule #schedule-content-container.s3 #d3 {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
 #schedule #schedule-content-container.start .schedule-content * {
   -webkit-transform: translateX(100%);
   -moz-transform: translateX(100%);
@@ -166,6 +220,9 @@
   transform: translateY(100px);
   opacity: 0;
 }
+#schedule .schedule-day.selected {
+  color: #D4A50D;
+}
 #schedule .line-container {
   position: relative;
   z-index: 20;
@@ -201,7 +258,7 @@
   0% {
     transform: scaleX(0);
   }
-  40%, 50% {
+  50% {
     transform: scaleX(3);
   }
 }
@@ -245,7 +302,6 @@
 #schedule .schedule-content {
   position: absolute;
   width: 100%;
-  opacity: 0;
   top: 0;
   left: 0;
   -webkit-backface-visibility: hidden;
@@ -258,13 +314,14 @@
   perspective: 1000;
   /* Other transform properties here */
   will-change: transform;
+  -webkit-transition: transform 0.8s ease;
+  -moz-transition: transform 0.8s ease;
+  -o-transition: transform 0.8s ease;
+  transition: transform 0.8s ease;
 }
 #schedule .schedule-content hr {
   border-bottom: 1px solid grey;
   margin: 0px 20px 0px 20px;
-}
-#schedule .schedule-content.selected {
-  opacity: 1;
 }
 #schedule .schedule-content.tallest {
   position: relative;
