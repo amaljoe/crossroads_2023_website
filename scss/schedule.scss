@@ -42,9 +42,9 @@ $proshowCardMargin: 1rem;
       @include transition($scheduleTransition2);
     }
 
-    @for $i from 1 through 10 {
+    @for $i from 1 through 20 {
       .schedule-content *:nth-child(#{$i}) {
-        transition-delay: ($i - 1) * 0.05s;
+        transition-delay: ($i - 1) * 0.05s + $duration;
       }
     }
 
