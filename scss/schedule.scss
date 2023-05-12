@@ -151,6 +151,7 @@ $proshowCardMargin: 1rem;
     height: 2px;
     box-sizing: border-box;
     width: calc((100% - 2rem) / 3);
+    border-radius: 2px;
     background-color: $primary;
     margin: 0 1rem 0 1rem;
     align-items: center;
